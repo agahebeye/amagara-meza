@@ -6,6 +6,7 @@ return [
     'services' => 'Services',
     'departments' => 'Departements',
     'doctors' => 'Docteurs',
-    'contact' => 'Contact'
+    'contact' => 'Contact',
+    'appointment' => ':action rendez-vous',
 
 ];
