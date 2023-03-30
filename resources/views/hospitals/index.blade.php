@@ -189,12 +189,12 @@
                         </ul>
                     </li>
                     <li class="nav-small-cap m-t-10">--- Main Menu</li>
-                    <li> <a href="index.html" class="waves-effect"><i class="ti-dashboard p-r-10"></i> <span class="hide-menu">Dashboard</span></a> </li>
+                    <li> <a href="{{route('hospitals.index')}}" class="waves-effect"><i class="ti-dashboard p-r-10"></i> <span class="hide-menu">Dashboard</span></a> </li>
                     <li> <a href="javascript:void(0);" class="waves-effect"><i class="icon-envelope p-r-10"></i> <span class="hide-menu"> Mailbox <span class="fa arrow"></span><span class="label label-rouded label-danger pull-right">6</span></span></a>
                         <ul class="nav nav-second-level">
-                            <li> <a href="inbox.html">Inbox</a></li>
-                            <li> <a href="inbox-detail.html">Inbox detail</a></li>
-                            <li> <a href="compose.html">Compose mail</a></li>
+                            <li> <a href="{{route('hospitals.inbox')}}">Inbox</a></li>
+                            <li> <a href="{{route('hospitals.inbox_detail')}}">Inbox detail</a></li>
+                            <li> <a href="{{route('hospitals.compose')}}">Compose mail</a></li>
                         </ul>
                     </li>
                     <li class="nav-small-cap m-t-10">--- Professional</li>
