@@ -41,7 +41,7 @@
 
                 {{ $slot }}
 
-                <div class="right-sidebar">
+                <!-- <div class="right-sidebar">
                     <div class="slimscrollright">
                         <div class="rpanel-title"> Service Panel <span><i class="ti-close right-side-toggle"></i></span> </div>
                         <div class="r-panel-body">
@@ -111,7 +111,7 @@
                             </ul>
                         </div>
                     </div>
-                </div>
+                </div> -->
                 <!-- /.right-sidebar -->
             </div>
             <!-- /.container-fluid -->
@@ -138,8 +138,8 @@
     <!-- Sparkline chart JavaScript -->
     <script src="/app/plugins/bower_components/jquery-sparkline/jquery.sparkline.min.js"></script>
     <!-- jQuery peity -->
-    <script src="/app/plugins/bower_components/peity/jquery.peity.min.js"></script>
-    <script src="/app/plugins/bower_components/peity/jquery.peity.init.js"></script>
+    <!-- <script src="/app/plugins/bower_components/peity/jquery.peity.min.js"></script>
+    <script src="/app/plugins/bower_components/peity/jquery.peity.init.js"></script> -->
     <!-- Custom Theme JavaScript -->
     <script src="/app/js/custom.min.js"></script>
     <script src="/app/js/dashboard1.js"></script>
