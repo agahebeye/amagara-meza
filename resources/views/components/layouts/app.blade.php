@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" type="image/png" sizes="16x16" href="/app/plugins/images/favicon.png">
-    <title>{{config('app.name')}} - {{$title ?? 'Accueil'}}</title>
+    <title>{{config('app.name')}} - {{$title ?? 'Dashboard'}}</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="/app/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -19,6 +19,8 @@
     <link href="/app/plugins/bower_components/morrisjs/morris.css" rel="stylesheet">
     <!-- animation CSS -->
     <link href="/app/css/animate.css" rel="stylesheet">
+
+    {{ $moreStyles ?? '' }}
     <!-- Custom CSS -->
     <link href="/app/css/style.min.css" rel="stylesheet">
 
@@ -38,6 +40,20 @@
         <!-- Page Content -->
         <div id="page-wrapper">
             <div class="container-fluid">
+
+                <div class="row bg-title">
+                    <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+                        <h4 class="page-title">{{ $title ?? 'Dashboard' }}</h4>
+                    </div>
+
+                    <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12"> <a href="" target="_blank" class="btn btn-danger pull-right m-l-20 btn-rounded btn-outline hidden-xs hidden-sm waves-effect waves-light">Buy Now</a>
+                        <ol class="breadcrumb">
+                            <li><a href="#">Hospital</a></li>
+                            <li class="active">{{ $title ?? 'Dashboard'}}</li>
+                        </ol>
+                    </div>
+                    <!-- /.col-lg-12 -->
+                </div>
 
                 {{ $slot }}
 
@@ -138,13 +154,18 @@
     <!-- Sparkline chart JavaScript -->
     <script src="/app/plugins/bower_components/jquery-sparkline/jquery.sparkline.min.js"></script>
     <!-- jQuery peity -->
-    <!-- <script src="/app/plugins/bower_components/peity/jquery.peity.min.js"></script>
-    <script src="/app/plugins/bower_components/peity/jquery.peity.init.js"></script> -->
+    <script src="/app/plugins/bower_components/peity/jquery.peity.min.js"></script>
+    <script src="/app/plugins/bower_components/peity/jquery.peity.init.js"></script>
+
+    {{ $moreScripts ?? '' }}
+
     <!-- Custom Theme JavaScript -->
     <script src="/app/js/custom.min.js"></script>
     <script src="/app/js/dashboard1.js"></script>
     <!--Style Switcher -->
     <script src="/app/plugins/bower_components/styleswitcher/jQuery.style.switcher.js"></script>
+
+
 </body>
 
 </html>
