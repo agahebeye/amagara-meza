@@ -14,10 +14,7 @@
     <link href="/app/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="/app/plugins/bower_components/bootstrap-extension/css/bootstrap-extension.css" rel="stylesheet">
     <!-- Menu CSS -->
-    <link href="/app/plugins/bower_components/sidebar-nav/dist/sidebar-nav.min.css" rel="stylesheet">
-    <!-- morris CSS -->
-    <link href="/app/plugins/bower_components/morrisjs/morris.css" rel="stylesheet">
-    <!-- animation CSS -->
+    <link href="/app/plugins/bower_components/sidebar-nav/dist/sidebar-nav.min.css" rel="stylesheet"> <!-- animation CSS -->
     <link href="/app/css/animate.css" rel="stylesheet">
 
     {{ $moreStyles ?? '' }}
@@ -150,9 +147,6 @@
     <script src="/app/js/waves.js"></script>
     <!--Morris JavaScript -->
     <script src="/app/plugins/bower_components/raphael/raphael-min.js"></script>
-    <script src="/app/plugins/bower_components/morrisjs/morris.js"></script>
-    <!-- Sparkline chart JavaScript -->
-    <script src="/app/plugins/bower_components/jquery-sparkline/jquery.sparkline.min.js"></script>
     <!-- jQuery peity -->
     <script src="/app/plugins/bower_components/peity/jquery.peity.min.js"></script>
     <script src="/app/plugins/bower_components/peity/jquery.peity.init.js"></script>
@@ -161,7 +155,6 @@
 
     <!-- Custom Theme JavaScript -->
     <script src="/app/js/custom.min.js"></script>
-    <script src="/app/js/dashboard1.js"></script>
     <!--Style Switcher -->
     <script src="/app/plugins/bower_components/styleswitcher/jQuery.style.switcher.js"></script>
 

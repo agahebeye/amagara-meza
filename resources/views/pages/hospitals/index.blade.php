@@ -1,5 +1,9 @@
 <x-layouts.app>
 
+    <x-slot name='moreStyles'>
+        <link href="/app/plugins/bower_components/morrisjs/morris.css" rel="stylesheet">
+    </x-slot>
+
     <div class="row">
         <div class="col-md-3 col-sm-6">
             <div class="white-box">
@@ -233,4 +237,10 @@
             </div>
         </div>
     </div>
+
+    <x-slot name='moreScripts'>
+        <script src="/app/plugins/bower_components/morrisjs/morris.js"></script>
+        <script src="/app/plugins/bower_components/jquery-sparkline/jquery.sparkline.min.js"></script>
+        <script src="/app/js/dashboard1.js"></script>
+    </x-slot>
 </x-layouts.app>

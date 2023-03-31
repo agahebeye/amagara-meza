@@ -41,10 +41,10 @@
 
             <li> <a href="javascript:void(0);" class="waves-effect"><i class="fa fa-user-md p-r-10"></i> <span class="hide-menu"> Doctors <span class="fa arrow"></span></span></a>
                 <ul class="nav nav-second-level">
-                    <li> <a href="doctors.html">All Doctors</a> </li>
-                    <li> <a href="add-doctor.html">Add Doctor</a> </li>
-                    <li> <a href="edit-doctor.html">Edit Doctor</a> </li>
-                    <li> <a href="doctor-profile.html">Doctor Profile</a> </li>
+                    <li> <a href="{{route('hospitals.doctors')}}">All Doctors</a> </li>
+                    <li> <a href="{{route('hospitals.add_doctor')}}">Add Doctor</a> </li>
+                    <li> <a href="{{route('hospitals.edit_doctor')}}">Edit Doctor</a> </li>
+                    <li> <a href="{{route('hospitals.doctor_profile')}}">Doctor Profile</a> </li>
                 </ul>
             </li>
 
