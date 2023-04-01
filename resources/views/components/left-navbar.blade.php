@@ -59,17 +59,17 @@
 
             <li> <a href="javascript:void(0);" class="waves-effect"><i class="icon-chart p-r-10"></i> <span class="hide-menu"> Reports <span class="fa arrow"></span></span></a>
                 <ul class="nav nav-second-level">
-                    <li> <a href="payment-report.html">Payment Report</a></li>
-                    <li> <a href="income-report.html">Income Report</a></li>
-                    <li> <a href="sales-report.html">Sales Report</a></li>
+                    <li> <a href="{{route('hospitals.payment_report')}}">Payment Report</a></li>
+                    <li> <a href="{{route('hospitals.income_report')}}">Income Report</a></li>
+                    <li> <a href="{{route('hospitals.sales_report')}}">Sales Report</a></li>
                 </ul>
             </li>
 
             <li> <a href="javascript:void(0);" class="waves-effect"><i class="fa fa-inr p-r-10"></i> <span class="hide-menu"> Payments <span class="fa arrow"></span></span></a>
                 <ul class="nav nav-second-level">
-                    <li> <a href="payments.html">Payments</a></li>
-                    <li> <a href="add-payments.html">Add Payment</a></li>
-                    <li> <a href="patient-invoice.html">Patient Invoice</a></li>
+                    <li> <a href="{{route('hospitals.payments')}}">Payments</a></li>
+                    <li> <a href="{{route('hospitals.add_payment')}}">Add Payment</a></li>
+                    <li> <a href="{{route('hospitals.patient_invoice')}}">Patient Invoice</a></li>
                 </ul>
             </li>
     </div>

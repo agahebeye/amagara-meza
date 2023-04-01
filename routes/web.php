@@ -23,8 +23,16 @@ Route::prefix('hospital')->group(function () {
     Route::get('/edit-doctor', fn () => view('pages.hospitals.edit-doctor'))->name('hospitals.edit_doctor');
     Route::get('/doctor-profile', fn () => view('pages.hospitals.doctor-profile'))->name('hospitals.doctor_profile');
 
-    Route::get('/patients', fn () => view('pages.hospitals.doctors'))->name('hospitals.patients');
+    Route::get('/patients', fn () => view('pages.hospitals.patients'))->name('hospitals.patients');
     Route::get('/add-patient', fn () => view('pages.hospitals.add-patient'))->name('hospitals.add_patient');
     Route::get('/edit-patient', fn () => view('pages.hospitals.edit-patient'))->name('hospitals.edit_patient');
     Route::get('/patient-profile', fn () => view('pages.hospitals.patient-profile'))->name('hospitals.patient_profile');
+
+    Route::get('/payment-report', fn () => view('pages.hospitals.payment-report'))->name('hospitals.payment_report');
+    Route::get('/income-report', fn () => view('pages.hospitals.income-report'))->name('hospitals.income_report');
+    Route::get('/sales-report', fn () => view('pages.hospitals.sales-report'))->name('hospitals.sales_report');
+
+    Route::get('/payments', fn () => view('pages.hospitals.payments'))->name('hospitals.payments');
+    Route::get('/add-payment', fn () => view('pages.hospitals.add-payment'))->name('hospitals.add_payment');
+    Route::get('/patient-invoice', fn () => view('pages.hospitals.patient-invoice'))->name('hospitals.patient_invoice');
 });

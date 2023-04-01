@@ -128,7 +128,7 @@
                 <!-- /.right-sidebar -->
             </div>
             <!-- /.container-fluid -->
-            <footer class="footer text-center"> 2023 &copy; Crafted by Bymas Empire</footer>
+            <footer class="footer text-center">&copy; 2023 Crafted by Bymas Empire</footer>
         </div>
         <!-- /#page-wrapper -->
     </div>
