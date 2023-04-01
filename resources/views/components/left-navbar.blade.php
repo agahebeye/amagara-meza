@@ -12,7 +12,7 @@
             </li>
 
             <li class="user-pro">
-                <a href="#" class="waves-effect"><img src="/app/plugins/images/users/d1.jpg" alt="user-img" class="img-circle"> <span class="hide-menu">Dr. Steve Gection<span class="fa arrow"></span></span>
+                <a href="#" class="waves-effect"><img src="/images/users/d1.jpg" alt="user-img" class="img-circle"> <span class="hide-menu">Dr. Steve Gection<span class="fa arrow"></span></span>
                 </a>
                 <ul class="nav nav-second-level">
                     <li><a href="javascript:void(0)"><i class="ti-user"></i> My Profile</a></li>

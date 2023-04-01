@@ -10,8 +10,8 @@
     <meta content="" name="keywords">
 
     <!-- Favicons -->
-    <link href="img/favicon.png" rel="icon">
-    <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
+    <link href="/images/favicon.png" rel="icon">
+    <link href="/images/apple-touch-icon.png" rel="apple-touch-icon">
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
@@ -56,7 +56,7 @@
 
             <h1 class="logo me-auto"><a href="index.html">Medilab</a></h1>
             <!-- Uncomment below if you prefer to use an image logo -->
-            <!-- <a href="index.html" class="logo me-auto"><img src="img/logo.png" alt="" class="img-fluid"></a>-->
+            <!-- <a href="index.html" class="logo me-auto"><img src="/images/logo.png" alt="" class="img-fluid"></a>-->
 
             <nav id="navbar" class="navbar order-last order-lg-0">
                 <ul>
@@ -398,7 +398,7 @@
                                         <p>Et nobis maiores eius. Voluptatibus ut enim blanditiis atque harum sint. Laborum eos ipsum ipsa odit magni. Incidunt hic ut molestiae aut qui. Est repellat minima eveniet eius et quis magni nihil. Consequatur dolorem quaerat quos qui similique accusamus nostrum rem vero</p>
                                     </div>
                                     <div class="col-lg-4 text-center order-1 order-lg-2">
-                                        <img src="img/departments-1.jpg" alt="" class="img-fluid">
+                                        <img src="/images/departments-1.jpg" alt="" class="img-fluid">
                                     </div>
                                 </div>
                             </div>
@@ -410,7 +410,7 @@
                                         <p>Ea ipsum voluptatem consequatur quis est. Illum error ullam omnis quia et reiciendis sunt sunt est. Non aliquid repellendus itaque accusamus eius et velit ipsa voluptates. Optio nesciunt eaque beatae accusamus lerode pakto madirna desera vafle de nideran pal</p>
                                     </div>
                                     <div class="col-lg-4 text-center order-1 order-lg-2">
-                                        <img src="img/departments-2.jpg" alt="" class="img-fluid">
+                                        <img src="/images/departments-2.jpg" alt="" class="img-fluid">
                                     </div>
                                 </div>
                             </div>
@@ -422,7 +422,7 @@
                                         <p>Iure officiis odit rerum. Harum sequi eum illum corrupti culpa veritatis quisquam. Neque necessitatibus illo rerum eum ut. Commodi ipsam minima molestiae sed laboriosam a iste odio. Earum odit nesciunt fugiat sit ullam. Soluta et harum voluptatem optio quae</p>
                                     </div>
                                     <div class="col-lg-4 text-center order-1 order-lg-2">
-                                        <img src="img/departments-3.jpg" alt="" class="img-fluid">
+                                        <img src="/images/departments-3.jpg" alt="" class="img-fluid">
                                     </div>
                                 </div>
                             </div>
@@ -434,7 +434,7 @@
                                         <p>Eaque consequuntur consequuntur libero expedita in voluptas. Nostrum ipsam necessitatibus aliquam fugiat debitis quis velit. Eum ex maxime error in consequatur corporis atque. Eligendi asperiores sed qui veritatis aperiam quia a laborum inventore</p>
                                     </div>
                                     <div class="col-lg-4 text-center order-1 order-lg-2">
-                                        <img src="img/departments-4.jpg" alt="" class="img-fluid">
+                                        <img src="/images/departments-4.jpg" alt="" class="img-fluid">
                                     </div>
                                 </div>
                             </div>
@@ -446,7 +446,7 @@
                                         <p>Exercitationem nostrum omnis. Ut reiciendis repudiandae minus. Omnis recusandae ut non quam ut quod eius qui. Ipsum quia odit vero atque qui quibusdam amet. Occaecati sed est sint aut vitae molestiae voluptate vel</p>
                                     </div>
                                     <div class="col-lg-4 text-center order-1 order-lg-2">
-                                        <img src="img/departments-5.jpg" alt="" class="img-fluid">
+                                        <img src="/images/departments-5.jpg" alt="" class="img-fluid">
                                     </div>
                                 </div>
                             </div>
@@ -470,7 +470,7 @@
 
                     <div class="col-lg-6">
                         <div class="member d-flex align-items-start">
-                            <div class="pic"><img src="img/doctors/doctors-1.jpg" class="img-fluid" alt=""></div>
+                            <div class="pic"><img src="/images/doctors/doctors-1.jpg" class="img-fluid" alt=""></div>
                             <div class="member-info">
                                 <h4>Walter White</h4>
                                 <span>Chief Medical Officer</span>
@@ -487,7 +487,7 @@
 
                     <div class="col-lg-6 mt-4 mt-lg-0">
                         <div class="member d-flex align-items-start">
-                            <div class="pic"><img src="img/doctors/doctors-2.jpg" class="img-fluid" alt=""></div>
+                            <div class="pic"><img src="/images/doctors/doctors-2.jpg" class="img-fluid" alt=""></div>
                             <div class="member-info">
                                 <h4>Sarah Jhonson</h4>
                                 <span>Anesthesiologist</span>
@@ -504,7 +504,7 @@
 
                     <div class="col-lg-6 mt-4">
                         <div class="member d-flex align-items-start">
-                            <div class="pic"><img src="img/doctors/doctors-3.jpg" class="img-fluid" alt=""></div>
+                            <div class="pic"><img src="/images/doctors/doctors-3.jpg" class="img-fluid" alt=""></div>
                             <div class="member-info">
                                 <h4>William Anderson</h4>
                                 <span>Cardiology</span>
@@ -521,7 +521,7 @@
 
                     <div class="col-lg-6 mt-4">
                         <div class="member d-flex align-items-start">
-                            <div class="pic"><img src="img/doctors/doctors-4.jpg" class="img-fluid" alt=""></div>
+                            <div class="pic"><img src="/images/doctors/doctors-4.jpg" class="img-fluid" alt=""></div>
                             <div class="member-info">
                                 <h4>Amanda Jepson</h4>
                                 <span>Neurosurgeon</span>
@@ -613,7 +613,7 @@
                         <div class="swiper-slide">
                             <div class="testimonial-wrap">
                                 <div class="testimonial-item">
-                                    <img src="img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">
+                                    <img src="/images/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">
                                     <h3>Saul Goodman</h3>
                                     <h4>Ceo &amp; Founder</h4>
                                     <p>
@@ -628,7 +628,7 @@
                         <div class="swiper-slide">
                             <div class="testimonial-wrap">
                                 <div class="testimonial-item">
-                                    <img src="img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="">
+                                    <img src="/images/testimonials/testimonials-2.jpg" class="testimonial-img" alt="">
                                     <h3>Sara Wilsson</h3>
                                     <h4>Designer</h4>
                                     <p>
@@ -643,7 +643,7 @@
                         <div class="swiper-slide">
                             <div class="testimonial-wrap">
                                 <div class="testimonial-item">
-                                    <img src="img/testimonials/testimonials-3.jpg" class="testimonial-img" alt="">
+                                    <img src="/images/testimonials/testimonials-3.jpg" class="testimonial-img" alt="">
                                     <h3>Jena Karlis</h3>
                                     <h4>Store Owner</h4>
                                     <p>
@@ -658,7 +658,7 @@
                         <div class="swiper-slide">
                             <div class="testimonial-wrap">
                                 <div class="testimonial-item">
-                                    <img src="img/testimonials/testimonials-4.jpg" class="testimonial-img" alt="">
+                                    <img src="/images/testimonials/testimonials-4.jpg" class="testimonial-img" alt="">
                                     <h3>Matt Brandon</h3>
                                     <h4>Freelancer</h4>
                                     <p>
@@ -673,7 +673,7 @@
                         <div class="swiper-slide">
                             <div class="testimonial-wrap">
                                 <div class="testimonial-item">
-                                    <img src="img/testimonials/testimonials-5.jpg" class="testimonial-img" alt="">
+                                    <img src="/images/testimonials/testimonials-5.jpg" class="testimonial-img" alt="">
                                     <h3>John Larson</h3>
                                     <h4>Entrepreneur</h4>
                                     <p>
@@ -707,64 +707,64 @@
 
                     <div class="col-lg-3 col-md-4">
                         <div class="gallery-item">
-                            <a href="img/gallery/gallery-1.jpg" class="galelry-lightbox">
-                                <img src="img/gallery/gallery-1.jpg" alt="" class="img-fluid">
+                            <a href="/images/gallery/gallery-1.jpg" class="galelry-lightbox">
+                                <img src="/images/gallery/gallery-1.jpg" alt="" class="img-fluid">
                             </a>
                         </div>
                     </div>
 
                     <div class="col-lg-3 col-md-4">
                         <div class="gallery-item">
-                            <a href="img/gallery/gallery-2.jpg" class="galelry-lightbox">
-                                <img src="img/gallery/gallery-2.jpg" alt="" class="img-fluid">
+                            <a href="/images/gallery/gallery-2.jpg" class="galelry-lightbox">
+                                <img src="/images/gallery/gallery-2.jpg" alt="" class="img-fluid">
                             </a>
                         </div>
                     </div>
 
                     <div class="col-lg-3 col-md-4">
                         <div class="gallery-item">
-                            <a href="img/gallery/gallery-3.jpg" class="galelry-lightbox">
-                                <img src="img/gallery/gallery-3.jpg" alt="" class="img-fluid">
+                            <a href="/images/gallery/gallery-3.jpg" class="galelry-lightbox">
+                                <img src="/images/gallery/gallery-3.jpg" alt="" class="img-fluid">
                             </a>
                         </div>
                     </div>
 
                     <div class="col-lg-3 col-md-4">
                         <div class="gallery-item">
-                            <a href="img/gallery/gallery-4.jpg" class="galelry-lightbox">
-                                <img src="img/gallery/gallery-4.jpg" alt="" class="img-fluid">
+                            <a href="/images/gallery/gallery-4.jpg" class="galelry-lightbox">
+                                <img src="/images/gallery/gallery-4.jpg" alt="" class="img-fluid">
                             </a>
                         </div>
                     </div>
 
                     <div class="col-lg-3 col-md-4">
                         <div class="gallery-item">
-                            <a href="img/gallery/gallery-5.jpg" class="galelry-lightbox">
-                                <img src="img/gallery/gallery-5.jpg" alt="" class="img-fluid">
+                            <a href="/images/gallery/gallery-5.jpg" class="galelry-lightbox">
+                                <img src="/images/gallery/gallery-5.jpg" alt="" class="img-fluid">
                             </a>
                         </div>
                     </div>
 
                     <div class="col-lg-3 col-md-4">
                         <div class="gallery-item">
-                            <a href="img/gallery/gallery-6.jpg" class="galelry-lightbox">
-                                <img src="img/gallery/gallery-6.jpg" alt="" class="img-fluid">
+                            <a href="/images/gallery/gallery-6.jpg" class="galelry-lightbox">
+                                <img src="/images/gallery/gallery-6.jpg" alt="" class="img-fluid">
                             </a>
                         </div>
                     </div>
 
                     <div class="col-lg-3 col-md-4">
                         <div class="gallery-item">
-                            <a href="img/gallery/gallery-7.jpg" class="galelry-lightbox">
-                                <img src="img/gallery/gallery-7.jpg" alt="" class="img-fluid">
+                            <a href="/images/gallery/gallery-7.jpg" class="galelry-lightbox">
+                                <img src="/images/gallery/gallery-7.jpg" alt="" class="img-fluid">
                             </a>
                         </div>
                     </div>
 
                     <div class="col-lg-3 col-md-4">
                         <div class="gallery-item">
-                            <a href="img/gallery/gallery-8.jpg" class="galelry-lightbox">
-                                <img src="img/gallery/gallery-8.jpg" alt="" class="img-fluid">
+                            <a href="/images/gallery/gallery-8.jpg" class="galelry-lightbox">
+                                <img src="/images/gallery/gallery-8.jpg" alt="" class="img-fluid">
                             </a>
                         </div>
                     </div>

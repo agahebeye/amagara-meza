@@ -11,10 +11,10 @@
     <title>{{config('app.name')}} - {{$title ?? 'Dashboard'}}</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="/app/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/app/plugins/bower_components/bootstrap-extension/css/bootstrap-extension.css" rel="stylesheet">
+    <link href="/app/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/app/css/bootstrap-extension.css" rel="stylesheet">
     <!-- Menu CSS -->
-    <link href="/app/plugins/bower_components/sidebar-nav/dist/sidebar-nav.min.css" rel="stylesheet"> <!-- animation CSS -->
+    <link href="/app/css/sidebar-nav.min.css" rel="stylesheet"> <!-- animation CSS -->
     <link href="/app/css/animate.css" rel="stylesheet">
 
     {{ $moreStyles ?? '' }}
@@ -128,35 +128,33 @@
                 <!-- /.right-sidebar -->
             </div>
             <!-- /.container-fluid -->
-            <footer class="footer text-center">&copy; 2023 Crafted by Bymas Empire</footer>
+            <footer class="footer text-center"> &copy; 2023 Crafted by Bymas Empire</footer>
         </div>
         <!-- /#page-wrapper -->
     </div>
     <!-- /#wrapper -->
     <!-- jQuery -->
-    <script src="/app/plugins/bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="/app/js/jquery.min.js"></script>
     <!-- Bootstrap Core JavaScript -->
-    <script src="/app/bootstrap/dist/js/tether.min.js"></script>
-    <script src="/app/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script src="/app/plugins/bower_components/bootstrap-extension/js/bootstrap-extension.min.js"></script>
+    <script src="/app/js/tether.min.js"></script>
+    <script src="/app/js/bootstrap.min.js"></script>
+    <script src="/app/js/bootstrap-extension.min.js"></script>
     <!-- Menu /app/Plugin JavaScript -->
-    <script src="/app/plugins/bower_components/sidebar-nav/dist/sidebar-nav.min.js"></script>
+    <script src="/app/js/sidebar-nav.min.js"></script>
     <!--slimscroll JavaScript -->
     <script src="/app/js/jquery.slimscroll.js"></script>
     <!--Wave Effects -->
     <script src="/app/js/waves.js"></script>
     <!--Morris JavaScript -->
-    <script src="/app/plugins/bower_components/raphael/raphael-min.js"></script>
+    <script src="/app/js/raphael-min.js"></script>
     <!-- jQuery peity -->
-    <script src="/app/plugins/bower_components/peity/jquery.peity.min.js"></script>
-    <script src="/app/plugins/bower_components/peity/jquery.peity.init.js"></script>
+    <script src="/app/js/jquery.peity.min.js"></script>
+    <script src="/app/js/jquery.peity.init.js"></script>
 
     {{ $moreScripts ?? '' }}
 
     <!-- Custom Theme JavaScript -->
     <script src="/app/js/custom.min.js"></script>
-    <!--Style Switcher -->
-    <script src="/app/plugins/bower_components/styleswitcher/jQuery.style.switcher.js"></script>
 
 
 </body>
