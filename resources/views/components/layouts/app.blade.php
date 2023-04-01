@@ -43,7 +43,7 @@
                         <h4 class="page-title">{{ $title ?? 'Dashboard' }}</h4>
                     </div>
 
-                    <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12"> <a href="" target="_blank" class="btn btn-danger pull-right m-l-20 btn-rounded btn-outline hidden-xs hidden-sm waves-effect waves-light">Buy Now</a>
+                    <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
                         <ol class="breadcrumb">
                             <li><a href="#">Hospital</a></li>
                             <li class="active">{{ $title ?? 'Dashboard'}}</li>
@@ -128,7 +128,7 @@
                 <!-- /.right-sidebar -->
             </div>
             <!-- /.container-fluid -->
-            <footer class="footer text-center"> 2017 &copy; Elite Admin brought to you by themedesigner.in </footer>
+            <footer class="footer text-center"> 2023 &copy; Crafted by Bymas Empire</footer>
         </div>
         <!-- /#page-wrapper -->
     </div>
