@@ -50,10 +50,10 @@
 
             <li> <a href="javascript:void(0);" class="waves-effect"><i class="icon-people p-r-10"></i> <span class="hide-menu"> Patients <span class="fa arrow"></span></span></a>
                 <ul class="nav nav-second-level">
-                    <li> <a href="patients.html">All Patients</a> </li>
-                    <li> <a href="add-patient.html">Add Patient</a> </li>
-                    <li> <a href="edit-patient.html">Edit Patient</a> </li>
-                    <li> <a href="patient-profile.html">Patient Profile</a> </li>
+                    <li> <a href="{{route('hospitals.patients')}}">All Patiens</a> </li>
+                    <li> <a href="{{route('hospitals.add_patient')}}">Add Patient</a> </li>
+                    <li> <a href="{{route('hospitals.edit_patient')}}">Edit Patient</a> </li>
+                    <li> <a href="{{route('hospitals.patient_profile')}}">Patient Profile</a> </li>
                 </ul>
             </li>
 
