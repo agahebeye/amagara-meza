@@ -144,12 +144,11 @@
     <!--slimscroll JavaScript -->
     <script src="/app/js/jquery.slimscroll.js"></script>
     <!--Wave Effects -->
-    <script src="/app/js/waves.js"></script>
-    <!--Morris JavaScript -->
-    <script src="/app/js/raphael-min.js"></script>
+    <!-- <script src="/app/js/waves.js"></script> -->
+    <!-- <script src="/app/js/raphael-min.js"></script> -->
     <!-- jQuery peity -->
-    <script src="/app/js/jquery.peity.min.js"></script>
-    <script src="/app/js/jquery.peity.init.js"></script>
+    <!-- <script src="/app/js/jquery.peity.min.js"></script> -->
+    <!-- <script src="/app/js/jquery.peity.init.js"></script> -->
 
     {{ $moreScripts ?? '' }}
 
