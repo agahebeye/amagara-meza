@@ -21,7 +21,7 @@
                         <div class="media m-b-30 p-t-20">
                             <h4 class="font-bold m-t-0">Your message title goes here</h4>
                             <hr>
-                            <a class="pull-left" href="#"> <img class="media-object thumb-sm img-circle" src="../plugins/images/users/pawandeep.jpg" alt=""> </a>
+                            <a class="pull-left" href="#"> <img class="media-object thumb-sm img-circle" src="/images/users/pawandeep.jpg" alt=""> </a>
                             <div class="media-body"> <span class="media-meta pull-right">07:23 AM</span>
                                 <h4 class="text-danger m-0">Pavan kumar</h4> <small class="text-muted">From: jonathan@domain.com</small>
                             </div>
@@ -32,13 +32,13 @@
                         <h4> <i class="fa fa-paperclip m-r-10 m-b-10"></i> Attachments <span>(3)</span> </h4>
                         <div class="row">
                             <div class="col-sm-2 col-xs-4">
-                                <a href="#"> <img class="img-thumbnail img-responsive" alt="attachment" src="../plugins/images/img1.jpg"> </a>
+                                <a href="#"> <img class="img-thumbnail img-responsive" alt="attachment" src="/images/img1.jpg"> </a>
                             </div>
                             <div class="col-sm-2 col-xs-4">
-                                <a href="#"> <img class="img-thumbnail img-responsive" alt="attachment" src="../plugins/images/img2.jpg"> </a>
+                                <a href="#"> <img class="img-thumbnail img-responsive" alt="attachment" src="/images/img2.jpg"> </a>
                             </div>
                             <div class="col-sm-2 col-xs-4">
-                                <a href="#"> <img class="img-thumbnail img-responsive" alt="attachment" src="../plugins/images/img3.jpg"> </a>
+                                <a href="#"> <img class="img-thumbnail img-responsive" alt="attachment" src="/images/img3.jpg"> </a>
                             </div>
                         </div>
                         <hr>

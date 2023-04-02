@@ -2,9 +2,8 @@
         <x-slot name='title'>Doctor Schedule</x-slot>
 
         <x-slot name='moreStyles'>
-            <link href="/app/plugins/bower_components/calendar/dist/fullcalendar.css" rel="stylesheet" />
+            <link href="/app/css/fullcalendar.min.css" rel="stylesheet" />
         </x-slot>
-
 
         <!-- row -->
         <div class="row">
@@ -99,11 +98,11 @@
 
         <!-- Calendar JavaScript -->
         <x-slot name='moreScripts'>
-            <script src="/app/plugins/bower_components/calendar/jquery-ui.min.js"></script>
-            <script src="/app/plugins/bower_components/moment/moment.js"></script>
-            <script src='/app/plugins/bower_components/calendar/dist/fullcalendar.min.js'></script>
-            <script src="/app/plugins/bower_components/calendar/dist/jquery.fullcalendar.js"></script>
-            <script src="/app/plugins/bower_components/calendar/dist/cal-init.js"></script>
+            <script src="/app/js/jquery-ui.min.js"></script>
+            <script src="/app/js/moment.min.js"></script>
+            <script src='/app/js/fullcalendar.min.js'></script>
+            <script src="/app/js/jquery.fullcalendar.js"></script>
+            <script src="/app/js/cal-init.js"></script>
         </x-slot>
 
     </x-layouts.app>
