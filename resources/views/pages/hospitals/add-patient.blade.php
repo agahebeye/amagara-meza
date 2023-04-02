@@ -2,10 +2,6 @@
     <x-slot name='title'>Add Patient</x-slot>
 
 
-    <x-slot name='moreStyles'>
-        <link href="/app/plugins/bower_components/bootstrap-datepicker/bootstrap-datepicker.min.css" rel="stylesheet" type="text/css" />
-    </x-slot>
-
     <div class="row">
         <div class="col-sm-12">
             <div class="white-box">
@@ -22,7 +18,7 @@
                         <label class="col-md-12" for="bdate">Date of Birth</span>
                         </label>
                         <div class="col-md-12">
-                            <input type="text" id="bdate" name="bdate" class="form-control mydatepicker" placeholder="enter your birth date" value="12/10/2017">
+                            <input type="date" id="bdate" name="bdate" class="form-control mydatepicker" placeholder="enter your birth date">
                         </div>
                     </div>
                     <div class="form-group">
@@ -37,7 +33,7 @@
                     </div>
                     <div class="form-group">
                         <label class="col-sm-12">Profile Image</label>
-                        <div class="col-sm-12"> <img class="img-responsive" src="/app/plugins/images/users/varun.jpg" alt="" style="max-width:120px;"> </div>
+                        <div class="col-sm-12"> <img class="img-responsive" src="/images/users/varun.jpg" alt="" style="max-width:120px;"> </div>
                         <div class="col-sm-12">
                             <div class="fileinput fileinput-new input-group" data-provides="fileinput">
                                 <div class="form-control" data-trigger="fileinput"> <i class="glyphicon glyphicon-file fileinput-exists"></i> <span class="fileinput-filename"></span></div> <span class="input-group-addon btn btn-default btn-file"> <span class="fileinput-new">Select file</span> <span class="fileinput-exists">Change</span>
@@ -133,12 +129,4 @@
             </div>
         </div>
     </div>
-
-    <x-slot name='moreScripts'>
-        <script src="/app/plugins/bower_components/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
-        <script type="text/javascript">
-            // Date Picker
-            jQuery('.mydatepicker').datepicker();
-        </script>
-    </x-slot>
 </x-layouts.app>

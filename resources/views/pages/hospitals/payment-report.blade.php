@@ -61,7 +61,7 @@
     </div>
 
     <x-slot name='moreScripts'>
-        <script src="/app/plugins/bower_components/Chart.js/chartjs.init.js"></script>
-        <script src="/app/plugins/bower_components/Chart.js/Chart.min.js"></script>
+        <script src="/app/js/Chart.min.js"></script>
+        <script src="/app/js/chartjs.init.js"></script>
     </x-slot>
 </x-layouts.app>

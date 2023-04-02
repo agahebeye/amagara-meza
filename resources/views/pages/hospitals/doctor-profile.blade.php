@@ -4,7 +4,7 @@
     <div class="row">
         <div class="col-md-4 col-xs-12">
             <div class="white-box">
-                <div class="user-bg"> <img width="100%" alt="user" src="/app/plugins/images/big/d2.jpg"> </div>
+                <div class="user-bg"> <img width="100%" alt="user" src="/images/big/d2.jpg"> </div>
                 <div class="user-btm-box">
                     <!-- .row -->
                     <div class="row text-center m-t-10">
@@ -73,21 +73,21 @@
                     <div class="tab-pane active" id="home">
                         <div class="steamline">
                             <div class="sl-item">
-                                <div class="sl-left"> <img src="/app/plugins/images/users/d1.jpg" alt="user" class="img-circle" /> </div>
+                                <div class="sl-left"> <img src="/images/users/d1.jpg" alt="user" class="img-circle" /> </div>
                                 <div class="sl-right">
                                     <div class="m-l-40"><a href="#" class="text-info">John Doe</a> <span class="sl-date">5 minutes ago</span>
                                         <p>assign a new task <a href="#"> Design weblayout</a></p>
-                                        <div class="m-t-20 row"><img src="/app/plugins/images/img1.jpg" alt="user" class="col-md-3 col-xs-12" /> <img src="/app/plugins/images/img2.jpg" alt="user" class="col-md-3 col-xs-12" /> <img src="/app/plugins/images/img3.jpg" alt="user" class="col-md-3 col-xs-12" /></div>
+                                        <div class="m-t-20 row"><img src="/images/img1.jpg" alt="user" class="col-md-3 col-xs-12" /> <img src="/images/img2.jpg" alt="user" class="col-md-3 col-xs-12" /> <img src="/images/img3.jpg" alt="user" class="col-md-3 col-xs-12" /></div>
                                     </div>
                                 </div>
                             </div>
                             <hr>
                             <div class="sl-item">
-                                <div class="sl-left"> <img src="/app/plugins/images/users/d1.jpg" alt="user" class="img-circle" /> </div>
+                                <div class="sl-left"> <img src="/images/users/d1.jpg" alt="user" class="img-circle" /> </div>
                                 <div class="sl-right">
                                     <div class="m-l-40"> <a href="#" class="text-info">John Doe</a> <span class="sl-date">5 minutes ago</span>
                                         <div class="m-t-20 row">
-                                            <div class="col-md-2 col-xs-12"><img src="/app/plugins/images/img1.jpg" alt="user" class="img-responsive" /></div>
+                                            <div class="col-md-2 col-xs-12"><img src="/images/img1.jpg" alt="user" class="img-responsive" /></div>
                                             <div class="col-md-9 col-xs-12">
                                                 <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa</p> <a href="#" class="btn btn-success"> Design weblayout</a>
                                             </div>
@@ -97,7 +97,7 @@
                             </div>
                             <hr>
                             <div class="sl-item">
-                                <div class="sl-left"> <img src="/app/plugins/images/users/d1.jpg" alt="user" class="img-circle" /> </div>
+                                <div class="sl-left"> <img src="/images/users/d1.jpg" alt="user" class="img-circle" /> </div>
                                 <div class="sl-right">
                                     <div class="m-l-40"><a href="#" class="text-info">John Doe</a> <span class="sl-date">5 minutes ago</span>
                                         <p class="m-t-10"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper </p>
@@ -106,7 +106,7 @@
                             </div>
                             <hr>
                             <div class="sl-item">
-                                <div class="sl-left"> <img src="/app/plugins/images/users/d1.jpg" alt="user" class="img-circle" /> </div>
+                                <div class="sl-left"> <img src="/images/users/d1.jpg" alt="user" class="img-circle" /> </div>
                                 <div class="sl-right">
                                     <div class="m-l-40"><a href="#" class="text-info">John Doe</a> <span class="sl-date">5 minutes ago</span>
                                         <p>assign a new task <a href="#"> Design weblayout</a></p>
@@ -220,7 +220,7 @@
                             </div>
                             <div class="form-group">
                                 <label class="col-sm-12">Profile Image</label>
-                                <div class="col-sm-12"> <img class="img-responsive" src="/app/plugins/images/big/d2.jpg" alt="" style="max-width:120px;"> </div>
+                                <div class="col-sm-12"> <img class="img-responsive" src="/images/big/d2.jpg" alt="" style="max-width:120px;"> </div>
                                 <div class="col-sm-12">
                                     <div class="fileinput fileinput-new input-group" data-provides="fileinput">
                                         <div class="form-control" data-trigger="fileinput"> <i class="glyphicon glyphicon-file fileinput-exists"></i> <span class="fileinput-filename"></span></div> <span class="input-group-addon btn btn-default btn-file"> <span class="fileinput-new">Select file</span> <span class="fileinput-exists">Change</span>

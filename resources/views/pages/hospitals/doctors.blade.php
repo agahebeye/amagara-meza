@@ -7,7 +7,7 @@
             <div class="white-box">
                 <div class="row">
                     <div class="col-md-4 col-sm-4 text-center">
-                        <a href="contact-detail.html"><img src="/app/plugins/images/users/d1.jpg" alt="user" class="img-circle img-responsive"></a>
+                        <a href="contact-detail.html"><img src="/images/users/d1.jpg" alt="user" class="img-circle img-responsive"></a>
                     </div>
                     <div class="col-md-8 col-sm-8">
                         <h3 class="box-title m-b-0">Johnathan Doe</h3> <small>Cardio</small>
@@ -27,7 +27,7 @@
             <div class="white-box">
                 <div class="row">
                     <div class="col-md-4 col-sm-4 text-center">
-                        <a href="contact-detail.html"><img src="/app/plugins/images/users/d2.jpg" alt="user" class="img-circle img-responsive"></a>
+                        <a href="contact-detail.html"><img src="/images/users/d2.jpg" alt="user" class="img-circle img-responsive"></a>
                     </div>
                     <div class="col-md-8 col-sm-8">
                         <h3 class="box-title m-b-0">Johnathan Doe</h3> <small>Dentist</small>
@@ -47,7 +47,7 @@
             <div class="white-box">
                 <div class="row">
                     <div class="col-md-4 col-sm-4 text-center">
-                        <a href="contact-detail.html"><img src="/app/plugins/images/users/d3.jpg" alt="user" class="img-circle img-responsive"></a>
+                        <a href="contact-detail.html"><img src="/images/users/d3.jpg" alt="user" class="img-circle img-responsive"></a>
                     </div>
                     <div class="col-md-8 col-sm-8">
                         <h3 class="box-title m-b-0">Johnathan Doe</h3> <small>Neuro Surgeon</small>
@@ -71,7 +71,7 @@
             <div class="white-box">
                 <div class="row">
                     <div class="col-md-4 col-sm-4 text-center">
-                        <a href="contact-detail.html"><img src="/app/plugins/images/users/d4.jpg" alt="user" class="img-circle img-responsive"></a>
+                        <a href="contact-detail.html"><img src="/images/users/d4.jpg" alt="user" class="img-circle img-responsive"></a>
                     </div>
                     <div class="col-md-8 col-sm-8">
                         <h3 class="box-title m-b-0">Johnathan Doe</h3> <small>Cardio</small>
@@ -91,7 +91,7 @@
             <div class="white-box">
                 <div class="row">
                     <div class="col-md-4 col-sm-4 text-center">
-                        <a href="contact-detail.html"><img src="/app/plugins/images/users/d1.jpg" alt="user" class="img-circle img-responsive"></a>
+                        <a href="contact-detail.html"><img src="/images/users/d1.jpg" alt="user" class="img-circle img-responsive"></a>
                     </div>
                     <div class="col-md-8 col-sm-8">
                         <h3 class="box-title m-b-0">Johnathan Doe</h3> <small>ENT Specialist</small>
@@ -111,7 +111,7 @@
             <div class="white-box">
                 <div class="row">
                     <div class="col-md-4 col-sm-4 text-center">
-                        <a href="contact-detail.html"><img src="/app/plugins/images/users/d5.jpg" alt="user" class="img-circle img-responsive"></a>
+                        <a href="contact-detail.html"><img src="/images/users/d5.jpg" alt="user" class="img-circle img-responsive"></a>
                     </div>
                     <div class="col-md-8 col-sm-8">
                         <h3 class="box-title m-b-0">Johnathan Doe</h3> <small>Physio</small>
@@ -135,7 +135,7 @@
             <div class="white-box">
                 <div class="row">
                     <div class="col-md-4 col-sm-4 text-center">
-                        <a href="contact-detail.html"><img src="/app/plugins/images/users/d1.jpg" alt="user" class="img-circle img-responsive"></a>
+                        <a href="contact-detail.html"><img src="/images/users/d1.jpg" alt="user" class="img-circle img-responsive"></a>
                     </div>
                     <div class="col-md-8 col-sm-8">
                         <h3 class="box-title m-b-0">Johnathan Doe</h3> <small>M.B.B.S</small>
@@ -155,7 +155,7 @@
             <div class="white-box">
                 <div class="row">
                     <div class="col-md-4 col-sm-4 text-center">
-                        <a href="contact-detail.html"><img src="/app/plugins/images/users/d2.jpg" alt="user" class="img-circle img-responsive"></a>
+                        <a href="contact-detail.html"><img src="/images/users/d2.jpg" alt="user" class="img-circle img-responsive"></a>
                     </div>
                     <div class="col-md-8 col-sm-8">
                         <h3 class="box-title m-b-0">Johnathan Doe</h3> <small>Dentist</small>
@@ -175,7 +175,7 @@
             <div class="white-box">
                 <div class="row">
                     <div class="col-md-4 col-sm-4 text-center">
-                        <a href="contact-detail.html"><img src="/app/plugins/images/users/d3.jpg" alt="user" class="img-circle img-responsive"></a>
+                        <a href="contact-detail.html"><img src="/images/users/d3.jpg" alt="user" class="img-circle img-responsive"></a>
                     </div>
                     <div class="col-md-8 col-sm-8">
                         <h3 class="box-title m-b-0">Johnathan Doe</h3> <small>Neurologist</small>
@@ -199,7 +199,7 @@
             <div class="white-box">
                 <div class="row">
                     <div class="col-md-4 col-sm-4 text-center">
-                        <a href="contact-detail.html"><img src="/app/plugins/images/users/d4.jpg" alt="user" class="img-circle img-responsive"></a>
+                        <a href="contact-detail.html"><img src="/images/users/d4.jpg" alt="user" class="img-circle img-responsive"></a>
                     </div>
                     <div class="col-md-8 col-sm-8">
                         <h3 class="box-title m-b-0">Johnathan Doe</h3> <small>Orthopedic</small>
@@ -219,7 +219,7 @@
             <div class="white-box">
                 <div class="row">
                     <div class="col-md-4 col-sm-4 text-center">
-                        <a href="contact-detail.html"><img src="/app/plugins/images/users/d5.jpg" alt="user" class="img-circle img-responsive"></a>
+                        <a href="contact-detail.html"><img src="/images/users/d5.jpg" alt="user" class="img-circle img-responsive"></a>
                     </div>
                     <div class="col-md-8 col-sm-8">
                         <h3 class="box-title m-b-0">Johnathan Doe</h3> <small>Surgeon</small>
@@ -239,7 +239,7 @@
             <div class="white-box">
                 <div class="row">
                     <div class="col-md-4 col-sm-4 text-center">
-                        <a href="contact-detail.html"><img src="/app/plugins/images/users/d1.jpg" alt="user" class="img-circle img-responsive"></a>
+                        <a href="contact-detail.html"><img src="/images/users/d1.jpg" alt="user" class="img-circle img-responsive"></a>
                     </div>
                     <div class="col-md-8 col-sm-8">
                         <h3 class="box-title m-b-0">Johnathan Doe</h3> <small>Physician</small>

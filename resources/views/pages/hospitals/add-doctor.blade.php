@@ -1,24 +1,5 @@
 <x-layouts.app>
 
-    <x-slot name='moreStyles'>
-        <link href="/app/plugins/bower_components/bootstrap-datepicker/bootstrap-datepicker.min.css" rel="stylesheet" type="text/css" />
-    </x-slot>
-
-    <script>
-        (function(i, s, o, g, r, a, m) {
-            i['GoogleAnalyticsObject'] = r;
-            i[r] = i[r] || function() {
-                (i[r].q = i[r].q || []).push(arguments)
-            }, i[r].l = 1 * new Date();
-            a = s.createElement(o), m = s.getElementsByTagName(o)[0];
-            a.async = 1;
-            a.src = g;
-            m.parentNode.insertBefore(a, m)
-        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
-        ga('create', 'UA-19175540-9', 'auto');
-        ga('send', 'pageview');
-    </script>
-
     <div class="row">
         <div class="col-sm-12">
             <div class="white-box">
@@ -161,14 +142,4 @@
         </div>
     </div>
 
-
-    <x-slot name='moreScripts'>
-        <script src="/app/plugins/bower_components/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
-        <script type="text/javascript">
-            // Date Picker
-            jQuery('.mydatepicker').datepicker();
-        </script>
-        <script src="/app/js/jasny-bootstrap.js"></script>
-        <script src="/app/js/mask.js"></script>
-    </x-slot>
 </x-layouts.app>

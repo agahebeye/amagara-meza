@@ -157,7 +157,8 @@
     </div>
 
     <x-slot name='moreScripts'>
-        <script src="/app/plugins/bower_components/jquery-sparkline/jquery.sparkline.min.js"></script>
-        <script src="/app/plugins/bower_components/jquery-sparkline/jquery.charts-sparkline.js"></script>
+        <script src="/js/custom.min.js"></script>
+        <script src="/js/jquery.sparkline.min.js"></script>
+        <script src="/js/jquery.charts-sparkline.js"></script>
     </x-slot>
 </x-layouts.app>

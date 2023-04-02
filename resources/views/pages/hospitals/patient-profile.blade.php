@@ -4,7 +4,7 @@
     <div class="row">
         <div class="col-md-4 col-xs-12">
             <div class="white-box">
-                <div class="user-bg"> <img width="100%" alt="user" src="/app/plugins/images/big/img2.jpg"> </div>
+                <div class="user-bg"> <img width="100%" alt="user" src="/images/big/img2.jpg"> </div>
                 <div class="user-btm-box">
                     <!-- .row -->
                     <div class="row text-center m-t-10">

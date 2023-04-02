@@ -65,14 +65,14 @@
     </div>
 
     <x-slot name='moreScripts'>
-        <script src="/app/plugins/bower_components/flot/excanvas.min.js"></script>
-        <script src="/app/plugins/bower_components/flot/jquery.flot.js"></script>
-        <script src="/app/plugins/bower_components/flot/jquery.flot.pie.js"></script>
-        <script src="/app/plugins/bower_components/flot/jquery.flot.resize.js"></script>
-        <script src="/app/plugins/bower_components/flot/jquery.flot.time.js"></script>
-        <script src="/app/plugins/bower_components/flot/jquery.flot.stack.js"></script>
-        <script src="/app/plugins/bower_components/flot/jquery.flot.crosshair.js"></script>
-        <script src="/app/plugins/bower_components/flot.tooltip/js/jquery.flot.tooltip.min.js"></script>
+        <script src="/app/js/excanvas.min.js"></script>
+        <script src="/app/js/jquery.flot.js"></script>
+        <script src="/app/js/jquery.flot.pie.js"></script>
+        <script src="/app/js/jquery.flot.resize.js"></script>
+        <script src="/app/js/jquery.flot.time.js"></script>
+        <script src="/app/js/jquery.flot.stack.js"></script>
+        <script src="/app/js/jquery.flot.crosshair.js"></script>
+        <script src="/app/js/jquery.flot.tooltip.min.js"></script>
 
         <script src="/app/js/flot-data.js"></script>
     </x-slot>
