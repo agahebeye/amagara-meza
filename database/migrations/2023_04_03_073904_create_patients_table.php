@@ -16,7 +16,7 @@ class CreatePatientsTable extends Migration
         Schema::create('patients', function (Blueprint $table) {
             $table->id();
             $table->string('firstname');
-            $table->string('postname');
+            $table->string('postname')->nullable();
             $table->string('lastname');
             $table->string('birthplace');
             $table->date('birthdate');
@@ -27,11 +27,13 @@ class CreatePatientsTable extends Migration
             $table->string('relative');
             $table->string('nationality');
             $table->string('country');
+            $table->string('province');
             $table->string('municipality');
             $table->string('town');
             $table->string('neighborhood');
             $table->string('avenue');
             $table->integer('house_number');
+            $table->integer('profession');
             $table->string('phone_number');
             $table->timestamps();
         });
