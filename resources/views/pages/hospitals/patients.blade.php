@@ -1,263 +1,316 @@
 <x-layouts.app>
     <x-slot name='title'>Patients</x-slot>
 
+
     <x-slot name='moreStyles'>
-        <link href="/app/css/magnific-popup.css" rel="stylesheet">
+        <link href="/app/css/jquery.dataTables.min.css" rel="stylesheet" type="text/css" />
+        <link href="https://cdn.datatables.net/buttons/1.2.2/css/buttons.dataTables.min.css" rel="stylesheet" type="text/css" />
     </x-slot>
 
-    <div class="row el-element-overlay">
-        <!-- .usercard -->
-        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+    <div class="row">
+        <div class="col-sm-12">
             <div class="white-box">
-                <div class="el-card-item">
-                    <div class="el-card-avatar el-overlay-1"> <img src="/images/users/1.jpg" />
-                        <div class="el-overlay">
-                            <ul class="el-info">
-                                <li><a class="btn default btn-outline image-popup-vertical-fit" href="/images/users/1.jpg"><i class="icon-magnifier"></i></a></li>
-                                <li><a class="btn default btn-outline" href="{{ route('hospitals.edit_patient')}}"><i class="icon-link"></i></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="el-card-content">
-                        <h3 class="box-title">Genelia Deshmukh</h3> <small>Managing Director</small>
-                        <br /> <small>Age: 24 years</small>
-                    </div>
+                <h3 class="box-title m-b-0">Liste de patients</h3>
+                <hr>
+                <div class="table-responsive">
+                    <table id="myTable" class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>No</th>
+                                <th>Patient</th>
+                                <th>Doctor</th>
+                                <th>Date</th>
+                                <th>Charges</th>
+                                <th>Discount</th>
+                                <th>Total</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>Tiger Nixon</td>
+                                <td>Steve Gection</td>
+                                <td>2011/04/25</td>
+                                <td>$610</td>
+                                <td>15%</td>
+                                <td>$320</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Garrett Winters</td>
+                                <td>Steve Gection</td>
+                                <td>2011/04/25</td>
+                                <td>$630</td>
+                                <td>15%</td>
+                                <td>$170</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>Ashton Cox</td>
+                                <td>Steve Gection</td>
+                                <td>2011/04/25</td>
+                                <td>$660</td>
+                                <td>15%</td>
+                                <td>$860</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>Cedric Kelly</td>
+                                <td>Steve Gection</td>
+                                <td>2011/04/25</td>
+                                <td>$220</td>
+                                <td>15%</td>
+                                <td>$433</td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>Airi Satou</td>
+                                <td>Steve Gection</td>
+                                <td>2011/04/25</td>
+                                <td>$330</td>
+                                <td>15%</td>
+                                <td>$162</td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td>Brielle Williamson</td>
+                                <td>Steve Gection</td>
+                                <td>2011/04/25</td>
+                                <td>$610</td>
+                                <td>15%</td>
+                                <td>$372</td>
+                            </tr>
+                            <tr>
+                                <td>7</td>
+                                <td>Herrod Chandler</td>
+                                <td>Steve Gection</td>
+                                <td>2011/04/25</td>
+                                <td>$590</td>
+                                <td>15%</td>
+                                <td>$137</td>
+                            </tr>
+                            <tr>
+                                <td>8</td>
+                                <td>Rhona Davidson</td>
+                                <td>Steve Gection</td>
+                                <td>2011/04/25</td>
+                                <td>$550</td>
+                                <td>15%</td>
+                                <td>$327</td>
+                            </tr>
+                            <tr>
+                                <td>9</td>
+                                <td>Colleen Hurst</td>
+                                <td>Steve Gection</td>
+                                <td>2011/04/25</td>
+                                <td>$390</td>
+                                <td>15%</td>
+                                <td>$205</td>
+                            </tr>
+                            <tr>
+                                <td>10</td>
+                                <td>Sonya Frost</td>
+                                <td>Steve Gection</td>
+                                <td>2008/12/13</td>
+                                <td>$230</td>
+                                <td>15%</td>
+                                <td>$103</td>
+                            </tr>
+                            <tr>
+                                <td>31</td>
+                                <td>Tiger Nixon</td>
+                                <td>Steve Gection</td>
+                                <td>2011/04/25</td>
+                                <td>$610</td>
+                                <td>15%</td>
+                                <td>$320</td>
+                            </tr>
+                            <tr>
+                                <td>28</td>
+                                <td>Garrett Winters</td>
+                                <td>Steve Gection</td>
+                                <td>2011/04/25</td>
+                                <td>$630</td>
+                                <td>15%</td>
+                                <td>$170</td>
+                            </tr>
+                            <tr>
+                                <td>73</td>
+                                <td>Ashton Cox</td>
+                                <td>Steve Gection</td>
+                                <td>2011/04/25</td>
+                                <td>$660</td>
+                                <td>15%</td>
+                                <td>$860</td>
+                            </tr>
+                            <tr>
+                                <td>44</td>
+                                <td>Cedric Kelly</td>
+                                <td>Steve Gection</td>
+                                <td>2011/04/25</td>
+                                <td>$220</td>
+                                <td>15%</td>
+                                <td>$433</td>
+                            </tr>
+                            <tr>
+                                <td>95</td>
+                                <td>Airi Satou</td>
+                                <td>Steve Gection</td>
+                                <td>2011/04/25</td>
+                                <td>$330</td>
+                                <td>15%</td>
+                                <td>$162</td>
+                            </tr>
+                            <tr>
+                                <td>76</td>
+                                <td>Brielle Williamson</td>
+                                <td>Steve Gection</td>
+                                <td>2011/04/25</td>
+                                <td>$610</td>
+                                <td>15%</td>
+                                <td>$372</td>
+                            </tr>
+                            <tr>
+                                <td>67</td>
+                                <td>Herrod Chandler</td>
+                                <td>Steve Gection</td>
+                                <td>2011/04/25</td>
+                                <td>$590</td>
+                                <td>15%</td>
+                                <td>$137</td>
+                            </tr>
+                            <tr>
+                                <td>83</td>
+                                <td>Rhona Davidson</td>
+                                <td>Steve Gection</td>
+                                <td>2011/04/25</td>
+                                <td>$550</td>
+                                <td>15%</td>
+                                <td>$327</td>
+                            </tr>
+                            <tr>
+                                <td>19</td>
+                                <td>Colleen Hurst</td>
+                                <td>Steve Gection</td>
+                                <td>2011/04/25</td>
+                                <td>$390</td>
+                                <td>15%</td>
+                                <td>$205</td>
+                            </tr>
+                            <tr>
+                                <td>14</td>
+                                <td>Sonya Frost</td>
+                                <td>Steve Gection</td>
+                                <td>2008/12/13</td>
+                                <td>$230</td>
+                                <td>15%</td>
+                                <td>$103</td>
+                            </tr>
+                            <tr>
+                                <td>13</td>
+                                <td>Tiger Nixon</td>
+                                <td>Steve Gection</td>
+                                <td>2011/04/25</td>
+                                <td>$610</td>
+                                <td>15%</td>
+                                <td>$320</td>
+                            </tr>
+                            <tr>
+                                <td>25</td>
+                                <td>Garrett Winters</td>
+                                <td>Steve Gection</td>
+                                <td>2011/04/25</td>
+                                <td>$630</td>
+                                <td>15%</td>
+                                <td>$170</td>
+                            </tr>
+                            <tr>
+                                <td>39</td>
+                                <td>Ashton Cox</td>
+                                <td>Steve Gection</td>
+                                <td>2011/04/25</td>
+                                <td>$660</td>
+                                <td>15%</td>
+                                <td>$860</td>
+                            </tr>
+                            <tr>
+                                <td>41</td>
+                                <td>Cedric Kelly</td>
+                                <td>Steve Gection</td>
+                                <td>2011/04/25</td>
+                                <td>$220</td>
+                                <td>15%</td>
+                                <td>$433</td>
+                            </tr>
+                            <tr>
+                                <td>53</td>
+                                <td>Airi Satou</td>
+                                <td>Steve Gection</td>
+                                <td>2011/04/25</td>
+                                <td>$330</td>
+                                <td>15%</td>
+                                <td>$162</td>
+                            </tr>
+                            <tr>
+                                <td>65</td>
+                                <td>Brielle Williamson</td>
+                                <td>Steve Gection</td>
+                                <td>2011/04/25</td>
+                                <td>$610</td>
+                                <td>15%</td>
+                                <td>$372</td>
+                            </tr>
+                            <tr>
+                                <td>77</td>
+                                <td>Herrod Chandler</td>
+                                <td>Steve Gection</td>
+                                <td>2011/04/25</td>
+                                <td>$590</td>
+                                <td>15%</td>
+                                <td>$137</td>
+                            </tr>
+                            <tr>
+                                <td>80</td>
+                                <td>Rhona Davidson</td>
+                                <td>Steve Gection</td>
+                                <td>2011/04/25</td>
+                                <td>$550</td>
+                                <td>15%</td>
+                                <td>$327</td>
+                            </tr>
+                            <tr>
+                                <td>90</td>
+                                <td>Colleen Hurst</td>
+                                <td>Steve Gection</td>
+                                <td>2011/04/25</td>
+                                <td>$390</td>
+                                <td>15%</td>
+                                <td>$205</td>
+                            </tr>
+                            <tr>
+                                <td>100</td>
+                                <td>Sonya Frost</td>
+                                <td>Steve Gection</td>
+                                <td>2008/12/13</td>
+                                <td>$230</td>
+                                <td>15%</td>
+                                <td>$103</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
-        <!-- /.usercard-->
-        <!-- /.usercard -->
-        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-            <div class="white-box">
-                <div class="el-card-item">
-                    <div class="el-card-avatar el-overlay-1"> <img src="/images/users/2.jpg" />
-                        <div class="el-overlay">
-                            <ul class="el-info">
-                                <li><a class="btn default btn-outline image-popup-vertical-fit" href="/images/users/2.jpg"><i class="icon-magnifier"></i></a></li>
-                                <li><a class="btn default btn-outline" href="{{ route('hospitals.edit_patient')}}"><i class="icon-link"></i></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="el-card-content">
-                        <h3 class="box-title">Genelia Deshmukh</h3> <small>Managing Director</small>
-                        <br /> <small>Age: 24 years</small>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- /.usercard-->
-        <!-- /.usercard -->
-        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-            <div class="white-box">
-                <div class="el-card-item">
-                    <div class="el-card-avatar el-overlay-1"> <img src="/images/users/3.jpg" />
-                        <div class="el-overlay">
-                            <ul class="el-info">
-                                <li><a class="btn default btn-outline image-popup-vertical-fit" href="/images/users/3.jpg"><i class="icon-magnifier"></i></a></li>
-                                <li><a class="btn default btn-outline" href="{{ route('hospitals.edit_patient')}}"><i class="icon-link"></i></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="el-card-content">
-                        <h3 class="box-title">Genelia Deshmukh</h3> <small>Managing Director</small>
-                        <br /> <small>Age: 24 years</small>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- /.usercard-->
-        <!-- /.usercard -->
-        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-            <div class="white-box">
-                <div class="el-card-item">
-                    <div class="el-card-avatar el-overlay-1"> <img src="/images/users/4.jpg" />
-                        <div class="el-overlay">
-                            <ul class="el-info">
-                                <li><a class="btn default btn-outline image-popup-vertical-fit" href="/images/users/4.jpg"><i class="icon-magnifier"></i></a></li>
-                                <li><a class="btn default btn-outline" href="{{ route('hospitals.edit_patient')}}"><i class="icon-link"></i></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="el-card-content">
-                        <h3 class="box-title">Genelia Deshmukh</h3> <small>Managing Director</small>
-                        <br /> <small>Age: 24 years</small>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- /.usercard-->
-    </div>
-    <!-- /.row -->
-    <!-- .row -->
-    <div class="row el-element-overlay">
-        <!-- .usercard -->
-        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-            <div class="white-box">
-                <div class="el-card-item">
-                    <div class="el-card-avatar el-overlay-1"> <img src="/images/users/1.jpg" />
-                        <div class="el-overlay">
-                            <ul class="el-info">
-                                <li><a class="btn default btn-outline image-popup-vertical-fit" href="/images/users/1.jpg"><i class="icon-magnifier"></i></a></li>
-                                <li><a class="btn default btn-outline" href="{{ route('hospitals.edit_patient')}}"><i class="icon-link"></i></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="el-card-content">
-                        <h3 class="box-title">Genelia Deshmukh</h3> <small>Managing Director</small>
-                        <br /> <small>Age: 24 years</small>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- /.usercard-->
-        <!-- /.usercard -->
-        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-            <div class="white-box">
-                <div class="el-card-item">
-                    <div class="el-card-avatar el-overlay-1"> <img src="/images/users/2.jpg" />
-                        <div class="el-overlay">
-                            <ul class="el-info">
-                                <li><a class="btn default btn-outline image-popup-vertical-fit" href="/images/users/2.jpg"><i class="icon-magnifier"></i></a></li>
-                                <li><a class="btn default btn-outline" href="{{ route('hospitals.edit_patient')}}"><i class="icon-link"></i></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="el-card-content">
-                        <h3 class="box-title">Genelia Deshmukh</h3> <small>Managing Director</small>
-                        <br /> <small>Age: 24 years</small>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- /.usercard-->
-        <!-- /.usercard -->
-        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-            <div class="white-box">
-                <div class="el-card-item">
-                    <div class="el-card-avatar el-overlay-1"> <img src="/images/users/3.jpg" />
-                        <div class="el-overlay">
-                            <ul class="el-info">
-                                <li><a class="btn default btn-outline image-popup-vertical-fit" href="/images/users/3.jpg"><i class="icon-magnifier"></i></a></li>
-                                <li><a class="btn default btn-outline" href="{{ route('hospitals.edit_patient')}}"><i class="icon-link"></i></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="el-card-content">
-                        <h3 class="box-title">Genelia Deshmukh</h3> <small>Managing Director</small>
-                        <br /> <small>Age: 24 years</small>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- /.usercard-->
-        <!-- /.usercard -->
-        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-            <div class="white-box">
-                <div class="el-card-item">
-                    <div class="el-card-avatar el-overlay-1"> <img src="/images/users/4.jpg" />
-                        <div class="el-overlay">
-                            <ul class="el-info">
-                                <li><a class="btn default btn-outline image-popup-vertical-fit" href="/images/users/4.jpg"><i class="icon-magnifier"></i></a></li>
-                                <li><a class="btn default btn-outline" href="{{ route('hospitals.edit_patient')}}"><i class="icon-link"></i></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="el-card-content">
-                        <h3 class="box-title">Genelia Deshmukh</h3> <small>Managing Director</small>
-                        <br /> <small>Age: 24 years</small>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- /.usercard-->
-    </div>
-    <!-- /.row -->
-    <!-- .row -->
-    <div class="row el-element-overlay">
-        <!-- .usercard -->
-        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-            <div class="white-box">
-                <div class="el-card-item">
-                    <div class="el-card-avatar el-overlay-1"> <img src="/images/users/1.jpg" />
-                        <div class="el-overlay">
-                            <ul class="el-info">
-                                <li><a class="btn default btn-outline image-popup-vertical-fit" href="/images/users/1.jpg"><i class="icon-magnifier"></i></a></li>
-                                <li><a class="btn default btn-outline" href="{{ route('hospitals.edit_patient')}}"><i class="icon-link"></i></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="el-card-content">
-                        <h3 class="box-title">Genelia Deshmukh</h3> <small>Managing Director</small>
-                        <br /> <small>Age: 24 years</small>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- /.usercard-->
-        <!-- /.usercard -->
-        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-            <div class="white-box">
-                <div class="el-card-item">
-                    <div class="el-card-avatar el-overlay-1"> <img src="/images/users/2.jpg" />
-                        <div class="el-overlay">
-                            <ul class="el-info">
-                                <li><a class="btn default btn-outline image-popup-vertical-fit" href="/images/users/2.jpg"><i class="icon-magnifier"></i></a></li>
-                                <li><a class="btn default btn-outline" href="{{ route('hospitals.edit_patient')}}"><i class="icon-link"></i></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="el-card-content">
-                        <h3 class="box-title">Genelia Deshmukh</h3> <small>Managing Director</small>
-                        <br /> <small>Age: 24 years</small>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- /.usercard-->
-        <!-- /.usercard -->
-        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-            <div class="white-box">
-                <div class="el-card-item">
-                    <div class="el-card-avatar el-overlay-1"> <img src="/images/users/3.jpg" />
-                        <div class="el-overlay">
-                            <ul class="el-info">
-                                <li><a class="btn default btn-outline image-popup-vertical-fit" href="/images/users/3.jpg"><i class="icon-magnifier"></i></a></li>
-                                <li><a class="btn default btn-outline" href="{{ route('hospitals.edit_patient')}}"><i class="icon-link"></i></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="el-card-content">
-                        <h3 class="box-title">Genelia Deshmukh</h3> <small>Managing Director</small>
-                        <br /> <small>Age: 24 years</small>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- /.usercard-->
-        <!-- /.usercard -->
-        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-            <div class="white-box">
-                <div class="el-card-item">
-                    <div class="el-card-avatar el-overlay-1"> <img src="/images/users/4.jpg" />
-                        <div class="el-overlay">
-                            <ul class="el-info">
-                                <li><a class="btn default btn-outline image-popup-vertical-fit" href="/images/users/4.jpg"><i class="icon-magnifier"></i></a></li>
-                                <li><a class="btn default btn-outline" href="{{ route('hospitals.edit_patient')}}"><i class="icon-link"></i></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="el-card-content">
-                        <h3 class="box-title">Genelia Deshmukh</h3> <small>Managing Director</small>
-                        <br /> <small>Age: 24 years</small>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- /.usercard-->
     </div>
 
     <x-slot name='moreScripts'>
-        <script src="/app/js/jquery.magnific-popup.min.js"></script>
-        <script src="/app/js/jquery.magnific-popup-init.js"></script>
+
+        <script src="/app/js/jquery.dataTables.min.js"></script>
+        <script>
+            $(document).ready(function() {
+                $('#myTable').DataTable();
+            });
+        </script>
     </x-slot>
+
 </x-layouts.app>
