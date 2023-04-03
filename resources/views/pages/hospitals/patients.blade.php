@@ -27,8 +27,8 @@
                     <table id="patientTable" class="table table-striped">
                         <thead>
                             <tr>
-                                <th>FirstName</th>
-
+                                <th>No</th>
+                                <th>name</th>
                             </tr>
                         </thead>
 
@@ -49,10 +49,42 @@
         <script src="/app/js/jquery.dataTables.min.js"></script>
         <script>
             $(document).ready(function() {
+                $("#add-patient-btn").magnificPopup({
+                    type: "inline",
+                    preloader: false,
+                    focus: "#name",
+                    // When elemened is focused, some mobile browsers in some cases zoom in
+                    // It looks not nice, so we disable it:
+                    callbacks: {
+                        beforeOpen: function() {
+                            if ($(window).width() < 700) {
+                                this.st.focus = false;
+                            } else {
+                                this.st.focus = "#name";
+                            }
+                        },
+                    },
+                });
+
+                $("#add-patient-form").on("submit", function(e) {
+                    e.preventDefault();
+                    $.magnificPopup.instance.close();
+                    console.log(new FormData(this));
+                });
+
                 $('#patientTable').DataTable({
                     processing: true,
                     serverSide: true,
-                    ajax: "{{route('api.v1.patients.index')}}"
+                    ajax: "{{route('api.v1.patients.index')}}",
+                    columns: [{
+                            data: 'id',
+                            name: 'id'
+                        },
+                        {
+                            data: 'first_name',
+                            name: 'name'
+                        },
+                    ]
                 });
             });
         </script>

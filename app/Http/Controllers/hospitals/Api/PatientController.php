@@ -15,7 +15,7 @@ class PatientController
 {
     function index()
     {
-        $patients = Patient::query()->find(['first_name']);
+        $patients = Patient::all();
         return datatables($patients)->make(true);
     }
 }

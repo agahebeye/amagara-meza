@@ -18,8 +18,8 @@ class CreatePatientsTable extends Migration
             $table->string('first_name');
             $table->string('post_name')->nullable();
             $table->string('last_name');
-            $table->string('birt_hplace');
-            $table->date('birt_hdate');
+            $table->string('birth_place');
+            $table->date('birth_date');
             $table->integer('gender');
             $table->string('martital_status');
             $table->string('father_name');
@@ -33,7 +33,7 @@ class CreatePatientsTable extends Migration
             $table->string('neighborhood');
             $table->string('avenue');
             $table->integer('house_number');
-            $table->integer('profession');
+            $table->string('profession');
             $table->string('phone_number');
             $table->timestamps();
         });
