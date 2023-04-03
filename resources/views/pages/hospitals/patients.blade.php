@@ -14,16 +14,12 @@
                 <div class="d-flex justify-content-between align-items-center">
                     <h3 class="box-title m-b-0">Liste de patients</h3>
                     <div class="row">
-                        <!-- .col -->
                         <div class="col-sm-12">
                             <a id="add-patient-btn" class="btn btn-info" href="#add-patient-form">Open form</a>
-                            <!-- form itself -->
 
                             <x-partials.add-patient />
 
-
                         </div>
-                        <!-- .col -->
                     </div>
                 </div>
                 <hr>
@@ -31,28 +27,13 @@
                     <table id="patientTable" class="table table-striped">
                         <thead>
                             <tr>
-                                <th>No</th>
-                                <th>Patient</th>
-                                <th>Doctor</th>
-                                <th>Date</th>
-                                <th>Charges</th>
-                                <th>Discount</th>
-                                <th>Total</th>
+                                <th>FirstName</th>
+
                             </tr>
                         </thead>
 
                         <tbody>
-                            @foreach($patients as $patient)
-                            <tr>
-                                <td>1</td>
-                                <td>Tiger Nixon</td>
-                                <td>Steve Gection</td>
-                                <td>2011/04/25</td>
-                                <td>$610</td>
-                                <td>15%</td>
-                                <td>$320</td>
-                            </tr>
-                            @endforeach
+
                         </tbody>
                     </table>
                 </div>
@@ -68,7 +49,11 @@
         <script src="/app/js/jquery.dataTables.min.js"></script>
         <script>
             $(document).ready(function() {
-                $('#patientTable').DataTable();
+                $('#patientTable').DataTable({
+                    processing: true,
+                    serverSide: true,
+                    ajax: "{{route('api.v1.patients.index')}}"
+                });
             });
         </script>
     </x-slot>

@@ -19,5 +19,6 @@ $(document).ready(function () {
     $("#add-patient-form").on("submit", function (e) {
         e.preventDefault();
         $.magnificPopup.instance.close();
+        console.log(new FormData(this));
     });
 });
