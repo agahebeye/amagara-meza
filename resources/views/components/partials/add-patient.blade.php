@@ -1,61 +1,62 @@
    <form id="add-patient-form" class="mfp-hide form-material form-horizontal white-popup-block">
-       <h1>Ajouter nouveau patient</h1>
+       <h2>Ajouter nouveau patient</h2>
+
        <div class="row mt-5">
            <div class="col">
                <div class="form-group">
                    <label class="col-md-12 mt-4" for="lastname">Lastname</span>
                    </label>
                    <div class="col-md-12">
-                       <input type="text" id="lastname" name="lastname" class="form-control" placeholder="enter your lastname">
+                       <input type="text" id="lastname" name="last_name" class="form-control" placeholder="enter your lastname">
                    </div>
                </div>
                <div class="form-group">
                    <label class="col-md-12 mt-4" for="postname">Postname</span>
                    </label>
                    <div class="col-md-12">
-                       <input type="text" id="postname" name="postname" class="form-control" placeholder="enter your postname">
+                       <input type="text" id="postname" name="post_name" class="form-control" placeholder="enter your postname">
                    </div>
                </div>
                <div class="form-group">
                    <label class="col-md-12 mt-4" for="firstname">Firstname</span>
                    </label>
                    <div class="col-md-12">
-                       <input type="text" id="firstname" name="firstname" class="form-control" placeholder="enter your firstname">
+                       <input type="text" id="firstname" name="first_name" class="form-control" placeholder="enter your firstname">
                    </div>
                </div>
                <div class="form-group">
                    <label class="col-md-12 mt-4" for="birthplace">Place of Birth</span>
                    </label>
                    <div class="col-md-12">
-                       <input type="text" id="birthplace" name="birthplace" class="form-control" placeholder="enter your place of birth">
+                       <input type="text" id="birthplace" name="birth_place" class="form-control" placeholder="enter your place of birth">
                    </div>
                </div>
                <div class="form-group">
                    <label class="col-md-12 mt-4" for="bdate">Date of Birth</span>
                    </label>
                    <div class="col-md-12">
-                       <input type="date" id="bdate" name="bdate" class="form-control mydatepicker" placeholder="enter your birth date">
+                       <input type="date" id="bdate" name="birth_date" class="form-control mydatepicker" placeholder="enter your birth date">
                    </div>
                </div>
                <div class="form-group">
                    <label class="col-sm-12">Gender</label>
                    <div class="col-sm-12">
-                       <select class="form-control">
+                       <select class="form-control" name='gender'>
                            <option>Select Gender</option>
-                           <option selected="selected">Male</option>
-                           <option>Female</option>
+                           <option value="0" selected="selected">Male</option>
+                           <option value="1">Female</option>
                        </select>
                    </div>
                </div>
                <div class="form-group">
                    <label class="col-sm-12">Marital Status</label>
                    <div class="col-sm-12">
-                       <select class="form-control">
+                       <select class="form-control" name="marital_status">
                            <option disabled>Select marital status</option>
-                           <option selected="selected">Bachelor</option>
-                           <option>Married</option>
-                           <option>Divorced</option>
-                           <option>Widowed</option>
+                           <option value="Bachelor" selected="selected">Bachelor</option>
+                           <option value='Married'>Married</option>
+                           <option value="Divorced">Divorced</option>
+                           <option value="Widowed">Widowed</option>
                        </select>
                    </div>
                </div>
@@ -67,6 +68,7 @@
                    </div>
                </div>
            </div>
+
            <div class="col">
                <div class="form-group">
                    <label class="col-md-12 mt-4" for="mother_name">Mother's name</span>
@@ -150,7 +152,7 @@
                    <label class="col-md-12 mt-4" for="phone">Phone</span>
                    </label>
                    <div class="col-md-12">
-                       <input type="text" id="phone" name="phone" class="form-control" placeholder="enter your phone">
+                       <input type="text" id="phone" name="phone_number" class="form-control" placeholder="enter your phone">
                    </div>
                </div>
            </div>

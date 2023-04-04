@@ -109,8 +109,8 @@
                         cache: false,
                         processData: false,
                         success: function(response) {
-                            $(form).trigger("reset");
-                            console.log(response)
+                            $(form)[0].reset();
+                            table.ajax.reload();
                         },
                         error: function(response) {}
                     });
