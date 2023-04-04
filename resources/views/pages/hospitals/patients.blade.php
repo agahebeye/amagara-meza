@@ -6,6 +6,8 @@
         <link href="/app/css/magnific-popup.css" rel="stylesheet">
         <link href="/app/css/jquery.dataTables.min.css" rel="stylesheet" type="text/css" />
         <link href="https://cdn.datatables.net/buttons/1.2.2/css/buttons.dataTables.min.css" rel="stylesheet" type="text/css" />
+
+
     </x-slot>
 
     <div class="row">
@@ -30,6 +32,7 @@
                                 <th>No</th>
                                 <th>FirstName</th>
                                 <th>LastName</th>
+                                <th width="100px">Action</th>
                             </tr>
                         </thead>
 
@@ -47,6 +50,7 @@
         <script src="/app/js/jquery.magnific-popup.min.js"></script>
 
         <script src="/app/js/jquery.dataTables.min.js"></script>
+        <script src="https://cdn.datatables.net/responsive/2.4.1/js/dataTables.responsive.min.js"></script>
         <script>
             $(document).ready(function() {
                 $("#add-patient-btn").magnificPopup({
@@ -66,14 +70,9 @@
                     },
                 });
 
-                $("#add-patient-form").on("submit", function(e) {
-                    e.preventDefault();
-                    $.magnificPopup.instance.close();
-                    console.log(new FormData(this));
-                });
 
-                $('#patientTable').DataTable({
-                    // processing: true,
+                var table = $('#patientTable').DataTable({
+
                     serverSide: true,
                     ajax: "{{route('api.v1.patients.index')}}",
                     columns: [{
@@ -87,7 +86,36 @@
                             data: 'last_name',
                             name: 'last_name'
                         },
+                        {
+                            data: 'view',
+                            name: 'view',
+                            orderable: false,
+                            searchable: false
+                        },
                     ]
+                });
+
+                var form = "#add-patient-form"
+
+                $(form).on("submit", function(e) {
+                    e.preventDefault();
+
+                    $.ajax({
+                        url: "{{route('api.v1.patients.store')}}",
+                        method: 'POST',
+                        data: new FormData(this),
+                        dataType: 'JSON',
+                        contentType: false,
+                        cache: false,
+                        processData: false,
+                        success: function(response) {
+                            $(form).trigger("reset");
+                            console.log(response)
+                        },
+                        error: function(response) {}
+                    });
+
+                    $.magnificPopup.instance.close();
                 });
             });
         </script>

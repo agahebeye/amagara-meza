@@ -15,9 +15,23 @@ class PatientController
 {
     function index()
     {
-        $patients = Patient::select('id', 'first_name', 'last_name');
+        $patients = Patient::query()->latest('id')->select('id', 'first_name', 'last_name');
 
         return datatables($patients)
+            ->addColumn('view', function ($row) {
+                $btn = '<a href="javascript:void(0)" class=""><i class="icon-eye"></i></a>';
+                return $btn;
+            })
+            ->rawColumns(['view'])
             ->toJson();
+    }
+
+    function store()
+    {
+        Patient::create(request()->all());
+
+        return response()->json([
+            'data' => 'success'
+        ]);
     }
 }
