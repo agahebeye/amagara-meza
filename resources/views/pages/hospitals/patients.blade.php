@@ -28,7 +28,8 @@
                         <thead>
                             <tr>
                                 <th>No</th>
-                                <th>name</th>
+                                <th>FirstName</th>
+                                <th>LastName</th>
                             </tr>
                         </thead>
 
@@ -44,7 +45,6 @@
 
     <x-slot name='moreScripts'>
         <script src="/app/js/jquery.magnific-popup.min.js"></script>
-        <script src="/app/js/jquery.magnific-popup-init.js"></script>
 
         <script src="/app/js/jquery.dataTables.min.js"></script>
         <script>
@@ -73,7 +73,7 @@
                 });
 
                 $('#patientTable').DataTable({
-                    processing: true,
+                    // processing: true,
                     serverSide: true,
                     ajax: "{{route('api.v1.patients.index')}}",
                     columns: [{
@@ -82,7 +82,10 @@
                         },
                         {
                             data: 'first_name',
-                            name: 'name'
+                            name: 'first_name'
+                        }, {
+                            data: 'last_name',
+                            name: 'last_name'
                         },
                     ]
                 });

@@ -15,7 +15,9 @@ class PatientController
 {
     function index()
     {
-        $patients = Patient::all();
-        return datatables($patients)->make(true);
+        $patients = Patient::select('id', 'first_name', 'last_name');
+
+        return datatables($patients)
+            ->toJson();
     }
 }
