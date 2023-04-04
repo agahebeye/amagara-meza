@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\hospitals\Api;
+namespace App\Http\Controllers\Api;
 
 use App\Models\hospitals\Patient;
 use Spatie\RouteAttributes\Attributes\Prefix;
@@ -19,7 +19,7 @@ class PatientController
 
         return datatables($patients)
             ->addColumn('view', function ($row) {
-                $btn = '<a href="javascript:void(0)" class=""><i class="icon-eye"></i></a>';
+                $btn = '<a href="javascript:void(0)" class="view-button"><i class="icon-eye"></i></a>';
                 return $btn;
             })
             ->rawColumns(['view'])

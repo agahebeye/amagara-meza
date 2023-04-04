@@ -15,7 +15,7 @@
     <link href="/app/css/bootstrap-extension.css" rel="stylesheet">
     <!-- Menu CSS -->
     <link href="/app/css/sidebar-nav.min.css" rel="stylesheet"> <!-- animation CSS -->
-    <link href="/app/css/animate.css" rel="stylesheet">
+    <!-- <link href="/app/css/animate.css" rel="stylesheet"> -->
 
     {{ $moreStyles ?? '' }}
     <!-- Custom CSS -->

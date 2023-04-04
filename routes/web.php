@@ -24,9 +24,9 @@ Route::prefix('hospital')->group(function () {
     Route::get('/doctor-profile', fn () => view('pages.hospitals.doctor-profile'))->name('hospitals.doctor_profile');
 
     // Route::get('/patients', fn () => view('pages.hospitals.patients'))->name('hospitals.patients');
-    Route::get('/add-patient', fn () => view('pages.hospitals.add-patient'))->name('hospitals.add_patient');
-    Route::get('/edit-patient', fn () => view('pages.hospitals.edit-patient'))->name('hospitals.edit_patient');
-    Route::get('/patient-profile', fn () => view('pages.hospitals.patient-profile'))->name('hospitals.patient_profile');
+    // Route::get('/add-patient', fn () => view('pages.hospitals.add-patient'))->name('hospitals.add_patient');
+    // Route::get('/edit-patient', fn () => view('pages.hospitals.edit-patient'))->name('hospitals.edit_patient');
+    // Route::get('/patient-profile', fn () => view('pages.hospitals.patient-profile'))->name('hospitals.patient_profile');
 
     Route::get('/payment-report', fn () => view('pages.hospitals.payment-report'))->name('hospitals.payment_report');
     Route::get('/income-report', fn () => view('pages.hospitals.income-report'))->name('hospitals.income_report');

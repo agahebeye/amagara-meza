@@ -5,7 +5,7 @@
     <x-slot name='moreStyles'>
         <link href="/app/css/magnific-popup.css" rel="stylesheet">
         <link href="/app/css/jquery.dataTables.min.css" rel="stylesheet" type="text/css" />
-        <link href="https://cdn.datatables.net/buttons/1.2.2/css/buttons.dataTables.min.css" rel="stylesheet" type="text/css" />
+        <link href="/app/css/jquery.toast.css" rel="stylesheet" type="text/css" />
 
 
     </x-slot>
@@ -17,7 +17,7 @@
                     <h3 class="box-title m-b-0">Liste de patients</h3>
                     <div class="row">
                         <div class="col-sm-12">
-                            <a id="add-patient-btn" class="btn btn-info" href="#add-patient-form">Open form</a>
+                            <a id="add-patient-btn" class="btn btn-primary" href="#add-patient-form">Open form</a>
 
                             <x-partials.add-patient />
 
@@ -48,9 +48,9 @@
 
     <x-slot name='moreScripts'>
         <script src="/app/js/jquery.magnific-popup.min.js"></script>
-
+        <script src="/app/js/jquery.toast.js"></script>
         <script src="/app/js/jquery.dataTables.min.js"></script>
-        <script src="https://cdn.datatables.net/responsive/2.4.1/js/dataTables.responsive.min.js"></script>
+
         <script>
             $(document).ready(function() {
                 $("#add-patient-btn").magnificPopup({
@@ -71,7 +71,7 @@
                 });
 
 
-                var table = $('#patientTable').DataTable({
+                var dataTable = $('#patientTable').DataTable({
 
                     serverSide: true,
                     ajax: "{{route('api.v1.patients.index')}}",
@@ -100,6 +100,7 @@
                 $(form).on("submit", function(e) {
                     e.preventDefault();
 
+
                     $.ajax({
                         url: "{{route('api.v1.patients.store')}}",
                         method: 'POST',
@@ -109,10 +110,31 @@
                         cache: false,
                         processData: false,
                         success: function(response) {
+                            $.toast({
+                                heading: 'Success',
+                                text: 'User was added with success',
+                                position: 'top-right',
+                                loaderBg: '#ff6849',
+                                icon: 'success',
+                                hideAfter: 2000,
+                                stack: 6
+                            });
+
                             $(form)[0].reset();
-                            table.ajax.reload();
+
+                            dataTable.ajax.reload();
                         },
-                        error: function(response) {}
+                        error: function(response) {
+                            $.toast({
+                                heading: 'Error',
+                                text: 'We were unable to add new user',
+                                position: 'top-right',
+                                loaderBg: '#ff6849',
+                                icon: 'error',
+                                hideAfter: 2000,
+                                stack: 6
+                            });
+                        }
                     });
 
                     $.magnificPopup.instance.close();
