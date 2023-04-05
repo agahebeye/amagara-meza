@@ -39,18 +39,19 @@
                 </ul>
             </li>
 
-            <li> <a href="javascript:void(0);" class="waves-effect"><i class="fa fa-user-md p-r-10"></i> <span class="hide-menu"> Doctors <span class="fa arrow"></span></span></a>
-                <ul class="nav nav-second-level">
-                    <li> <a href="{{route('hospitals.doctors')}}">All Doctors</a> </li>
-                    <li> <a href="{{route('hospitals.add_doctor')}}">Add Doctor</a> </li>
-                    <li> <a href="{{route('hospitals.edit_doctor')}}">Edit Doctor</a> </li>
-                    <li> <a href="{{route('hospitals.doctor_profile')}}">Doctor Profile</a> </li>
-                </ul>
+            <li> <a href="{{route('doctors')}}" class="waves-effect"><i class="fa fa-user-md p-r-10"></i> <span class="hide-menu"> Doctors <!-- <span class="fa arrow"></span> --></span></a>
+                <!-- <ul class="nav nav-second-level">
+                    <li> <a href="">All Doctors</a> </li>
+                    <li> <a href="">Add Doctor</a> </li>
+                    <li> <a href="">Edit Doctor</a> </li>
+                    <li> <a href="">Doctor Profile</a> </li>
+                </ul> -->
             </li>
 
             <li> <a href="{{route('patients')}}" class="waves-effect"><i class="icon-people p-r-10"></i> <span class="hide-menu"> Patients <!-- <span class="fa arrow"></span> --></span></a>
-            <li> <a href="/hospital/consultations" class="waves-effect"><i class="icon-people p-r-10"></i> <span class="hide-menu"> Consultations <!-- <span class="fa arrow"></span> --></span></a>
             <li> <a href="{{route('cashbox')}}" class="waves-effect"><i class="icon-people p-r-10"></i> <span class="hide-menu"> Cash Box <!-- <span class="fa arrow"></span> --></span></a>
+            <li> <a href="{{route('consultations')}}" class="waves-effect"><i class="icon-people p-r-10"></i> <span class="hide-menu"> Consultations <!-- <span class="fa arrow"></span> --></span></a>
+            <li> <a href="{{route('drug_store')}}" class="waves-effect"><i class="icon-people p-r-10"></i> <span class="hide-menu"> Drug store <!-- <span class="fa arrow"></span> --></span></a>
                 <!-- <ul class="nav nav-second-level">
                     <li> <a href="">All Patiens</a> </li>
                     <li> <a href="">Add Patient</a> </li>

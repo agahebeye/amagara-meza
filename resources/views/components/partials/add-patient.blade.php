@@ -1,5 +1,5 @@
-   <form id="add-patient-form" class="mfp-hide form-material form-horizontal white-popup-block">
-       <h2>Ajouter nouveau patient</h2>
+   <form id="add-patient-form" class="mfp-hide form-material white-popup-block">
+       <h2 class="text-center">Ajouter nouveau patient</h2>
 
        <div class="row mt-5">
            <div class="col">

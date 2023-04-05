@@ -1,5 +1,5 @@
 <x-layouts.app>
-    <x-slot name='title'>Patients</x-slot>
+    <x-slot name='title'>Cash Box</x-slot>
 
 
     <x-slot name='moreStyles'>

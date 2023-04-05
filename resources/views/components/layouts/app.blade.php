@@ -19,7 +19,7 @@
 
     {{ $moreStyles ?? '' }}
     <!-- Custom CSS -->
-    <link href="/app/css/style.min.css" rel="stylesheet">
+    <link href="/app/css/style.css" rel="stylesheet">
 
     <!-- color CSS -->
     <link href="/app/css/colors/megna.css" id="theme" rel="stylesheet">

@@ -91,6 +91,7 @@
                 </form>
             </div>
         </div>
+
         <div class="col-sm-6">
             <div class="white-box">
                 <h3 class="box-title">Patient's Social Information</h3>
