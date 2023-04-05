@@ -13,7 +13,7 @@
         <div class="col-sm-12">
             <div class="white-box">
                 <div class="d-flex justify-content-between align-items-center">
-                    <h3 class="box-title m-b-0">Liste de patients</h3>
+                    <h2 class="m-b-0">Liste de patients</h2>
                     <div class="row">
                         <div class="col-sm-12">
                             <a data-toggle="modal" data-target=".bs-example-modal-lg" class="btn btn-info rounded-md">Add new patient</a>
@@ -23,8 +23,8 @@
                         </div>
                     </div>
                 </div>
-                <hr>
-                <div class="table-responsive">
+
+                <div class="table-responsive mt-5">
                     <table id="patientTable" class="table table-striped">
                         <thead>
                             <tr>

@@ -1471,7 +1471,7 @@ pre {
   width: 100%;
   height: 100%;
 }
-table.dataTable thead .sorting,
+/* table.dataTable thead .sorting,
 table.dataTable thead .sorting_asc,
 table.dataTable thead .sorting_desc,
 table.dataTable thead .sorting_asc_disabled,
@@ -1493,7 +1493,7 @@ table.dataTable thead .sorting:after {
   float: right;
   font-family: fontawesome;
   color: rgba(50, 50, 50, 0.5);
-}
+} */
 .btn-circle {
   width: 30px;
   height: 30px;
@@ -3120,9 +3120,9 @@ Basic List
   color: inherit;
 }
 /*custom tab*/
-.tab-content {
+/* .tab-content {
   margin-top: 30px;
-}
+} */
 .customtab {
   border-bottom: 2px solid #f7fafc;
 }
@@ -3176,6 +3176,7 @@ Basic List
   display: table-cell;
   padding: 20px;
   vertical-align: top;
+  padding-top: 0px;
 }
 .tabs-vertical li.active a,
 .tabs-vertical li.active a:hover,
@@ -3566,52 +3567,7 @@ Basic List
 .table {
   margin-bottom: 10px;
 }
-.table-striped > tbody > tr:nth-of-type(odd),
-.table-hover > tbody > tr:hover,
-.table > thead > tr > td.active,
-.table > tbody > tr > td.active,
-.table > tfoot > tr > td.active,
-.table > thead > tr > th.active,
-.table > tbody > tr > th.active,
-.table > tfoot > tr > th.active,
-.table > thead > tr.active > td,
-.table > tbody > tr.active > td,
-.table > tfoot > tr.active > td,
-.table > thead > tr.active > th,
-.table > tbody > tr.active > th,
-.table > tfoot > tr.active > th {
-  background-color: #f7fafc !important;
-}
-.table > thead > tr > th,
-.table > tbody > tr > th,
-.table > tfoot > tr > th,
-.table > thead > tr > td,
-.table > tbody > tr > td,
-.table > tfoot > tr > td,
-.table > thead > tr > th,
-.table-bordered {
-  border-top: 1px solid #e4e7ea;
-}
-.table > tbody > tr > td,
-.table > tbody > tr > th,
-.table > tfoot > tr > td,
-.table > tfoot > tr > th,
-.table > thead > tr > td,
-.table > thead > tr > th {
-  padding: 15px 8px;
-}
-.table-bordered > thead > tr > th,
-.table-bordered > tbody > tr > th,
-.table-bordered > tfoot > tr > th,
-.table-bordered > thead > tr > td,
-.table-bordered > tbody > tr > td,
-.table-bordered > tfoot > tr > td {
-  border: 1px solid #e4e7ea;
-}
-.table > thead > tr > th {
-  vertical-align: bottom;
-  border-bottom: 1px solid #e4e7ea;
-}
+
 tbody {
   color: #797979;
 }
