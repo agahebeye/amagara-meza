@@ -16751,4 +16751,8 @@ a.fc-event:not([href]):not([tabindex]) {
     float: left;
   }
 }
+
+.rounded-md {
+  border-radius: 8px;
+}
 /*Top bar header*/

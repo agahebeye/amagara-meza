@@ -3,7 +3,6 @@
 
 
     <x-slot name='moreStyles'>
-        <link href="/app/css/magnific-popup.css" rel="stylesheet">
         <link href="/app/css/jquery.dataTables.min.css" rel="stylesheet" type="text/css" />
         <link href="/app/css/jquery.toast.css" rel="stylesheet" type="text/css" />
 
@@ -17,7 +16,7 @@
                     <h3 class="box-title m-b-0">Liste de patients</h3>
                     <div class="row">
                         <div class="col-sm-12">
-                            <a id="add-patient-btn" class="btn btn-primary" href="#add-patient-form">Open form</a>
+                            <a data-toggle="modal" data-target=".bs-example-modal-lg" class="btn btn-info rounded-md">Add new patient</a>
 
                             <x-partials.add-patient />
 
@@ -47,29 +46,11 @@
 
 
     <x-slot name='moreScripts'>
-        <script src="/app/js/jquery.magnific-popup.min.js"></script>
         <script src="/app/js/jquery.toast.js"></script>
         <script src="/app/js/jquery.dataTables.min.js"></script>
 
         <script>
             $(document).ready(function() {
-                $("#add-patient-btn").magnificPopup({
-                    type: "inline",
-                    preloader: false,
-                    focus: "#name",
-                    // When elemened is focused, some mobile browsers in some cases zoom in
-                    // It looks not nice, so we disable it:
-                    callbacks: {
-                        beforeOpen: function() {
-                            if ($(window).width() < 700) {
-                                this.st.focus = false;
-                            } else {
-                                this.st.focus = "#name";
-                            }
-                        },
-                    },
-                });
-
 
                 var dataTable = $('#patientTable').DataTable({
 
