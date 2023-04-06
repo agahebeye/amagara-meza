@@ -13,7 +13,7 @@
         <div class="col-sm-12">
             <div class="white-box">
                 <div class="d-flex justify-content-between align-items-center">
-                    <h2 class="m-b-0">Liste de patients</h2>
+                    <h3 class="m-b-0">Liste de patients enregistrés</h3>
                     <div class="row">
                         <div class="col-sm-12">
                             <a data-toggle="modal" data-target=".bs-example-modal-lg" class="btn btn-info rounded-md">Add new patient</a>

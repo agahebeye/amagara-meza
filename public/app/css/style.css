@@ -1471,7 +1471,7 @@ pre {
   width: 100%;
   height: 100%;
 }
-/* table.dataTable thead .sorting,
+table.dataTable thead .sorting,
 table.dataTable thead .sorting_asc,
 table.dataTable thead .sorting_desc,
 table.dataTable thead .sorting_asc_disabled,
@@ -1493,7 +1493,7 @@ table.dataTable thead .sorting:after {
   float: right;
   font-family: fontawesome;
   color: rgba(50, 50, 50, 0.5);
-} */
+}
 .btn-circle {
   width: 30px;
   height: 30px;
@@ -4924,25 +4924,9 @@ ul.list-icons li i {
   top: 7px;
   right: 16px;
 }
-/*Datepicker*/
-.datepicker table tr td.today,
-.datepicker table tr td.today:hover,
-.datepicker table tr td.today.disabled,
-.datepicker table tr td.today.disabled:hover {
-  background-image: none;
-  background: #ff6849;
-  color: #ffffff;
-}
-.datepicker table tr td.active,
-.datepicker table tr td.active:hover,
-.datepicker table tr td.active.disabled,
-.datepicker table tr td.active.disabled:hover {
-  background-image: none;
-  background: #03a9f3;
-  color: #ffffff;
-}
+
 /*Datatable*/
-.editable-table + input.error {
+/* .editable-table + input.error {
   border: 1px solid #danger;
   outline: 0;
   outline-offset: 0;
@@ -4956,7 +4940,8 @@ ul.list-icons li i {
 }
 .editable-table td:focus {
   outline: 0;
-}
+} */
+
 /*Form-Wizard*/
 .wizard-steps {
   display: table;
@@ -14531,7 +14516,10 @@ a.dt-button:hover:not(.disabled) {
   border-color: rgba(120, 130, 140, 0.13);
 }
 .dataTables_filter input {
-  border: 1px solid rgba(120, 130, 140, 0.13);
+  border: 0 none;
+  border-bottom: 1px solid rgba(120, 130, 140, 0.5);
+  background: none;
+  outline: none;
 }
 table.dataTable.display tbody tr.odd > .sorting_1,
 table.dataTable.order-column.stripe tbody tr.odd > .sorting_1,
@@ -16660,8 +16648,6 @@ blockquote {
 select.form-control:not([size]):not([multiple]) {
   height: calc(3.85rem);
 }
-.datepicker td,
-.datepicker th,
 .table-condensed td,
 .table-condensed th {
   padding: 5px;
