@@ -16,7 +16,7 @@
             <label class="col-sm-12">Department*</label>
 
             <div class="col-sm-12">
-                <select class="form-control" name="marital_status" required>
+                <select class="form-control" name="department" required>
                     <option value="" selected disabled>--Select department--</option>
                     <option value="Cardiology">Cardiology</option>
                     <option value='Neurology'>Neurology</option>

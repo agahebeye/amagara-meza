@@ -4,11 +4,11 @@
             <label class="col-sm-12">Taken care?*</label>
 
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="care" id="private">
+                <input class="form-check-input" type="radio" name="care_type" id="private">
                 <label class="form-check-label ml-2" for="private"> Private</label>
             </div>
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="care" id="subscribed">
+                <input class="form-check-input" type="radio" name="care_type" id="subscribed">
                 <label class="form-check-label ml-2" for="subscribed"> Subscribed to organisation</label>
             </div>
 
@@ -62,13 +62,13 @@
             </div>
         </div>
 
-        <div class="form-group col-md-6 align-self-end ">
+        <!-- <div class="form-group col-md-6 align-self-end ">
             <label class="col-md-12 mt-4" for="date">Date</span>
             </label>
             <div class="col-md-12">
                 <input type="date" id="date" name="date" class="form-control" placeholder="enter date">
             </div>
-        </div>
+        </div> -->
 
 
         <div class="form-group col-md-6">

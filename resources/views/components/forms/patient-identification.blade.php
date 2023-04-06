@@ -5,7 +5,7 @@
             <label class="col-md-12 mt-4" for="lastname">Lastname*</span>
             </label>
             <div class="col-md-12">
-                <input required type="text" id="lastname" name="last_name" class="form-control" placeholder="enter your lastname">
+                <input required type="text" id="lastname" name="last_name" class="form-control" placeholder="enter lastname">
             </div>
         </div>
 
@@ -13,7 +13,7 @@
             <label class="col-md-12 mt-4" for="postname">Postname*</span>
             </label>
             <div class="col-md-12">
-                <input required type="text" id="postname" name="post_name" class="form-control" placeholder="enter your postname">
+                <input required type="text" id="postname" name="post_name" class="form-control" placeholder="enter postname">
             </div>
         </div>
 
@@ -21,7 +21,7 @@
             <label class="col-md-12 mt-4" for="firstname">Firstname*</span>
             </label>
             <div class="col-md-12">
-                <input required type="text" id="firstname" name="first_name" class="form-control" placeholder="enter your firstname">
+                <input required type="text" id="firstname" name="first_name" class="form-control" placeholder="enter firstname">
             </div>
         </div>
 
@@ -29,7 +29,7 @@
             <label class="col-md-12 mt-4" for="birthplace">Place of Birth*</span>
             </label>
             <div class="col-md-12">
-                <input required type="text" id="birthplace" name="birth_place" class="form-control" placeholder="enter your place of birth">
+                <input required type="text" id="birthplace" name="birth_place" class="form-control" placeholder="enter place of birth">
             </div>
         </div>
 
@@ -37,7 +37,7 @@
             <label class="col-md-12 mt-4" for="bdate">Date of Birth*</span>
             </label>
             <div class="col-md-12">
-                <input required type="date" id="bdate" name="birth_date" class="form-control mydatepicker" placeholder="enter your birth date">
+                <input required type="date" id="bdate" name="birth_date" class="form-control mydatepicker" placeholder="enter birth date">
             </div>
         </div>
 
@@ -69,7 +69,7 @@
             <label class="col-md-12 mt-4" for="father_name">Father's name*</span>
             </label>
             <div class="col-md-12">
-                <input required type="text" id="father_name" name="father_name" class="form-control" placeholder="enter your father's name">
+                <input required type="text" id="father_name" name="father_name" class="form-control" placeholder="enter father's name">
             </div>
         </div>
 
@@ -77,7 +77,7 @@
             <label class="col-md-12 mt-4" for="mother_name">Mother's name*</span>
             </label>
             <div class="col-md-12">
-                <input required type="text" id="mother_name" name="mother_name" class="form-control" placeholder="enter your mother's name">
+                <input required type="text" id="mother_name" name="mother_name" class="form-control" placeholder="enter mother's name">
             </div>
         </div>
 
@@ -85,7 +85,16 @@
             <label class="col-md-12 mt-4" for="relative">Relative*</span>
             </label>
             <div class="col-md-12">
-                <input required type="text" id="relative" name="relative" class="form-control" placeholder="enter your firstname">
+                <input required type="text" id="relative" name="relative" class="form-control" placeholder="enter firstname">
+            </div>
+        </div>
+
+
+        <div class="form-group col-md-6">
+            <label class="col-md-12 mt-4" for="relative_contact">Relative's contact*</span>
+            </label>
+            <div class="col-md-12">
+                <input required type="number" id="relative_contact" name="relative_contact" class="form-control" placeholder="enter firstname">
             </div>
         </div>
 
@@ -93,7 +102,7 @@
             <label class="col-md-12 mt-4" for="nationality">Nationality*</span>
             </label>
             <div class="col-md-12">
-                <input required type="text" id="nationality" name="nationality" class="form-control" placeholder="enter your nationality">
+                <input required type="text" id="nationality" name="nationality" class="form-control" placeholder="enter nationality">
             </div>
         </div>
 
@@ -101,7 +110,7 @@
             <label class="col-md-12 mt-4" for="country">Country*</span>
             </label>
             <div class="col-md-12">
-                <input required type="text" id="country" name="country" class="form-control" placeholder="enter your country">
+                <input required type="text" id="country" name="country" class="form-control" placeholder="enter country">
             </div>
         </div>
 
@@ -109,7 +118,7 @@
             <label class="col-md-12 mt-4" for="province">Province*</span>
             </label>
             <div class="col-md-12">
-                <input required type="text" id="province" name="province" class="form-control" placeholder="enter your province">
+                <input required type="text" id="province" name="province" class="form-control" placeholder="enter province">
             </div>
         </div>
 
@@ -117,7 +126,7 @@
             <label class="col-md-12 mt-4" for="town">Town*</span>
             </label>
             <div class="col-md-12">
-                <input required type="text" id="town" name="town" class="form-control" placeholder="enter your town">
+                <input required type="text" id="town" name="town" class="form-control" placeholder="enter town">
             </div>
         </div>
 
@@ -126,7 +135,7 @@
             <label class="col-md-12 mt-4" for="municipality">Municipality*</span>
             </label>
             <div class="col-md-12">
-                <input required type="text" id="municipality" name="municipality" class="form-control" placeholder="enter your municipality">
+                <input required type="text" id="municipality" name="municipality" class="form-control" placeholder="enter municipality">
             </div>
         </div>
 
@@ -134,7 +143,7 @@
             <label class="col-md-12 mt-4" for="neighborhood">Neighborhood*</span>
             </label>
             <div class="col-md-12">
-                <input required type="text" id="neighborhood" name="neighborhood" class="form-control" placeholder="enter your neighborhood">
+                <input required type="text" id="neighborhood" name="neighborhood" class="form-control" placeholder="enter neighborhood">
             </div>
         </div>
 
@@ -142,7 +151,7 @@
             <label class="col-md-12 mt-4" for="avenue">Avenue*</span>
             </label>
             <div class="col-md-12">
-                <input required type="text" id="avenue" name="avenue" class="form-control" placeholder="enter your avenue">
+                <input required type="text" id="avenue" name="avenue" class="form-control" placeholder="enter avenue">
             </div>
         </div>
 
@@ -150,7 +159,7 @@
             <label class="col-md-12 mt-4" for="house_number">House number*</span>
             </label>
             <div class="col-md-12">
-                <input required type="text" id="house_number" name="house_number" class="form-control" placeholder="enter your house_number">
+                <input required type="text" id="house_number" name="house_number" class="form-control" placeholder="enter house_number">
             </div>
         </div>
 
@@ -158,7 +167,7 @@
             <label class="col-md-12 mt-4" for="profession">Profession*</span>
             </label>
             <div class="col-md-12">
-                <input required type="text" id="profession" name="profession" class="form-control" placeholder="enter your profession">
+                <input required type="text" id="profession" name="profession" class="form-control" placeholder="enter profession">
             </div>
         </div>
 
@@ -166,7 +175,7 @@
             <label class="col-md-12 mt-4" for="phone">Phone*</span>
             </label>
             <div class="col-md-12">
-                <input required type="text" id="phone" name="phone_number" class="form-control" placeholder="enter your phone">
+                <input required type="text" id="phone" name="phone_number" class="form-control" placeholder="enter phone">
             </div>
         </div>
     </div>

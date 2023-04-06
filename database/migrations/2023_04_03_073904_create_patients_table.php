@@ -25,6 +25,7 @@ class CreatePatientsTable extends Migration
             $table->string('father_name');
             $table->string('mother_name');
             $table->string('relative');
+            $table->string('relative_contact');
             $table->string('nationality');
             $table->string('country');
             $table->string('province');
