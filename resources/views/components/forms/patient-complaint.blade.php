@@ -1,5 +1,12 @@
-<form id="complaint-form" class="form-material" style="font-size: 1.25rem;">
-    <div class="row">
+<form id="complaint-form" class="form-material patient-form" style="font-size: 1.25rem;">
+    <div class="row no-gutters">
+        <div class="form-group col-12 mt-4" id='patient-id-wrapper'>
+            <label class="col-sm-12">Patient ID</label>
+            <div class="col-md-12">
+                <input type="number" id="patient-id" name="patient_id" class="form-control" value='2' disabled>
+            </div>
+        </div>
+
         <div class="form-group col-md-6 align-self-end ">
             <label class="col-sm-12">Taken care?*</label>
 
@@ -50,7 +57,7 @@
             <label class="col-md-12 mt-4" for="pulse_rate">PR (Pulse Rate)</span> <!-- frequence cardiaque-->
             </label>
             <div class="col-md-12">
-                <input required type="text" id="pulse_rate" name="pulse_rate" class="form-control" placeholder="enter your heart pulse">
+                <input required type="number" id="pulse_rate" name="pulse_rate" class="form-control" placeholder="enter your heart pulse">
             </div>
         </div>
 
@@ -99,8 +106,8 @@
 
     </div>
 
-    <div class="row justify-content-center mt-5">
-        <button type="submit" class="btn btn-info px-5 rounded-md" id='submit-patient'><i class="fa fa-check"></i> Submit</button>
+    <div class="row justify-content-end mt-5">
+        <button type="submit" class="btn btn-info px-5 rounded-md" id='submit-patient'>Next <i class="fa fa-arrow-right"></i></button>
     </div>
 
 </form>

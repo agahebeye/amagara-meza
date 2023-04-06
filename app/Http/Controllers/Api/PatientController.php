@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Api;
 
-use App\Models\hospitals\Patient;
+use App\Models\Patient;
 use Spatie\RouteAttributes\Attributes\Prefix;
 use Spatie\RouteAttributes\Attributes\ApiResource;
 
@@ -28,6 +28,7 @@ class PatientController
 
     function store()
     {
+        return request()->all();
         Patient::create(request()->all());
 
         return response()->json([

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Models\hospitals;
+namespace App\Models;
 
 use App\Models\Complaint;
 use App\Models\Orientation;

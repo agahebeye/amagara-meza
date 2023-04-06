@@ -1,4 +1,4 @@
-<form id="identification-form" class="form-material" style="font-size: 1.25rem;">
+<form id="identification-form" class="form-material patient-form" style="font-size: 1.25rem;">
 
     <div class="row no-gutters">
         <div class="form-group col-md-6">
@@ -180,8 +180,8 @@
         </div>
     </div>
 
-    <div class="row justify-content-center mt-5">
-        <button type="submit" class="btn btn-info px-5 rounded-md" id='submit-patient'><i class="fa fa-check"></i> Submit</button>
+    <div class="row justify-content-end mt-5">
+        <button type="submit" class="btn btn-info px-5 rounded-md" id='submit-patient'>Next <i class="fa fa-arrow-right"></i> </button>
     </div>
 
 </form>

@@ -11,7 +11,7 @@
 
     <div class="row">
         <div class="col-sm-12">
-            <div class="white-box">
+            <div class="white-box rounded-md">
                 <div class="d-flex justify-content-between align-items-center">
                     <h3 class="m-b-0">Liste de patients enregistrés</h3>
                     <div class="row">
@@ -51,8 +51,10 @@
 
         <script>
             $(document).ready(function() {
+                $('#complaint-form #patient-id-wrapper').hide();
+                $('#orientation-form #patient-id-wrapper').hide();
 
-                var dataTable = $('#patientTable').DataTable({
+                const dataTable = $('#patientTable').DataTable({
                     serverSide: true,
                     ajax: "{{route('api.v1.patients.index')}}",
                     columns: [{
@@ -75,119 +77,69 @@
                     ]
                 });
 
-                var ifr = "#identification-form"
-                var cfr = "#complaint-form"
-                var ofr = "#orientation-form"
-
-                $(ifr).on("submit", function(e) {
+                $('#identification-form').on("submit", function(e) {
                     e.preventDefault();
 
 
-                    $.ajax({
-                        url: "{{route('api.v1.patients.store')}}",
-                        method: 'POST',
-                        data: new FormData(this),
-                        dataType: 'JSON',
-                        contentType: false,
-                        cache: false,
-                        processData: false,
-                        success: function(response) {
-                            $.toast({
-                                heading: 'Success',
-                                text: 'User was added with success',
-                                position: 'top-right',
-                                loaderBg: '#ff6849',
-                                icon: 'success',
-                                hideAfter: 2000,
-                                stack: 6
-                            });
-                        },
-                        error: function(response) {
-                            $.toast({
-                                heading: 'Error',
-                                text: 'We were unable to add new user',
-                                position: 'top-right',
-                                loaderBg: '#ff6849',
-                                icon: 'error',
-                                hideAfter: 2000,
-                                stack: 6
-                            });
-                        }
-                    });
+                    $('#complaint-tab').click();
+                    $('#complaint-form #patient-id-wrapper').show();
+
+
                 });
 
-                $(cfr).on("submit", function(e) {
+                $('#complaint-form').on("submit", function(e) {
                     e.preventDefault();
 
+                    $('#orientation-tab').click();
+                    $('#orientation-form #patient-id-wrapper').show();
 
-                    $.ajax({
-                        url: "{{route('api.v1.complaints.store')}}",
-                        method: 'POST',
-                        data: new FormData(this),
-                        dataType: 'JSON',
-                        contentType: false,
-                        cache: false,
-                        processData: false,
-                        success: function(response) {
-                            $.toast({
-                                heading: 'Success',
-                                text: 'User was added with success',
-                                position: 'top-right',
-                                loaderBg: '#ff6849',
-                                icon: 'success',
-                                hideAfter: 2000,
-                                stack: 6
-                            });
-                        },
-                        error: function(response) {
-                            $.toast({
-                                heading: 'Error',
-                                text: 'We were unable to add new user',
-                                position: 'top-right',
-                                loaderBg: '#ff6849',
-                                icon: 'error',
-                                hideAfter: 2000,
-                                stack: 6
-                            });
-                        }
-                    });
                 });
 
-                $(ofr).on("submit", function(e) {
+                $('#orientation-form').on("submit", function(e) {
                     e.preventDefault();
 
+                    $(".patient-form").each(function() {
 
-                    $.ajax({
-                        url: "{{route('api.v1.orientations.store')}}",
-                        method: 'POST',
-                        data: new FormData(this),
-                        dataType: 'JSON',
-                        contentType: false,
-                        cache: false,
-                        processData: false,
-                        success: function(response) {
-                            $.toast({
-                                heading: 'Success',
-                                text: 'Orientation was added with success',
-                                position: 'top-right',
-                                loaderBg: '#ff6849',
-                                icon: 'success',
-                                hideAfter: 2000,
-                                stack: 6
-                            });
-                        },
-                        error: function(response) {
-                            $.toast({
-                                heading: 'Error',
-                                text: 'We were unable to orientate this new patient',
-                                position: 'top-right',
-                                loaderBg: '#ff6849',
-                                icon: 'error',
-                                hideAfter: 2000,
-                                stack: 6
-                            });
-                        }
+                        let input = $(this).find(':input').map(e => e.name);
+                        console.log(input);
+
                     });
+                    // fetch("{{route('api.v1.orientations.store')}}", {
+                    //     method: 'POST',
+                    //     headers: {
+                    //         'Content-Type': 'Application/json'
+                    //     }
+                    // }).then(response => {
+                    //     let data = new Map();
+
+
+                    // $("#identification-form")[0].reset();
+                    // $("#complaint-form")[0].reset();
+                    // $("#orientation-form")[0].reset();
+
+                    // $('#new-patient-modal').modal('hide');
+
+                    // $.toast({
+                    //     heading: 'Success',
+                    //     text: 'Patient registered successfully.',
+                    //     position: 'top-right',
+                    //     loaderBg: '#ff6849',
+                    //     icon: 'success',
+                    //     hideAfter: 2000,
+                    //     stack: 6
+                    // });
+                    // }).catch(response => {
+                    //     $.toast({
+                    //         heading: 'Error',
+                    //         text: 'We were unable to orientate this new patient.',
+                    //         position: 'top-right',
+                    //         loaderBg: '#ff6849',
+                    //         icon: 'error',
+                    //         hideAfter: 2000,
+                    //         stack: 6
+                    //     });
+                    // })
+
                 });
             });
         </script>

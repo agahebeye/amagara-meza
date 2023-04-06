@@ -9,15 +9,15 @@
                 <div class="vtabs customvtab">
                     <ul class="nav tabs-vertical">
                         <li class="tab nav-item active">
-                            <a data-toggle="tab" class="nav-link" href="#identification" aria-expanded="true"> <span class="visible-xs"><i class="ti-home"></i></span> <span class="">Identification</span> </a>
+                            <a data-toggle="tab" id='identification-tab' class="nav-link" href="#identification" aria-expanded="true"> <span class="visible-xs"><i class="ti-home"></i></span> <span class="">Identification</span> </a>
                         </li>
 
                         <li class="tab nav-item">
-                            <a data-toggle="tab" class="nav-link" href="#complaint" aria-expanded="false"> <span class="visible-xs"><i class="ti-user"></i></span> <span class="">Complaint</span> </a>
+                            <a data-toggle="tab" id='complaint-tab' class="nav-link" href="#complaint" aria-expanded="false"> <span class="visible-xs"><i class="ti-user"></i></span> <span class="">Complaint</span> </a>
                         </li>
 
                         <li class="tab nav-item">
-                            <a data-toggle="tab" class="nav-link" href="#orientation" aria-expanded="false"> <span class="visible-xs"><i class="ti-user"></i></span> <span class="">Orientation</span> </a>
+                            <a data-toggle="tab" id='orientation-tab' class="nav-link" href="#orientation" aria-expanded="false"> <span class="visible-xs"><i class="ti-user"></i></span> <span class="">Orientation</span> </a>
                         </li>
                     </ul>
 

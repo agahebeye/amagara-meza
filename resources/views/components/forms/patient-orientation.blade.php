@@ -1,6 +1,12 @@
-<form id="orientation-form" class="form-material" style="font-size: 1.25rem;">
+<form id="orientation-form" class="form-material patient-form" style="font-size: 1.25rem;">
 
-    <div class="row no-gutters">
+    <div class="row no-gutters mt-4">
+        <div class="form-group col-12" id='patient-id-wrapper'>
+            <label class="col-sm-12">Patient ID</label>
+            <div class="col-md-12">
+                <input type="number" id="patient-id" name="patient_id" class="form-control" value='2' disabled>
+            </div>
+        </div>
 
         <div class="form-group col-md-6">
             <label class="col-md-12 mt-4" for="orientation_date">Orientation Date*</span>

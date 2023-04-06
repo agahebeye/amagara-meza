@@ -16,6 +16,7 @@ class OrientationController
 {
     function store()
     {
+        return request()->all();
         Orientation::create(request()->all());
 
         return response()->json([

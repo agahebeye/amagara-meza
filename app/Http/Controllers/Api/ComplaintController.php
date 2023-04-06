@@ -16,6 +16,7 @@ class ComplaintController
 {
     function store()
     {
+        return request()->all();
         Complaint::create(request()->all());
 
         return response()->json([
