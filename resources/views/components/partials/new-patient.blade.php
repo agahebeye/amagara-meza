@@ -11,18 +11,29 @@
                         <li class="tab nav-item active">
                             <a data-toggle="tab" class="nav-link" href="#identification" aria-expanded="true"> <span class="visible-xs"><i class="ti-home"></i></span> <span class="hidden-xs">Identification</span> </a>
                         </li>
+
                         <li class="tab nav-item">
                             <a data-toggle="tab" class="nav-link" href="#complaint" aria-expanded="false"> <span class="visible-xs"><i class="ti-user"></i></span> <span class="hidden-xs">Complaint</span> </a>
+                        </li>
+
+                        <li class="tab nav-item">
+                            <a data-toggle="tab" class="nav-link" href="#orientation" aria-expanded="false"> <span class="visible-xs"><i class="ti-user"></i></span> <span class="hidden-xs">Orientation</span> </a>
                         </li>
                     </ul>
 
                     <div class="tab-content">
+
                         <div id="identification" class="tab-pane active">
                             <x-forms.patient-identification />
                         </div>
 
                         <div id="complaint" class="tab-pane">
-                            <p>Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt.Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim.</p>
+                            <x-forms.patient-complaint />
+                        </div>
+
+
+                        <div id="orientation" class="tab-pane">
+                            <x-forms.patient-orientation />
                         </div>
 
                     </div>

@@ -45,8 +45,8 @@
             <label class="col-sm-12">Gender*</label>
             <div class="col-sm-12">
                 <select class="form-control" name='gender' required>
-                    <option>Select Gender</option>
-                    <option value="0" selected="selected">Male</option>
+                    <option value="" selected="selected">--Select Gender--</option>
+                    <option value="0">Male</option>
                     <option value="1">Female</option>
                 </select>
             </div>
@@ -56,8 +56,8 @@
             <label class="col-sm-12">Marital Status*</label>
             <div class="col-sm-12">
                 <select class="form-control" name="marital_status" required>
-                    <option disabled>--Select marital status--</option>
-                    <option value="Bachelor" selected="selected">Bachelor</option>
+                    <option value="" selected="selected" disabled>--Select marital status--</option>
+                    <option value="Bachelor">Bachelor</option>
                     <option value='Married'>Married</option>
                     <option value="Divorced">Divorced</option>
                     <option value="Widowed">Widowed</option>

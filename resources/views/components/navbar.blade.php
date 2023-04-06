@@ -3,14 +3,14 @@
         <div class="top-left-part"><a class="logo" href="index.html"><b><img src="/images/eliteadmin-logo.png" alt="home" /></b><span class="hidden-xs"><strong>elite</strong>hospital</span></a></div>
         <ul class="nav navbar-top-links navbar-left hidden-xs">
             <li><a href="javascript:void(0)" class="open-close hidden-xs waves-effect waves-light"><i class="icon-arrow-left-circle ti-menu"></i></a></li>
-            <li>
+            <!-- <li>
                 <form role="search" class="app-search hidden-xs">
                     <input type="text" placeholder="Search..." class="form-control"> <a href=""><i class="fa fa-search"></i></a>
                 </form>
-            </li>
+            </li> -->
         </ul>
         <ul class="nav navbar-top-links navbar-right pull-right">
-            <li class="dropdown"> <a class="dropdown-toggle waves-effect waves-light" data-toggle="dropdown" href="#"><i class="icon-envelope"></i>
+            <!-- <li class="dropdown"> <a class="dropdown-toggle waves-effect waves-light" data-toggle="dropdown" href="#"><i class="icon-envelope"></i>
                     <div class="notify"><span class="heartbit"></span><span class="point"></span></div>
                 </a>
                 <ul class="dropdown-menu mailbox animated bounceInDown">
@@ -49,10 +49,9 @@
                         <a class="text-center" href="javascript:void(0);"> <strong>See all notifications</strong> <i class="fa fa-angle-right"></i> </a>
                     </li>
                 </ul>
-                <!-- /.dropdown-messages -->
-            </li>
+            </li> -->
             <!-- /.dropdown -->
-            <li class="dropdown"> <a class="dropdown-toggle waves-effect waves-light" data-toggle="dropdown" href="#"><i class="icon-note"></i>
+            <!-- <li class="dropdown"> <a class="dropdown-toggle waves-effect waves-light" data-toggle="dropdown" href="#"><i class="icon-note"></i>
                     <div class="notify"><span class="heartbit"></span><span class="point"></span></div>
                 </a>
                 <ul class="dropdown-menu dropdown-tasks animated slideInUp">
@@ -104,21 +103,18 @@
                         <a class="text-center" href="#"> <strong>See All Tasks</strong> <i class="fa fa-angle-right"></i> </a>
                     </li>
                 </ul>
-                <!-- /.dropdown-tasks -->
-            </li>
+            </li> -->
             <!-- /.dropdown -->
             <li class="dropdown">
                 <a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#"> <img src="/images/users/d1.jpg" alt="user-img" width="36" class="img-circle"><b class="hidden-xs">Dr. Steave</b> </a>
-                <ul class="dropdown-menu dropdown-user animated flipInY">
+                <ul class="dropdown-menu dropdown-user">
                     <li><a href="javascript:void(0)"><i class="ti-user"></i> My Profile</a></li>
                     <li><a href="javascript:void(0)"><i class="ti-email"></i> Inbox</a></li>
                     <li><a href="javascript:void(0)"><i class="ti-settings"></i> Account Setting</a></li>
                     <li><a href="login.html"><i class="fa fa-power-off"></i> Logout</a></li>
                 </ul>
-                <!-- /.dropdown-user -->
             </li>
-            <li class="right-side-toggle"> <a class="waves-effect waves-light" href="javascript:void(0)"><i class="ti-settings"></i></a></li>
-            <!-- /.dropdown -->
+            <!-- <li class="right-side-toggle"> <a class="waves-effect waves-light" href="javascript:void(0)"><i class="ti-settings"></i></a></li> -->
         </ul>
     </div>
 </nav>

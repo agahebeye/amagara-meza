@@ -18,7 +18,7 @@
                         <div class="col-sm-12">
                             <a data-toggle="modal" data-target=".bs-example-modal-lg" class="btn btn-info rounded-md">Add new patient</a>
 
-                            <x-partials.add-patient />
+                            <x-partials.new-patient />
 
                         </div>
                     </div>
