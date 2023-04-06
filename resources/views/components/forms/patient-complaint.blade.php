@@ -1,4 +1,4 @@
-<form id="add-patient-form" class="form-material" style="font-size: 1.25rem;">
+<form id="complaint-form" class="form-material" style="font-size: 1.25rem;">
     <div class="row">
         <div class="form-group col-md-6 align-self-end ">
             <label class="col-sm-12">Taken care?*</label>

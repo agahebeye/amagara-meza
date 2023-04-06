@@ -1,4 +1,4 @@
-<form id="add-patient-form" class="form-material" style="font-size: 1.25rem;">
+<form id="orientation-form" class="form-material" style="font-size: 1.25rem;">
 
     <div class="row no-gutters">
 

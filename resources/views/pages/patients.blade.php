@@ -16,7 +16,7 @@
                     <h3 class="m-b-0">Liste de patients enregistrés</h3>
                     <div class="row">
                         <div class="col-sm-12">
-                            <a data-toggle="modal" data-target=".bs-example-modal-lg" class="btn btn-info rounded-md">Add new patient</a>
+                            <a data-toggle="modal" data-target="#new-patient-modal" class="btn btn-info rounded-md">Add new patient</a>
 
                             <x-partials.new-patient />
 
@@ -53,7 +53,6 @@
             $(document).ready(function() {
 
                 var dataTable = $('#patientTable').DataTable({
-
                     serverSide: true,
                     ajax: "{{route('api.v1.patients.index')}}",
                     columns: [{
@@ -76,9 +75,11 @@
                     ]
                 });
 
-                var form = "#add-patient-form"
+                var ifr = "#identification-form"
+                var cfr = "#complaint-form"
+                var ofr = "#orientation-form"
 
-                $(form).on("submit", function(e) {
+                $(ifr).on("submit", function(e) {
                     e.preventDefault();
 
 
@@ -100,10 +101,6 @@
                                 hideAfter: 2000,
                                 stack: 6
                             });
-
-                            $(form)[0].reset();
-
-                            dataTable.ajax.reload();
                         },
                         error: function(response) {
                             $.toast({
@@ -117,8 +114,80 @@
                             });
                         }
                     });
+                });
 
-                    $.magnificPopup.instance.close();
+                $(cfr).on("submit", function(e) {
+                    e.preventDefault();
+
+
+                    $.ajax({
+                        url: "{{route('api.v1.complaints.store')}}",
+                        method: 'POST',
+                        data: new FormData(this),
+                        dataType: 'JSON',
+                        contentType: false,
+                        cache: false,
+                        processData: false,
+                        success: function(response) {
+                            $.toast({
+                                heading: 'Success',
+                                text: 'User was added with success',
+                                position: 'top-right',
+                                loaderBg: '#ff6849',
+                                icon: 'success',
+                                hideAfter: 2000,
+                                stack: 6
+                            });
+                        },
+                        error: function(response) {
+                            $.toast({
+                                heading: 'Error',
+                                text: 'We were unable to add new user',
+                                position: 'top-right',
+                                loaderBg: '#ff6849',
+                                icon: 'error',
+                                hideAfter: 2000,
+                                stack: 6
+                            });
+                        }
+                    });
+                });
+
+                $(ofr).on("submit", function(e) {
+                    e.preventDefault();
+
+
+                    $.ajax({
+                        url: "{{route('api.v1.orientations.store')}}",
+                        method: 'POST',
+                        data: new FormData(this),
+                        dataType: 'JSON',
+                        contentType: false,
+                        cache: false,
+                        processData: false,
+                        success: function(response) {
+                            $.toast({
+                                heading: 'Success',
+                                text: 'Orientation was added with success',
+                                position: 'top-right',
+                                loaderBg: '#ff6849',
+                                icon: 'success',
+                                hideAfter: 2000,
+                                stack: 6
+                            });
+                        },
+                        error: function(response) {
+                            $.toast({
+                                heading: 'Error',
+                                text: 'We were unable to orientate this new patient',
+                                position: 'top-right',
+                                loaderBg: '#ff6849',
+                                icon: 'error',
+                                hideAfter: 2000,
+                                stack: 6
+                            });
+                        }
+                    });
                 });
             });
         </script>
