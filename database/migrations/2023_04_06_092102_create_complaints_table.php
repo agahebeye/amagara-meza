@@ -26,6 +26,8 @@ class CreateComplaintsTable extends Migration
             $table->tinyText('complaint');
             $table->string('precision');
             $table->timestamps();
+
+            $table->foreignId('patient_id')->constrained()->cascadeOnDelete();
         });
     }
 

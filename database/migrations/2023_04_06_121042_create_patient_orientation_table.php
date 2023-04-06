@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateOrientationsTable extends Migration
+class CreatePatientOrientationTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,17 +13,12 @@ class CreateOrientationsTable extends Migration
      */
     public function up()
     {
-        Schema::create('orientations', function (Blueprint $table) {
+        Schema::create('patient_orientation', function (Blueprint $table) {
             $table->id();
-            $table->date('orientation_date');
-            $table->string('Department');
-            $table->string('precision');
-
+            $table->timestamps();
 
             $table->foreignId('patient_id');
-            $table->foreignId('complaint_id');
-
-            $table->timestamps();
+            $table->foreignId('orientation_id');
         });
     }
 
@@ -34,6 +29,6 @@ class CreateOrientationsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('orientations');
+        Schema::dropIfExists('patient_orientation');
     }
 }
