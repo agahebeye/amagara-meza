@@ -15,13 +15,9 @@ class CreateOrientationsTable extends Migration
     {
         Schema::create('orientations', function (Blueprint $table) {
             $table->id();
-            $table->date('orientation_date');
+            $table->date('orientation_date')->nullable();
             $table->string('Department');
             $table->string('precision');
-
-
-            $table->foreignId('patient_id');
-            $table->foreignId('complaint_id');
 
             $table->timestamps();
         });

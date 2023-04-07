@@ -13,16 +13,18 @@
         <div class="col-sm-12">
             <div class="white-box rounded-md">
                 <div class="d-flex justify-content-between align-items-center">
-                    <h3 class="m-b-0">Liste de patients enregistrés</h3>
+                    <h3 class="m-b-0">Registered patients</h3>
                     <div class="row">
                         <div class="col-sm-12">
                             <a data-toggle="modal" data-target="#new-patient-modal" class="btn btn-info rounded-md">Add new patient</a>
 
-                            <x-partials.new-patient />
+                            <x-modals.new-patient />
 
                         </div>
                     </div>
                 </div>
+
+                <x-modals.show-patient />
 
                 <div class="table-responsive mt-5">
                     <table id="patientTable" class="table table-striped">
@@ -40,6 +42,8 @@
                         </tbody>
                     </table>
                 </div>
+
+
             </div>
         </div>
     </div>
@@ -51,10 +55,9 @@
 
         <script>
             $(document).ready(function() {
-                $('#complaint-form #patient-id-wrapper').hide();
-                $('#orientation-form #patient-id-wrapper').hide();
+                var patientDetails;
 
-                const dataTable = $('#patientTable').DataTable({
+                var table = $('#patientTable').DataTable({
                     serverSide: true,
                     ajax: "{{route('api.v1.patients.index')}}",
                     columns: [{
@@ -77,70 +80,32 @@
                     ]
                 });
 
-                $('#identification-form').on("submit", function(e) {
+                table.on('click', 'td .view-button', function(e) {
                     e.preventDefault();
+                    var tr = $(this).closest('tr');
+                    patientDetails = table.row(tr).data()
+
+                    // $(this).click();
+                })
+
+                $('#identification-form').on('submit', function(event) {
+                    event.preventDefault()
 
 
-                    $('#complaint-tab').click();
-                    $('#complaint-form #patient-id-wrapper').show();
+                    fetch("{{route('api.v1.patients.store')}}", {
+                            method: 'POST',
+                            body: new FormData(this),
+                        })
+                        .then(_ => {
+                            console.log('Success');
+                            table.ajax.reload();
+                            $(this).trigger('reset');
 
+                            $('#new-patient-modal').modal('hide');
+                        })
+                        .catch(reason => console.log(reason));
 
-                });
-
-                $('#complaint-form').on("submit", function(e) {
-                    e.preventDefault();
-
-                    $('#orientation-tab').click();
-                    $('#orientation-form #patient-id-wrapper').show();
-
-                });
-
-                $('#orientation-form').on("submit", function(e) {
-                    e.preventDefault();
-
-                    $(".patient-form").each(function() {
-
-                        let input = $(this).find(':input').map(e => e.name);
-                        console.log(input);
-
-                    });
-                    // fetch("{{route('api.v1.orientations.store')}}", {
-                    //     method: 'POST',
-                    //     headers: {
-                    //         'Content-Type': 'Application/json'
-                    //     }
-                    // }).then(response => {
-                    //     let data = new Map();
-
-
-                    // $("#identification-form")[0].reset();
-                    // $("#complaint-form")[0].reset();
-                    // $("#orientation-form")[0].reset();
-
-                    // $('#new-patient-modal').modal('hide');
-
-                    // $.toast({
-                    //     heading: 'Success',
-                    //     text: 'Patient registered successfully.',
-                    //     position: 'top-right',
-                    //     loaderBg: '#ff6849',
-                    //     icon: 'success',
-                    //     hideAfter: 2000,
-                    //     stack: 6
-                    // });
-                    // }).catch(response => {
-                    //     $.toast({
-                    //         heading: 'Error',
-                    //         text: 'We were unable to orientate this new patient.',
-                    //         position: 'top-right',
-                    //         loaderBg: '#ff6849',
-                    //         icon: 'error',
-                    //         hideAfter: 2000,
-                    //         stack: 6
-                    //     });
-                    // })
-
-                });
+                })
             });
         </script>
     </x-slot>

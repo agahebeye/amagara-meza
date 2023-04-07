@@ -36,6 +36,7 @@ class CreatePatientsTable extends Migration
             $table->integer('house_number');
             $table->string('profession');
             $table->string('phone_number');
+
             $table->timestamps();
         });
     }

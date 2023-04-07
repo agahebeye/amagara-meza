@@ -15,12 +15,11 @@ class PatientController
 {
     function index()
     {
-        $patients = Patient::query()->latest('id')->select('id', 'first_name', 'last_name');
+        $patients = Patient::query()->latest('id')->get();
 
         return datatables($patients)
             ->addColumn('view', function ($row) {
-                $btn = '<a href="javascript:void(0)" class="view-button"><i class="icon-eye"></i></a>';
-                return $btn;
+                return '<a  data-toggle="modal" data-target="#show-patient-modal" class="view-button"><i class="icon-eye"></i></a>';
             })
             ->rawColumns(['view'])
             ->toJson();
@@ -28,11 +27,12 @@ class PatientController
 
     function store()
     {
-        return request()->all();
-        Patient::create(request()->all());
+
+        $newPatient = tap(Patient::create(request()->all()));
 
         return response()->json([
-            'data' => 'success'
-        ]);
+            'data' => $newPatient,
+            'message' => 'success'
+        ], 201);
     }
 }

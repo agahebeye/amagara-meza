@@ -1,4 +1,4 @@
-<form id="identification-form" class="form-material patient-form" style="font-size: 1.25rem;">
+<form id="identification-form" class="form-material px-5" style="font-size: 1.25rem;">
 
     <div class="row no-gutters">
         <div class="form-group col-md-6">
@@ -94,7 +94,7 @@
             <label class="col-md-12 mt-4" for="relative_contact">Relative's contact*</span>
             </label>
             <div class="col-md-12">
-                <input required type="number" id="relative_contact" name="relative_contact" class="form-control" placeholder="enter firstname">
+                <input required type="text" id="relative_contact" name="relative_contact" class="form-control" placeholder="enter firstname">
             </div>
         </div>
 
@@ -180,8 +180,8 @@
         </div>
     </div>
 
-    <div class="row justify-content-end mt-5">
-        <button type="submit" class="btn btn-info px-5 rounded-md" id='submit-patient'>Next <i class="fa fa-arrow-right"></i> </button>
+    <div class="row justify-content-center mt-5">
+        <button type="submit" class="btn btn-info px-5 rounded-md" id='submit-patient'> <i class="fa fa-check"></i> Submit</button>
     </div>
 
 </form>
