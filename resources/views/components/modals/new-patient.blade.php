@@ -103,7 +103,7 @@
                             <label class="col-md-12 mt-4" for="relative_contact">Relative's contact*</span>
                             </label>
                             <div class="col-md-12">
-                                <input required type="text" id="relative_contact" name="relative_contact" class="form-control" placeholder="enter firstname">
+                                <input required type="tel" id="relative_contact" name="relative_contact" class="form-control" placeholder="enter firstname">
                             </div>
                         </div>
 
@@ -184,7 +184,7 @@
                             <label class="col-md-12 mt-4" for="phone">Phone*</span>
                             </label>
                             <div class="col-md-12">
-                                <input required type="text" id="phone" name="phone_number" class="form-control" placeholder="enter phone">
+                                <input required type="tel" id="phone" name="phone_number" class="form-control" placeholder="(+257)">
                             </div>
                         </div>
                     </div>

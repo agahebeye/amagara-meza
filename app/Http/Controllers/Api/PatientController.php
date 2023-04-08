@@ -3,10 +3,10 @@
 namespace App\Http\Controllers\Api;
 
 use App\Models\Patient;
-use Spatie\RouteAttributes\Attributes\Prefix;
 use Spatie\RouteAttributes\Attributes\ApiResource;
+use Spatie\RouteAttributes\Attributes\Prefix;
 
-#[Prefix('api/v1')]
+#[Prefix('v1')]
 #[ApiResource(
     resource: 'patients',
     names: 'api.v1.patients'

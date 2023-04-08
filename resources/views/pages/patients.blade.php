@@ -76,13 +76,10 @@
 
                     ],
                     columnDefs: [{
-                            "targets": [-1, 0]
-                        },
-                        {
-                            orderable: false,
-                            targets: [-1]
-                        }
-                    ],
+                        orderable: false,
+                        searchable: false,
+                        targets: [-1]
+                    }],
                 });
 
                 $('#show-patient-modal').on('show.bs.modal', function(event) {
