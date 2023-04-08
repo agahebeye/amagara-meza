@@ -15,14 +15,9 @@ class PatientController
 {
     function index()
     {
-        $patients = Patient::query()->latest('id')->get();
+        $patients = Patient::query();
 
-        return datatables($patients)
-            ->addColumn('view', function ($row) {
-                return '<a  data-toggle="modal" data-target="#show-patient-modal" class="view-button"><i class="icon-eye"></i></a>';
-            })
-            ->rawColumns(['view'])
-            ->toJson();
+        return datatables($patients)->toJson();
     }
 
     function store()

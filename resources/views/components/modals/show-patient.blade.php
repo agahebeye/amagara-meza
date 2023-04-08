@@ -1,199 +1,134 @@
-<div class="modal fade" id="show-patient-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" style="display: none;">
+<div class="modal fade" id="show-patient-modal" tabindex="-1" role="dialog" aria-pledby="myLargeModalp" aria-hidden="true" style="display: none;">
     <div class="modal-dialog modal-lg modal-dialog-centered">
         <div class="modal-content rounded-md">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                <h2 class="modal-title text-center" id="myModalLabel">Add new patient</h2>
+                <h2 class="modal-title text-center" id="myModalp">Patient Details</h2>
             </div>
 
             <div class="modal-body">
-                <form id="identification-form" class="form-material px-5" style="font-size: 1.25rem;">
+                <div id="show-patient" class="px-5" style="font-size: 1.25rem;">
 
                     <div class="row no-gutters">
-                        <div class="form-group col-md-6">
-                            <label class="col-md-12 mt-4" for="lastname">Lastname*</span>
-                            </label>
-                            <div class="col-md-12">
-                                <input required type="text" id="lastname" name="last_name" class="form-control" placeholder="enter lastname">
-                            </div>
+                        <div class="col-md-6">
+                            <p class="mt-4 font-weight-bold">Lastname</p>
+                            <p id="last_name"></p>
                         </div>
 
-                        <div class="form-group col-md-6">
-                            <label class="col-md-12 mt-4" for="postname">Postname*</span>
-                            </label>
-                            <div class="col-md-12">
-                                <input required type="text" id="postname" name="post_name" class="form-control" placeholder="enter postname">
-                            </div>
+                        <div class="col-md-6">
+                            <p class="mt-4 font-weight-bold">Postname</p>
+                            <p id="post_name"></p>
                         </div>
 
-                        <div class="form-group col-md-6">
-                            <label class="col-md-12 mt-4" for="firstname">Firstname*</span>
-                            </label>
-                            <div class="col-md-12">
-                                <input required type="text" id="firstname" name="first_name" class="form-control" placeholder="enter firstname">
-                            </div>
+                        <div class="col-md-6">
+                            <p class="mt-4 font-weight-bold">Firstname</p>
+                            <p id="first_name"></p>
                         </div>
 
-                        <div class="form-group col-md-6">
-                            <label class="col-md-12 mt-4" for="birthplace">Place of Birth*</span>
-                            </label>
-                            <div class="col-md-12">
-                                <input required type="text" id="birthplace" name="birth_place" class="form-control" placeholder="enter place of birth">
-                            </div>
+                        <div class="col-md-6">
+                            <p class="mt-4 font-weight-bold">Place of Birth</p>
+                            <p id="birth_place"></p>
                         </div>
 
-                        <div class="form-group col-md-6">
-                            <label class="col-md-12 mt-4" for="bdate">Date of Birth*</span>
-                            </label>
-                            <div class="col-md-12">
-                                <input required type="date" id="bdate" name="birth_date" class="form-control mydatepicker" placeholder="enter birth date">
-                            </div>
+                        <div class="col-md-6">
+                            <p class="mt-4 font-weight-bold">Date of Birth</p>
+                            <p id="birth_date"></p>
                         </div>
 
-                        <div class="form-group col-md-6 align-self-end ">
-                            <label class="col-sm-12">Gender*</label>
-                            <div class="col-sm-12">
-                                <select class="form-control" name='gender' required>
-                                    <option value="" selected="selected">--Select Gender--</option>
-                                    <option value="0">Male</option>
-                                    <option value="1">Female</option>
-                                </select>
-                            </div>
+                        <div class="col-md-6">
+                            <p class="mt-4 font-weight-bold">Gender</p>
+                            <p id="gender"></p>
                         </div>
 
-                        <div class="form-group col-md-6 align-self-end ">
-                            <label class="col-sm-12">Marital Status*</label>
-                            <div class="col-sm-12">
-                                <select class="form-control" name="marital_status" required>
-                                    <option value="" selected="selected" disabled>--Select marital status--</option>
-                                    <option value="Bachelor">Bachelor</option>
-                                    <option value='Married'>Married</option>
-                                    <option value="Divorced">Divorced</option>
-                                    <option value="Widowed">Widowed</option>
-                                </select>
-                            </div>
+                        <div class="col-md-6">
+                            <p class="mt-4 font-weight-bold">Marital Status</p>
+                            <p id="marital_status"></p>
                         </div>
 
-                        <div class="form-group col-md-6">
-                            <label class="col-md-12 mt-4" for="father_name">Father's name*</span>
-                            </label>
-                            <div class="col-md-12">
-                                <input required type="text" id="father_name" name="father_name" class="form-control" placeholder="enter father's name">
-                            </div>
+                        <div class="col-md-6">
+                            <p class="mt-4 font-weight-bold">Father's name</p>
+                            <p id="father_name"></p>
                         </div>
 
-                        <div class="form-group col-md-6">
-                            <label class="col-md-12 mt-4" for="mother_name">Mother's name*</span>
-                            </label>
-                            <div class="col-md-12">
-                                <input required type="text" id="mother_name" name="mother_name" class="form-control" placeholder="enter mother's name">
-                            </div>
+                        <div class="col-md-6">
+                            <p class="mt-4 font-weight-bold">Mother's name</p>
+                            <p id="mother_name"></p>
                         </div>
 
-                        <div class="form-group col-md-6">
-                            <label class="col-md-12 mt-4" for="relative">Relative*</span>
-                            </label>
-                            <div class="col-md-12">
-                                <input required type="text" id="relative" name="relative" class="form-control" placeholder="enter firstname">
-                            </div>
+                        <div class="col-md-6">
+                            <p class="mt-4 font-weight-bold">Relative</p>
+                            <p id="relative"></p>
                         </div>
 
 
-                        <div class="form-group col-md-6">
-                            <label class="col-md-12 mt-4" for="relative_contact">Relative's contact*</span>
-                            </label>
-                            <div class="col-md-12">
-                                <input required type="text" id="relative_contact" name="relative_contact" class="form-control" placeholder="enter firstname">
-                            </div>
+                        <div class="col-md-6">
+                            <p class="mt-4 font-weight-bold">Relative's contact
+                            </p>
+                            <p id="relative_contact">
+                            </p>
                         </div>
 
-                        <div class="form-group col-md-6">
-                            <label class="col-md-12 mt-4" for="nationality">Nationality*</span>
-                            </label>
-                            <div class="col-md-12">
-                                <input required type="text" id="nationality" name="nationality" class="form-control" placeholder="enter nationality">
-                            </div>
+                        <div class="col-md-6">
+                            <p class="mt-4 font-weight-bold">Nationality</p>
+                            <p id="nationality"></p>
                         </div>
 
-                        <div class="form-group col-md-6">
-                            <label class="col-md-12 mt-4" for="country">Country*</span>
-                            </label>
-                            <div class="col-md-12">
-                                <input required type="text" id="country" name="country" class="form-control" placeholder="enter country">
-                            </div>
+                        <div class="col-md-6">
+                            <p class="mt-4 font-weight-bold">Country</p>
+                            <p id="country"></p>
                         </div>
 
-                        <div class="form-group col-md-6">
-                            <label class="col-md-12 mt-4" for="province">Province*</span>
-                            </label>
-                            <div class="col-md-12">
-                                <input required type="text" id="province" name="province" class="form-control" placeholder="enter province">
-                            </div>
+                        <div class="col-md-6">
+                            <p class="mt-4 font-weight-bold" for="province">Province</p>
+                            <p id="province"></p>
                         </div>
 
-                        <div class="form-group col-md-6">
-                            <label class="col-md-12 mt-4" for="town">Town*</span>
-                            </label>
-                            <div class="col-md-12">
-                                <input required type="text" id="town" name="town" class="form-control" placeholder="enter town">
-                            </div>
+                        <div class="col-md-6">
+                            <p class="mt-4 font-weight-bold">Town</p>
+                            <p id="town"></p>
                         </div>
 
 
-                        <div class="form-group col-md-6">
-                            <label class="col-md-12 mt-4" for="municipality">Municipality*</span>
-                            </label>
-                            <div class="col-md-12">
-                                <input required type="text" id="municipality" name="municipality" class="form-control" placeholder="enter municipality">
-                            </div>
+                        <div class="col-md-6">
+                            <p class="mt-4 font-weight-bold">Municipality</p>
+                            <p id=" municipality"></p>
                         </div>
 
-                        <div class="form-group col-md-6">
-                            <label class="col-md-12 mt-4" for="neighborhood">Neighborhood*</span>
-                            </label>
-                            <div class="col-md-12">
-                                <input required type="text" id="neighborhood" name="neighborhood" class="form-control" placeholder="enter neighborhood">
-                            </div>
+                        <div class="col-md-6">
+                            <p class="mt-4 font-weight-bold">Neighborhood
+                            </p>
+                            <p id="neighborhood"></p>
                         </div>
 
-                        <div class="form-group col-md-6">
-                            <label class="col-md-12 mt-4" for="avenue">Avenue*</span>
-                            </label>
-                            <div class="col-md-12">
-                                <input required type="text" id="avenue" name="avenue" class="form-control" placeholder="enter avenue">
-                            </div>
+                        <div class="col-md-6">
+                            <p class="mt-4 font-weight-bold">Avenue
+                            </p>
+                            <p id="avenue"></p>
                         </div>
 
-                        <div class="form-group col-md-6">
-                            <label class="col-md-12 mt-4" for="house_number">House number*</span>
-                            </label>
-                            <div class="col-md-12">
-                                <input required type="text" id="house_number" name="house_number" class="form-control" placeholder="enter house_number">
-                            </div>
+                        <div class="col-md-6">
+                            <p class="mt-4 font-weight-bold" for="house_number">House number
+                            </p>
+                            <p id="house_number">
+                            </p>
                         </div>
 
-                        <div class="form-group col-md-6">
-                            <label class="col-md-12 mt-4" for="profession">Profession*</span>
-                            </label>
-                            <div class="col-md-12">
-                                <input required type="text" id="profession" name="profession" class="form-control" placeholder="enter profession">
-                            </div>
+                        <div class="col-md-6">
+                            <p class="mt-4 font-weight-bold">Profession
+                            </p>
+                            <p id="profession">
+                            </p>
                         </div>
 
-                        <div class="form-group col-md-6">
-                            <label class="col-md-12 mt-4" for="phone">Phone*</span>
-                            </label>
-                            <div class="col-md-12">
-                                <input required type="text" id="phone" name="phone_number" class="form-control" placeholder="enter phone">
-                            </div>
+                        <div class="col-md-6">
+                            <p class="mt-4 font-weight-bold" for="phone">Phone
+                            </p>
+                            <p id="phone_number">
+                            </p>
                         </div>
                     </div>
 
-                    <div class="row justify-content-center mt-5">
-                        <button type="submit" class="btn btn-info px-5 rounded-md" id='submit-patient'> <i class="fa fa-check"></i> Submit</button>
-                    </div>
-
-                </form>
+                </div>
             </div>
         </div>
     </div>

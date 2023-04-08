@@ -33,7 +33,7 @@
                                 <th>No</th>
                                 <th>FirstName</th>
                                 <th>LastName</th>
-                                <th width="100px">Action</th>
+                                <th>Actions</th>
                             </tr>
                         </thead>
 
@@ -55,38 +55,44 @@
 
         <script>
             $(document).ready(function() {
-                var patientDetails;
-
-                var table = $('#patientTable').DataTable({
+                const table = $('#patientTable').DataTable({
                     serverSide: true,
                     ajax: "{{route('api.v1.patients.index')}}",
                     columns: [{
-                            data: 'id',
-                            name: 'id'
+                            data: 'id'
                         },
                         {
-                            data: 'first_name',
-                            name: 'first_name'
+                            data: 'first_name'
+                        },
+                        {
+                            data: 'last_name'
                         }, {
-                            data: 'last_name',
-                            name: 'last_name'
+                            data: 'actions',
+                            render: function(data, type, row, meta) {
+                                const value = encodeURIComponent(JSON.stringify(row))
+                                return `<a title="Show Details" role="button" data-id="${row.id}" data-value="${value}" data-toggle="modal" data-target="#show-patient-modal" class="view-button"><i class="icon-eye"></i></a>`;
+                            }
+                        }
+
+                    ],
+                    columnDefs: [{
+                            "targets": [-1, 0]
                         },
                         {
-                            data: 'view',
-                            name: 'view',
                             orderable: false,
-                            searchable: false
-                        },
-                    ]
+                            targets: [-1]
+                        }
+                    ],
                 });
 
-                table.on('click', 'td .view-button', function(e) {
-                    e.preventDefault();
-                    var tr = $(this).closest('tr');
-                    patientDetails = table.row(tr).data()
-
-                    // $(this).click();
+                $('#show-patient-modal').on('show.bs.modal', function(event) {
+                    const button = $(event.relatedTarget);
+                    const value = JSON.parse(decodeURIComponent(button.data('value')))
+                    $.map(value, function(v, i) {
+                        $(`#show-patient #${i}`).text(v)
+                    })
                 })
+
 
                 $('#identification-form').on('submit', function(event) {
                     event.preventDefault()

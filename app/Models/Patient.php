@@ -11,6 +11,15 @@ class Patient extends \Illuminate\Database\Eloquent\Model
     use HasFactory;
 
     protected $guarded = [];
+    protected $hidden = ['updated_at', 'created_at'];
+    protected $casts = [
+        'gender' => 'boolean',
+    ];
+
+    public function getGenderAttribute($value)
+    {
+        return $value ? 'F' : 'M';
+    }
 
     public function complaints(): \Illuminate\Database\Eloquent\Relations\HasMany
     {
