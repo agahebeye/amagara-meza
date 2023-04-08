@@ -20,14 +20,4 @@ class Patient extends \Illuminate\Database\Eloquent\Model
     {
         return $value ? 'F' : 'M';
     }
-
-    public function complaints(): \Illuminate\Database\Eloquent\Relations\HasMany
-    {
-        return $this->hasMany(Complaint::class);
-    }
-
-    public function orientations(): \Illuminate\Database\Eloquent\Relations\BelongsToMany
-    {
-        return $this->belongsToMany(Orientation::class, 'patient_orientation');
-    }
 }

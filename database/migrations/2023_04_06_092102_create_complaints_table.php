@@ -22,12 +22,12 @@ class CreateComplaintsTable extends Migration
             $table->decimal('temperature');
             $table->decimal('pulse_rate');
             $table->decimal('respiratory_rate');
-            // $table->date('date')->useCurrent();
+            $table->date('date')->nullable();
             $table->tinyText('complaint');
             $table->string('precision');
             $table->timestamps();
 
-            $table->foreignId('patient_id')->constrained()->cascadeOnDelete();
+            $table->foreignId('orientation_id')->constrained()->cascadeOnDelete();
         });
     }
 
