@@ -24,4 +24,9 @@ class Patient extends \Illuminate\Database\Eloquent\Model
     {
         return $this->hasMany(Invoice::class);
     }
+
+    public function indebted()
+    {
+        return $this->invoices()->pending();
+    }
 }

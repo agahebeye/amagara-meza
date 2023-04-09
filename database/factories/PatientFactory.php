@@ -1,6 +1,6 @@
 <?php
 
-namespace Database\Factories\hospitals;
+namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Foundation\Testing\WithFaker;
@@ -26,6 +26,7 @@ class PatientFactory extends Factory
             'father_name' => $this->faker->firstNameMale(),
             'mother_name' => $this->faker->firstNameFemale(),
             'relative' => $this->faker->name(),
+            'relative_contact' => $this->faker->phoneNumber(),
             'nationality' => $this->faker->word(),
             'country' => $this->faker->country(),
             'province' => $this->faker->word(),

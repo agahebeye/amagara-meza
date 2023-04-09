@@ -2,7 +2,7 @@
 
 namespace Database\Seeders;
 
-use App\Models\hospitals\Patient;
+use App\Models\Patient;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -14,7 +14,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        Patient::factory()->count(30)->create();
+        Patient::factory()->count(5)->create();
         // \App\Models\User::factory(10)->create();
     }
 }
