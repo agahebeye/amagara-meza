@@ -2,8 +2,7 @@
 
 namespace App\Models;
 
-use App\Models\Complaint;
-use App\Models\Orientation;
+use App\Models\Invoice;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Patient extends \Illuminate\Database\Eloquent\Model
@@ -19,5 +18,10 @@ class Patient extends \Illuminate\Database\Eloquent\Model
     public function getGenderAttribute($value)
     {
         return $value ? 'F' : 'M';
+    }
+
+    public function invoices()
+    {
+        return $this->hasMany(Invoice::class);
     }
 }

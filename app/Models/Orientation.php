@@ -2,9 +2,10 @@
 
 namespace App\Models;
 
-use App\Models\hospitals\Patient;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\Invoice;
+use App\Models\Complaint;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Orientation extends Model
 {
@@ -12,8 +13,13 @@ class Orientation extends Model
 
     protected $guarded = [];
 
-    public function patients(): \Illuminate\Database\Eloquent\Relations\BelongsToMany
+    public function complaints()
     {
-        return $this->belongsToMany(Patient::class, 'patient_orientation');
+        return $this->hasMany(Complaint::class);
+    }
+
+    public function invoice()
+    {
+        return $this->morphOne(Invoice::class, 'priceable');
     }
 }

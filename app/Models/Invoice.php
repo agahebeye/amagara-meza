@@ -5,7 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class invoice extends Model
+class Invoice extends Model
 {
     use HasFactory;
+    public $timestamps = false;
+
+    public function priceable()
+    {
+        return $this->morphTo();
+    }
 }
