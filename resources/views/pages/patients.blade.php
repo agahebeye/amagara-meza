@@ -70,7 +70,11 @@
                             data: 'actions',
                             render: function(data, type, row, meta) {
                                 const value = encodeURIComponent(JSON.stringify(row))
-                                return `<a title="Show Details" role="button" data-id="${row.id}" data-value="${value}" data-toggle="modal" data-target="#show-patient-modal" class="view-button"><i class="icon-eye"></i></a>`;
+                                return `
+                                <a title="Show Details" role="button" data-id="${row.id}" data-value="${value}" data-toggle="modal" data-target="#show-patient-modal" class="view-button"><i class="icon-eye"></i></a>
+                                <a title="Edit Patient" role="button" data-id="${row.id}" data-value="${value}" data-toggle="modal" data-target="#show-patient-modal" class="edit-button mx-3"><i class="icon-pencil"></i></a>
+                                <a title="Delete Patient" role="button" data-id="${row.id}" data-value="${value}" data-toggle="modal" data-target="#show-patient-modal" class="delete-button"><i class="icon-trash"></i></a>
+                                `;
                             }
                         }
 

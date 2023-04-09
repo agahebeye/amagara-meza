@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 
 use App\Models\Patient;
 use App\Models\Orientation;
+use Barryvdh\Debugbar\Facades\Debugbar;
 use Illuminate\Database\Eloquent\Builder;
 use Spatie\RouteAttributes\Attributes\Prefix;
 use Spatie\RouteAttributes\Attributes\ApiResource;
@@ -24,6 +25,8 @@ class OrientationController
             $query->where('status', 1)
                 ->whereHasMorph('priceable', Orientation::class)
         );
+
+        Debugbar::info(Patient::with('invoices')->get()->toArray());
 
         return datatables($patients)->toJson();
     }

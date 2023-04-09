@@ -1,9 +1,8 @@
 <x-layouts.app>
-    <x-slot name='title'>Cash Box</x-slot>
+    <x-slot name='title'>Patients</x-slot>
 
 
     <x-slot name='moreStyles'>
-        <link href="/app/css/magnific-popup.css" rel="stylesheet">
         <link href="/app/css/jquery.dataTables.min.css" rel="stylesheet" type="text/css" />
         <link href="/app/css/jquery.toast.css" rel="stylesheet" type="text/css" />
 
@@ -12,27 +11,28 @@
 
     <div class="row">
         <div class="col-sm-12">
-            <div class="white-box">
+            <div class="white-box rounded-md">
                 <div class="d-flex justify-content-between align-items-center">
-                    <h3 class="box-title m-b-0">Liste de patients</h3>
+                    <h3 class="m-b-0">Indebted patients</h3>
                     <div class="row">
                         <div class="col-sm-12">
-                            <a id="add-patient-btn" class="btn btn-primary" href="#add-patient-form">Open form</a>
+                            <a data-toggle="modal" data-target="#new-patient-modal" class="btn btn-info rounded-md">Add new patient</a>
 
-                            <x-partials.add-patient />
+                            <x-modals.new-patient />
 
                         </div>
                     </div>
                 </div>
-                <hr>
-                <div class="table-responsive">
+
+                <x-modals.show-patient />
+
+                <div class="table-responsive mt-5">
                     <table id="patientTable" class="table table-striped">
                         <thead>
                             <tr>
                                 <th>No</th>
-                                <th>FirstName</th>
-                                <th>LastName</th>
-                                <th width="100px">Action</th>
+                                <th>Full Name</th>
+                                <th>Actions</th>
                             </tr>
                         </thead>
 
@@ -41,104 +41,43 @@
                         </tbody>
                     </table>
                 </div>
+
+
             </div>
         </div>
     </div>
 
 
     <x-slot name='moreScripts'>
-        <script src="/app/js/jquery.magnific-popup.min.js"></script>
         <script src="/app/js/jquery.toast.js"></script>
         <script src="/app/js/jquery.dataTables.min.js"></script>
 
         <script>
             $(document).ready(function() {
-                $("#add-patient-btn").magnificPopup({
-                    type: "inline",
-                    preloader: false,
-                    focus: "#name",
-                    // When elemened is focused, some mobile browsers in some cases zoom in
-                    // It looks not nice, so we disable it:
-                    callbacks: {
-                        beforeOpen: function() {
-                            if ($(window).width() < 700) {
-                                this.st.focus = false;
-                            } else {
-                                this.st.focus = "#name";
-                            }
-                        },
-                    },
-                });
-
-
-                var dataTable = $('#patientTable').DataTable({
-
+                const table = $('#patientTable').DataTable({
                     serverSide: true,
-                    ajax: "{{route('api.v1.patients.index')}}",
+                    ajax: "{{route('api.v1.invoices.index')}}",
                     columns: [{
-                            data: 'id',
-                            name: 'id'
+                            data: 'id'
                         },
                         {
-                            data: 'first_name',
-                            name: 'first_name'
+                            data: 'full_name'
                         }, {
-                            data: 'last_name',
-                            name: 'last_name'
-                        },
-                        {
-                            data: 'view',
-                            name: 'view',
-                            orderable: false,
-                            searchable: false
-                        },
-                    ]
-                });
-
-                var form = "#add-patient-form"
-
-                $(form).on("submit", function(e) {
-                    e.preventDefault();
-
-
-                    $.ajax({
-                        url: "{{route('api.v1.patients.store')}}",
-                        method: 'POST',
-                        data: new FormData(this),
-                        dataType: 'JSON',
-                        contentType: false,
-                        cache: false,
-                        processData: false,
-                        success: function(response) {
-                            $.toast({
-                                heading: 'Success',
-                                text: 'User was added with success',
-                                position: 'top-right',
-                                loaderBg: '#ff6849',
-                                icon: 'success',
-                                hideAfter: 2000,
-                                stack: 6
-                            });
-
-                            $(form)[0].reset();
-
-                            dataTable.ajax.reload();
-                        },
-                        error: function(response) {
-                            $.toast({
-                                heading: 'Error',
-                                text: 'We were unable to add new user',
-                                position: 'top-right',
-                                loaderBg: '#ff6849',
-                                icon: 'error',
-                                hideAfter: 2000,
-                                stack: 6
-                            });
+                            data: 'actions',
+                            render: function(data, type, row, meta) {
+                                const value = encodeURIComponent(JSON.stringify(row))
+                                return `<a title="Show Details" role="button" data-id="${row.id}" data-value="${value}" data-toggle="modal" data-target="#show-patient-modal" class="view-button"><i class="icon-eye"></i></a>`;
+                            }
                         }
-                    });
 
-                    $.magnificPopup.instance.close();
+                    ],
+                    columnDefs: [{
+                        orderable: false,
+                        searchable: false,
+                        targets: [-1]
+                    }],
                 });
+
             });
         </script>
     </x-slot>

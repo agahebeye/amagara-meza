@@ -11,9 +11,15 @@ class Patient extends \Illuminate\Database\Eloquent\Model
 
     protected $guarded = [];
     protected $hidden = ['updated_at', 'created_at'];
+    protected $appends = ['full_name'];
     protected $casts = [
         'gender' => 'boolean',
     ];
+
+    public function getFullNameAttribute()
+    {
+        return "{$this->last_name} {$this->first_name} ";
+    }
 
     public function getGenderAttribute($value)
     {

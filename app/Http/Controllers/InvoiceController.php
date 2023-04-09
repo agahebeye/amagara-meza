@@ -15,7 +15,10 @@ class InvoiceController
 {
     public function index()
     {
+        $patients = Patient::select('id', 'first_name', 'last_name')
+            ->with(['invoices' => fn ($query) => $query->pending()]);
 
-        return datatables(Patient::query())->toJson();
+
+        return datatables($patients)->toJson();
     }
 }

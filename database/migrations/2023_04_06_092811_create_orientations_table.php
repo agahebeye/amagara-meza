@@ -19,6 +19,8 @@ class CreateOrientationsTable extends Migration
             $table->string('Department');
             $table->string('precision');
 
+            $table->foreignId('complaint_id')->constrained()->cascadeOnDelete();
+
             $table->timestamps();
         });
     }
