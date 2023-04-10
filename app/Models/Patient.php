@@ -16,6 +16,15 @@ class Patient extends \Illuminate\Database\Eloquent\Model
         'gender' => 'boolean',
     ];
 
+    protected static function booted(): void
+    {
+        static::created(function ($model) {
+            $model->invoices()->create([
+                'service' => 'consulations'
+            ]);
+        });
+    }
+
     public function getFullNameAttribute()
     {
         return "{$this->last_name} {$this->first_name} ";

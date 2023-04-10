@@ -103,14 +103,16 @@
 
                 })
 
-                //FIXME: Notify not defined
                 $('#confirm-button').on('click', () => {
                     let route = `{{route('api.v1.patients.destroy', ':id')}}`;
 
                     fetch(route.replace(':id', currentId), {
                             method: 'DELETE'
                         })
-                        .then(res => notify('Delete notification', 'Patient deleted succefully.'))
+                        .then(res => {
+                            notify('Delete notification', 'Patient deleted succefully.');
+                            table.ajax.reload();
+                        })
                         .catch(reason => notify('Delete notification', 'Error deleting a patient.'))
                         .finally(() => $('#delete-confirmation-modal').modal('hide'));
                 })
@@ -124,13 +126,13 @@
                             body: new FormData(this),
                         })
                         .then(_ => {
-                            console.log('Success');
+                            notify('Patient registration', 'Patient registered succefully.')
                             table.ajax.reload();
                             $(this).trigger('reset');
 
                             $('#new-patient-modal').modal('hide');
                         })
-                        .catch(reason => console.log(reason));
+                        .catch(reason => notify('Patient registration', 'Error registering new patient.', 'error'));
 
                 })
             });

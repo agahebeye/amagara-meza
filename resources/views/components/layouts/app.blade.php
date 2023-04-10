@@ -71,10 +71,8 @@
     <script src="/app/js/sidebar-nav.min.js"></script>
     <!--slimscroll JavaScript -->
     <script src="/app/js/jquery.slimscroll.js"></script>
-
-    <script src="/app/js/custom.min.js"></script>
-
     {{ $moreScripts ?? '' }}
+    <script src="/app/js/custom.min.js"></script>
 
     <!-- Custom Theme JavaScript -->
 
