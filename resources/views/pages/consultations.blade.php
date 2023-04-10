@@ -14,17 +14,10 @@
             <div class="white-box rounded-md">
                 <div class="d-flex justify-content-between align-items-center">
                     <h3 class="m-b-0">Oriented patients</h3>
-                    <div class="row">
-                        <div class="col-sm-12">
-                            <a data-toggle="modal" data-target="#new-patient-modal" class="btn btn-info rounded-md">Add new patient</a>
 
-                            <x-modals.new-patient />
-
-                        </div>
-                    </div>
                 </div>
 
-                <x-modals.show-patient />
+
 
                 <div class="table-responsive mt-5">
                     <table id="patientTable" class="table table-striped">
@@ -55,6 +48,8 @@
 
         <script>
             $(document).ready(function() {
+                let complaint;
+
                 const table = $('#patientTable').DataTable({
                     serverSide: true,
                     ajax: "{{route('api.v1.orientations.index')}}",
@@ -70,7 +65,7 @@
                             data: 'actions',
                             render: function(data, type, row, meta) {
                                 const value = encodeURIComponent(JSON.stringify(row))
-                                return `<a title="Show Details" role="button" data-id="${row.id}" data-value="${value}" data-toggle="modal" data-target="#show-patient-modal" class="view-button"><i class="icon-eye"></i></a>`;
+                                return `<a title="Show Details" role="button"  data-value="${value}" data-toggle="modal" data-target="#orientation-modal" class="view-button"><i class="icon-eye"></i></a>`;
                             }
                         }
 
@@ -82,8 +77,32 @@
                     }],
                 });
 
+                $('#orientation-modal').on('show.bs.modal', function(event) {
+                    const button = $(event.relatedTarget);
+                    const value = JSON.parse(decodeURIComponent(button.data('value')))
+                    $('.patient_id').val(value.id);
+
+                    $.map(value, function(v, i) {
+                        $('#show-patient').find(`#${i}`).text(v)
+                    })
+                })
+
+                $('#complaint-form').on('submit', function(e) {
+                    e.preventDefault();
+                    complaint = Object.fromEntries(new FormData(this).entries());
+                    $("a[href='#orientation']").click()
+
+                })
+
+                //TODO submit orientation with its complaint
+                $('#orientation-form').on('submit', function(e) {
+                    e.preventDefault();
+                    $(this).closest('#orientation-modal').modal('hide')
+
+                })
             });
         </script>
     </x-slot>
 
+    <x-modals.new-orientation />
 </x-layouts.app>

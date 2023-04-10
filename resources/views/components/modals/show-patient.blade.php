@@ -8,7 +8,6 @@
 
             <div class="modal-body">
                 <div id="show-patient" class="px-5" style="font-size: 1.25rem;">
-
                     <div class="row no-gutters">
                         <div class="col-md-6">
                             <p class="mt-4 font-weight-bold">Lastname</p>

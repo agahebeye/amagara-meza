@@ -4,7 +4,7 @@
         <div class="form-group col-12" id='patient-id-wrapper'>
             <label class="col-sm-12">Patient ID</label>
             <div class="col-md-12">
-                <input type="number" id="patient-id" name="patient_id" class="form-control" value='2' disabled>
+                <input type="number" name="patient_id" class="patient_id form-control" style="pointer-events: none;">
             </div>
         </div>
 
@@ -35,11 +35,11 @@
         <div class="form-group col-md-6 align-self-end ">
 
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="precision" id="monitoring">
+                <input class="form-check-input" type="radio" name="precision" id="monitoring" value="monitoring">
                 <label class="form-check-label ml-2" for="monitoring"> with medical monitoring</label>
             </div>
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="precision" id="hospitaliztion">
+                <input class="form-check-input" type="radio" name="precision" id="hospitalization" value="hospitalization">
                 <label class="form-check-label ml-2" for="hospitaliztion"> with direct hospitalization</label>
             </div>
 

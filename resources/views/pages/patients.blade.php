@@ -92,7 +92,7 @@
                     const button = $(event.relatedTarget);
                     const value = JSON.parse(decodeURIComponent(button.data('value')))
                     $.map(value, function(v, i) {
-                        $(`#show-patient #${i}`).text(v)
+                        $(`#show-patient`).find(`#${i}`).text(v)
                     })
                 })
 
