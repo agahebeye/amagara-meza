@@ -24,7 +24,6 @@
                     </div>
                 </div>
 
-                <x-modals.show-patient />
 
                 <div class="table-responsive mt-5">
                     <table id="patientTable" class="table table-striped">
@@ -47,6 +46,7 @@
             </div>
         </div>
     </div>
+
 
 
     <x-slot name='moreScripts'>
@@ -73,7 +73,7 @@
                                 return `
                                 <a title="Show Details" role="button" data-id="${row.id}" data-value="${value}" data-toggle="modal" data-target="#show-patient-modal" class="view-button"><i class="icon-eye"></i></a>
                                 <a title="Edit Patient" role="button" data-id="${row.id}" data-value="${value}" data-toggle="modal" data-target="#show-patient-modal" class="edit-button mx-3"><i class="icon-pencil"></i></a>
-                                <a title="Delete Patient" role="button" data-id="${row.id}" data-value="${value}" data-toggle="modal" data-target="#show-patient-modal" class="delete-button"><i class="icon-trash"></i></a>
+                                <a title="Delete Patient" role="button" data-id="${row.id}" data-toggle="modal" data-target="#delete-confirmation-modal" class="delete-button"><i class="icon-trash"></i></a>
                                 `;
                             }
                         }
@@ -92,6 +92,24 @@
                     $.map(value, function(v, i) {
                         $(`#show-patient #${i}`).text(v)
                     })
+                })
+
+                $('#delete-confirmation-modal').on('show.bs.modal', function(event) {
+                    const button = $(event.relatedTarget);
+                    const id = button.data('id');
+                    const parent = $(this);
+
+                    $('#confirm-button').on('click', () => {
+
+                        // console.log(route);
+                        // fetch(route, {
+                        //         method: 'DELETE'
+                        //     })
+                        //     .then(res => res.json())
+                        //     .then(res => console.log(res))
+                        //     .catch(reason => console.log(reason));
+                    })
+
                 })
 
 
@@ -117,4 +135,6 @@
         </script>
     </x-slot>
 
+    <x-modals.show-patient />
+    <x-modals.delete-confirmation />
 </x-layouts.app>

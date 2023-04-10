@@ -1,6 +1,6 @@
-<div class="modal fade" id="new-patient-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" style="display: none;">
-    <div class="modal-dialog modal-lg modal-dialog-centered">
-        <div class="modal-content rounded-md">
+<div class="modal fade" id="new-patient-modal" tabindex="-1" role="dialog" aria-labelledby="newPatientModal" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+        <div class="modal-content rounded-md" style="background: #fff;">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                 <h2 class="modal-title text-center" id="myModalLabel">Add new patient</h2>

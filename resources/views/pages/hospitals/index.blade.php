@@ -98,37 +98,6 @@
     </div>
 
     <div class="row">
-        <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12">
-            <div class="white-box">
-                <h3 class="box-title">Patients In</h3>
-                <ul class="list-inline text-center">
-                    <li>
-                        <h5><i class="fa fa-circle m-r-5" style="color: #00bfc7;"></i>OPD</h5>
-                    </li>
-                    <li>
-                        <h5><i class="fa fa-circle m-r-5" style="color: #b4becb;"></i>ICU</h5>
-                    </li>
-                </ul>
-                <div id="morris-area-chart1" style="height: 370px;"></div>
-            </div>
-        </div>
-        <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12">
-            <div class="white-box">
-                <h3 class="box-title">Hospital Earning</h3>
-                <ul class="list-inline text-center">
-                    <li>
-                        <h5><i class="fa fa-circle m-r-5" style="color: #00bfc7;"></i>OPD</h5>
-                    </li>
-                    <li>
-                        <h5><i class="fa fa-circle m-r-5" style="color: #b4becb;"></i>ICU</h5>
-                    </li>
-                </ul>
-                <div id="morris-area-chart2" style="height: 370px;"></div>
-            </div>
-        </div>
-    </div>
-
-    <div class="row">
         <div class="col-sm-6">
             <div class="white-box">
                 <h3 class="box-title m-b-0">New Patient List</h3>
@@ -238,13 +207,4 @@
         </div>
     </div>
 
-    <x-slot name='moreScripts'>
-        <script src="/app/js/morris.min.js"></script>
-        <script src="/app/js/jquery.sparkline.min.js"></script>
-        <script src="/app/js/raphael-min.js"></script>
-        <!-- jQuery peity -->
-        <script src="/app/js/jquery.peity.min.js"></script>
-        <script src="/app/js/jquery.peity.init.js"></script>
-        <script src="/app/js/dashboard1.js"></script>
-    </x-slot>
 </x-layouts.app>

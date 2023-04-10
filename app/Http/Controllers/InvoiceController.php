@@ -16,7 +16,7 @@ class InvoiceController
     public function index()
     {
         $patients = Patient::select('id', 'first_name', 'last_name')
-            ->with(['invoices' => fn ($query) => $query->pending()]);
+            ->whereHas('invoices', fn ($query) => $query->pending());
 
 
         return datatables($patients)->toJson();

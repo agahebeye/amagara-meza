@@ -13,14 +13,14 @@ use Spatie\RouteAttributes\Attributes\Prefix;
 )]
 class PatientController
 {
-    function index()
+    public function index()
     {
         $patients = Patient::query();
 
         return datatables($patients)->toJson();
     }
 
-    function store()
+    public function store()
     {
 
         $newPatient = Patient::create(request()->all());
@@ -31,5 +31,9 @@ class PatientController
             'data' => $newPatient,
             'message' => 'success'
         ], 201);
+    }
+
+    public function destroy(Patient $patient)
+    {
     }
 }

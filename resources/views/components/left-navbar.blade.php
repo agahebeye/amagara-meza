@@ -24,20 +24,20 @@
 
             <li> <a href="javascript:void(0);" class="waves-effect"><i class="icon-envelope p-r-10"></i> <span class="hide-menu"> Mailbox <span class="fa arrow"></span><span class="label label-rouded label-danger pull-right">6</span></span></a>
                 <ul class="nav nav-second-level">
-                    <li> <a href="{{route('hospitals.inbox')}}">Inbox</a></li>
-                    <li> <a href="{{route('hospitals.inbox_detail')}}">Inbox detail</a></li>
-                    <li> <a href="{{route('hospitals.compose')}}">Compose mail</a></li>
+                    <li> <a href="#">Inbox</a></li>
+                    <li> <a href="#">Inbox detail</a></li>
+                    <li> <a href="#">Compose mail</a></li>
                 </ul>
             </li>
 
             <li> <a href="javascript:void(0);" class="waves-effect"><i class="ti-calendar p-r-10"></i> <span class="hide-menu"> Appointment <span class="fa arrow"></span></span></a>
                 <ul class="nav nav-second-level">
-                    <li> <a href="{{route('hospitals.doctor_schedule')}}">Doctor Schedule</a> </li>
-                    <li> <a href="{{route('hospitals.make_appointment')}}">Book Appointment</a> </li>
+                    <li> <a href="#">Doctor Schedule</a> </li>
+                    <li> <a href="#">Book Appointment</a> </li>
                 </ul>
             </li>
 
-            <li> <a href="{{route('doctors')}}" class="waves-effect"><i class="fa fa-user-md p-r-10"></i> <span class="hide-menu"> Doctors <!-- <span class="fa arrow"></span> --></span></a>
+            <li> <a href="#" class="waves-effect"><i class="fa fa-user-md p-r-10"></i> <span class="hide-menu"> Doctors <!-- <span class="fa arrow"></span> --></span></a>
                 <!-- <ul class="nav nav-second-level">
                     <li> <a href="">All Doctors</a> </li>
                     <li> <a href="">Add Doctor</a> </li>
@@ -60,17 +60,17 @@
 
             <li> <a href="javascript:void(0);" class="waves-effect"><i class="icon-chart p-r-10"></i> <span class="hide-menu"> Reports <span class="fa arrow"></span></span></a>
                 <ul class="nav nav-second-level">
-                    <li> <a href="{{route('hospitals.payment_report')}}">Payment Report</a></li>
-                    <li> <a href="{{route('hospitals.income_report')}}">Income Report</a></li>
-                    <li> <a href="{{route('hospitals.sales_report')}}">Sales Report</a></li>
+                    <li> <a href="#">Payment Report</a></li>
+                    <li> <a href="#">Income Report</a></li>
+                    <li> <a href="#">Sales Report</a></li>
                 </ul>
             </li>
 
             <li> <a href="javascript:void(0);" class="waves-effect"><i class="fa fa-inr p-r-10"></i> <span class="hide-menu"> Payments <span class="fa arrow"></span></span></a>
                 <ul class="nav nav-second-level">
-                    <li> <a href="{{route('hospitals.payments')}}">Payments</a></li>
-                    <li> <a href="{{route('hospitals.add_payment')}}">Add Payment</a></li>
-                    <li> <a href="{{route('hospitals.patient_invoice')}}">Patient Invoice</a></li>
+                    <li> <a href="#">Payments</a></li>
+                    <li> <a href="#">Add Payment</a></li>
+                    <li> <a href="#">Patient Invoice</a></li>
                 </ul>
             </li>
     </div>

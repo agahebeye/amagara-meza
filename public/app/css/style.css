@@ -16664,9 +16664,6 @@ button,
 html [type=button] {
   -webkit-appearance: none;
 }
-.modal-backdrop.in {
-  opacity: 0.5;
-}
 a.fc-event:not([href]):not([tabindex]) {
   color: #ffffff;
 }
