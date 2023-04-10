@@ -75,7 +75,7 @@
                                 return `
                                 <a title="Show Details" role="button" data-id="${row.id}" data-value="${value}" data-toggle="modal" data-target="#show-patient-modal" class="view-button"><i class="icon-eye"></i></a>
                                 <a title="Edit Patient" role="button" data-id="${row.id}" data-value="${value}" data-toggle="modal" data-target="#show-patient-modal" class="edit-button mx-3"><i class="icon-pencil"></i></a>
-                                <a title="Delete Patient" role="button" data-id="${row.id}" data-toggle="modal" data-target="#delete-confirmation-modal" class="delete-button"><i class="icon-trash"></i></a>
+                                <a title="Delete Patient" role="button" data-id="${row.id}" data-toggle="modal" data-target="#confirmation-modal" class="delete-button"><i class="icon-trash"></i></a>
                                 `;
                             }
                         }
@@ -140,5 +140,5 @@
     </x-slot>
 
     <x-modals.show-patient />
-    <x-modals.confirmation />
+    <x-modals.confirmation title="Delete confirmation" message='Do you really want to delete this patient?' />
 </x-layouts.app>

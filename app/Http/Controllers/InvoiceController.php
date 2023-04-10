@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Invoice;
 use App\Models\Patient;
+use Barryvdh\Debugbar\Facades\Debugbar;
+use Illuminate\Http\Request;
 use Spatie\RouteAttributes\Attributes\Prefix;
 use Spatie\RouteAttributes\Attributes\ApiResource;
 
@@ -16,14 +18,14 @@ class InvoiceController
 {
     public function index()
     {
-        $patients = Patient::select('id', 'first_name', 'last_name')
-            ->with(['latestInvoice' => fn ($query) => $query->pending()]);
+        $invoices = Invoice::pending()->select('id', 'service', 'patient_id')
+            ->with('patient:id,first_name,last_name');
 
-        return datatables($patients)->toJson();
+        return datatables($invoices)->toJson();
     }
 
-    public function destroy(Invoice $invoice)
+    public function destroy(Request $request, Invoice $invoice)
     {
-        return $invoice;
+        return tap($invoice)->update($request->all());
     }
 }

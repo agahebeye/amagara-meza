@@ -45,26 +45,26 @@
 
         <script>
             $(document).ready(function() {
-                let invoice_id;
+                let invoice_id, status;
 
                 const table = $('#patientTable').DataTable({
                     serverSide: true,
                     ajax: "{{route('api.v1.invoices.index')}}",
                     columns: [{
                             data: 'id'
+                        }, {
+                            data: 'patient.full_name'
+                        }, {
+                            data: 'service',
+
                         },
                         {
-                            data: 'full_name'
-                        }, {
-                            data: 'latest_invoice.service'
-
-                        }, {
                             data: 'actions',
-                            render: function(data, type, row, meta) {
+                            render: function(data, type, row) {
 
                                 return `
-                                <a title="Mark as paid" role="button" data-id="${row.latest_invoice.id}" data-toggle="modal" data-target="#confirmation-modal" class="pay-button"><i class="icon-check"></i></a>
-                                <a title="Cancel payment" role="button" data-id="${row.latest_invoice.id}" data-toggle="modal" data-target="#confirmation-modal" class="cancel-button ml-2"><i class="icon-close"></i></a>
+                                <a title="Mark as paid" role="button" data-id="${row.id}" data-toggle="modal" data-target="#confirmation-modal" class="pay-button"><i class="icon-check"></i></a>
+                                <a title="Cancel payment" role="button" data-id="${row.id}" data-toggle="modal" data-target="#confirmation-modal" class="cancel-button ml-2"><i class="icon-close"></i></a>
                                 `;
                             }
                         }
@@ -81,11 +81,12 @@
 
                     const button = $(event.relatedTarget);
                     invoice_id = button.data('id');
+                    status = 1;
 
                     const className = button.attr('class').split(' ')[0];
 
                     if (className === 'cancel-button') {
-
+                        status = 2
                         $(this).find('#title').text('Payment Cancellation');
                         $(this).find('#message').text('Do you really want to cancell this payment?');
                     }
@@ -98,8 +99,17 @@
 
                     fetch(route.replace(':id', invoice_id), {
                             method: 'DELETE',
+                            headers: {
+                                'Content-type': 'application/json'
+                            },
+                            body: JSON.stringify({
+                                status
+                            })
                         })
-                        .then(res => notify('Payment notification', `Invoice #${invoice_id} paid successfully.`))
+                        .then(res => {
+                            notify('Payment notification', `Invoice #${invoice_id} paid successfully.`)
+                            table.ajax.reload()
+                        })
                         .catch(reason => notify('Delete notification', 'Error deleting a patient.', 'error'))
                         .finally(() => $('#confirmation-modal').modal('hide'));
                 })
