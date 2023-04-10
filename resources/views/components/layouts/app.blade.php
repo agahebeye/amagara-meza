@@ -72,11 +72,11 @@
     <!--slimscroll JavaScript -->
     <script src="/app/js/jquery.slimscroll.js"></script>
 
+    <script src="/app/js/custom.min.js"></script>
 
     {{ $moreScripts ?? '' }}
 
     <!-- Custom Theme JavaScript -->
-    <script src="/app/js/custom.min.js"></script>
 
 
 </body>

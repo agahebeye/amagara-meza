@@ -35,5 +35,6 @@ class PatientController
 
     public function destroy(Patient $patient)
     {
+        return tap($patient)->delete();
     }
 }

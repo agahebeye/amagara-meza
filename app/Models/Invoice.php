@@ -11,11 +11,6 @@ class Invoice extends Model
     use HasFactory;
     public $timestamps = false;
 
-    public function priceable()
-    {
-        return $this->morphTo();
-    }
-
     public function patient()
     {
         return $this->belongsTo(Patient::class);

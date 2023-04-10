@@ -31,8 +31,8 @@ class Patient extends \Illuminate\Database\Eloquent\Model
         return $this->hasMany(Invoice::class);
     }
 
-    public function indebted()
+    public function complaints()
     {
-        return $this->invoices()->pending();
+        return $this->hasMany(Complaint::class);
     }
 }

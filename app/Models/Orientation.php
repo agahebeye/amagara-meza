@@ -12,7 +12,7 @@ class Orientation extends Model
 
     protected $guarded = [];
 
-    public function complaint()
+    public function complaint(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {
         return $this->belongsTo(Complaint::class);
     }

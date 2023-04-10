@@ -11,12 +11,12 @@ class Complaint extends Model
 
     protected $guarded = [];
 
-    public function invoice()
+    public function patient(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {
-        return $this->morphOne(Invoice::class, 'priceable');
+        return $this->belongsTo(Patient::class);
     }
 
-    public function orientation()
+    public function orientation(): \Illuminate\Database\Eloquent\Relations\HasOne
     {
         return $this->hasOne(Orientation::class);
     }

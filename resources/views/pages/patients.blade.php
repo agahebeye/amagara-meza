@@ -55,6 +55,8 @@
 
         <script>
             $(document).ready(function() {
+                let currentId;
+
                 const table = $('#patientTable').DataTable({
                     serverSide: true,
                     ajax: "{{route('api.v1.patients.index')}}",
@@ -96,22 +98,22 @@
 
                 $('#delete-confirmation-modal').on('show.bs.modal', function(event) {
                     const button = $(event.relatedTarget);
-                    const id = button.data('id');
+                    currentId = button.data('id');
                     const parent = $(this);
-
-                    $('#confirm-button').on('click', () => {
-
-                        // console.log(route);
-                        // fetch(route, {
-                        //         method: 'DELETE'
-                        //     })
-                        //     .then(res => res.json())
-                        //     .then(res => console.log(res))
-                        //     .catch(reason => console.log(reason));
-                    })
 
                 })
 
+                //FIXME: Notify not defined
+                $('#confirm-button').on('click', () => {
+                    let route = `{{route('api.v1.patients.destroy', ':id')}}`;
+
+                    fetch(route.replace(':id', currentId), {
+                            method: 'DELETE'
+                        })
+                        .then(res => notify('Delete notification', 'Patient deleted succefully.'))
+                        .catch(reason => notify('Delete notification', 'Error deleting a patient.'))
+                        .finally(() => $('#delete-confirmation-modal').modal('hide'));
+                })
 
                 $('#identification-form').on('submit', function(event) {
                     event.preventDefault()
