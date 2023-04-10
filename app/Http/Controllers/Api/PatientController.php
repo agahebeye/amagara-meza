@@ -24,8 +24,6 @@ class PatientController
     {
 
         $newPatient = Patient::create(request()->all());
-        $newPatient->invoices()->create([]);
-
 
         return response()->json([
             'data' => $newPatient,

@@ -14,17 +14,7 @@
             <div class="white-box rounded-md">
                 <div class="d-flex justify-content-between align-items-center">
                     <h3 class="m-b-0">Indebted patients</h3>
-                    <div class="row">
-                        <div class="col-sm-12">
-                            <a data-toggle="modal" data-target="#new-patient-modal" class="btn btn-info rounded-md">Add new patient</a>
-
-                            <x-modals.new-patient />
-
-                        </div>
-                    </div>
                 </div>
-
-                <x-modals.show-patient />
 
                 <div class="table-responsive mt-5">
                     <table id="patientTable" class="table table-striped">
@@ -32,6 +22,7 @@
                             <tr>
                                 <th>No</th>
                                 <th>Full Name</th>
+                                <th>Service</th>
                                 <th>Actions</th>
                             </tr>
                         </thead>
@@ -54,6 +45,8 @@
 
         <script>
             $(document).ready(function() {
+                let invoice_id;
+
                 const table = $('#patientTable').DataTable({
                     serverSide: true,
                     ajax: "{{route('api.v1.invoices.index')}}",
@@ -63,10 +56,16 @@
                         {
                             data: 'full_name'
                         }, {
+                            data: 'latest_invoice.service'
+
+                        }, {
                             data: 'actions',
                             render: function(data, type, row, meta) {
-                                const value = encodeURIComponent(JSON.stringify(row))
-                                return `<a title="Show Details" role="button" data-id="${row.id}" data-value="${value}" data-toggle="modal" data-target="#show-patient-modal" class="view-button"><i class="icon-eye"></i></a>`;
+
+                                return `
+                                <a title="Mark as paid" role="button" data-id="${row.latest_invoice.id}" data-toggle="modal" data-target="#confirmation-modal" class="pay-button"><i class="icon-check"></i></a>
+                                <a title="Cancel payment" role="button" data-id="${row.latest_invoice.id}" data-toggle="modal" data-target="#confirmation-modal" class="cancel-button ml-2"><i class="icon-close"></i></a>
+                                `;
                             }
                         }
 
@@ -78,8 +77,38 @@
                     }],
                 });
 
+                $('#confirmation-modal').on('show.bs.modal', function(event) {
+
+                    const button = $(event.relatedTarget);
+                    invoice_id = button.data('id');
+
+                    const className = button.attr('class').split(' ')[0];
+
+                    if (className === 'cancel-button') {
+
+                        $(this).find('#title').text('Payment Cancellation');
+                        $(this).find('#message').text('Do you really want to cancell this payment?');
+                    }
+
+
+                })
+
+                $('#confirm-button').on('click', () => {
+                    let route = `{{route('api.v1.invoices.destroy', ':id')}}`;
+
+                    fetch(route.replace(':id', invoice_id), {
+                            method: 'DELETE',
+                        })
+                        .then(res => notify('Payment notification', `Invoice #${invoice_id} paid successfully.`))
+                        .catch(reason => notify('Delete notification', 'Error deleting a patient.', 'error'))
+                        .finally(() => $('#confirmation-modal').modal('hide'));
+                })
+
             });
         </script>
     </x-slot>
+
+    <x-modals.confirmation title='Payment confirmation' message='Do you realy want to confirm this payment?' />
+
 
 </x-layouts.app>

@@ -96,7 +96,7 @@
                     })
                 })
 
-                $('#delete-confirmation-modal').on('show.bs.modal', function(event) {
+                $('#confirmation-modal').on('show.bs.modal', function(event) {
                     const button = $(event.relatedTarget);
                     currentId = button.data('id');
                     const parent = $(this);
@@ -140,5 +140,5 @@
     </x-slot>
 
     <x-modals.show-patient />
-    <x-modals.delete-confirmation />
+    <x-modals.confirmation />
 </x-layouts.app>

@@ -23,10 +23,10 @@ class OrientationController
             'invoices',
             fn (Builder $query) =>
             $query->where('status', 1)
-                ->whereHasMorph('priceable', Orientation::class)
+                ->where('service', 'consultation')
         );
 
-        Debugbar::info(Patient::with('invoices')->get()->toArray());
+        Debugbar::info(Patient::select('first_name')->with('invoices')->get()->toJson());
 
         return datatables($patients)->toJson();
     }

@@ -20,7 +20,7 @@ class Patient extends \Illuminate\Database\Eloquent\Model
     {
         static::created(function ($model) {
             $model->invoices()->create([
-                'service' => 'consulations'
+                'service' => 'consultation'
             ]);
         });
     }
@@ -38,6 +38,11 @@ class Patient extends \Illuminate\Database\Eloquent\Model
     public function invoices()
     {
         return $this->hasMany(Invoice::class);
+    }
+
+    public function latestInvoice()
+    {
+        return $this->hasOne(Invoice::class)->latestOfMany();
     }
 
     public function complaints()
