@@ -25,6 +25,6 @@ class Orientation extends Model
     {
         $startDate = Carbon::now()->startOfDay();
 
-        return $query->whereDepartment($department)->whereBetwen('orientation_date', [$startDate, $endDate]);
+        return $query->whereDepartment($department)->whereBetween('created_at', [$startDate, $endDate])->count()/* ->whereBetween('created_at', [$startDate, $endDate]) */;
     }
 }

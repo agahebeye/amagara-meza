@@ -11,12 +11,12 @@ class Complaint extends Model
 
     protected $guarded = [];
     protected $casts = [
-        'weight' => 'decimal:5,2',
-        'size' => 'decimal:5,2',
-        'blood_pressure' => 'decimal:5,2',
-        'temperature' => 'decimal:5,2',
-        'pulse_rate' => 'decimal:5,2',
-        'respiratory_rate' => 'decimal:5,2',
+        'weight' => 'float',
+        'size' => 'float',
+        'blood_pressure' => 'float',
+        'temperature' => 'float',
+        'pulse_rate' => 'float',
+        'respiratory_rate' => 'float',
     ];
 
     public function patient(): \Illuminate\Database\Eloquent\Relations\BelongsTo

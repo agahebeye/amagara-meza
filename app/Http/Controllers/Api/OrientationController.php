@@ -3,10 +3,8 @@
 namespace App\Http\Controllers\Api;
 
 use App\Models\Complaint;
-use App\Models\Patient;
 use App\Models\Orientation;
-use Barryvdh\Debugbar\Facades\Debugbar;
-use DebugBar\DebugBar as DebugBarDebugBar;
+use App\Models\Patient;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
@@ -40,21 +38,18 @@ class OrientationController
         // show waiting list
         // generate medical orientation
 
-        $complaint = Complaint::create($request->complaint);
-        $complaint->orientation()->create($request->orientation);
+        // $complaint = Complaint::create($request->complaint);
+        // $complaint->orientation()->create($request->orientation);
 
-        $data = $complaint->loadCount([
-            'orientation' =>
-            fn ($query) => $query->waitingList(
-                endDate: Carbon::now(),
-                department: $request->orientation['department']
-            )
-        ]);
+        $data = Orientation::waitingList(
+            endDate: Carbon::now(),
+            department: $request->orientation['department']
+        );
 
-        return $data;
 
         return response()->json([
-            'data' => 'success'
-        ]);
+            'data' => $data + 1,
+            'message' => 'success'
+        ], 201);
     }
 }

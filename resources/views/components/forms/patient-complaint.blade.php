@@ -69,13 +69,13 @@
             </div>
         </div>
 
-        <!-- <div class="form-group col-md-6 align-self-end ">
+        <div class="form-group col-md-6 align-self-end ">
             <label class="col-md-12 mt-4" for="date">Date</span>
             </label>
             <div class="col-md-12">
                 <input type="date" id="date" name="date" class="form-control" placeholder="enter date">
             </div>
-        </div> -->
+        </div>
 
 
         <div class="form-group col-md-6">
