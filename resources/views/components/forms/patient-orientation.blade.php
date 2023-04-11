@@ -4,7 +4,7 @@
         <div class="form-group col-12" id='patient-id-wrapper'>
             <label class="col-sm-12">Patient ID</label>
             <div class="col-md-12">
-                <input type="number" name="patient_id" class="patient_id form-control" style="pointer-events: none;">
+                <input type="number" name="patient_id" class="patient_id form-control" disabled>
             </div>
         </div>
 

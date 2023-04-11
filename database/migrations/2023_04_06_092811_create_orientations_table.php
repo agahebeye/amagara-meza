@@ -15,8 +15,8 @@ class CreateOrientationsTable extends Migration
     {
         Schema::create('orientations', function (Blueprint $table) {
             $table->id();
-            $table->date('orientation_date')->nullable();
-            $table->string('Department');
+            $table->date('orientation_date')->useCurrent();
+            $table->string('department');
             $table->string('precision');
 
             $table->foreignId('complaint_id')->constrained()->cascadeOnDelete();

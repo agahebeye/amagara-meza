@@ -15,8 +15,8 @@
 </head>
 
 <body>
-    <div class="d-flex justify-content-center px-5 py-4" style="font-size: .95rem;">
-        <div class="w-100" style="max-width: 48rem; border: 1px solid black">
+    <div class="d-flex justify-content-center px-5 py-4" style="font-size: .815rem;">
+        <div class="w-100" style="max-width: 36rem; border: 1px solid black">
             <div class="text-right mr-3">N<sup>o</sup> Fiche: D950-53KSE/2023</div>
 
             <h1 class="text-center text-uppercase my-2" style="font-size: 1.5rem;"><u>fiche de consultation</u></h1>

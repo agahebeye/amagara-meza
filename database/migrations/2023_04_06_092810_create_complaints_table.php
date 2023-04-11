@@ -22,7 +22,7 @@ class CreateComplaintsTable extends Migration
             $table->decimal('temperature');
             $table->decimal('pulse_rate');
             $table->decimal('respiratory_rate');
-            $table->date('date')->nullable();
+            $table->date('date')->useCurrent();
             $table->tinyText('complaint');
             $table->string('precision');
 
