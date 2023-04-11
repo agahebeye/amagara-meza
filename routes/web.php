@@ -15,3 +15,5 @@ Route::prefix('hospital')->group(function () {
     Route::get('/cashbox', fn () => view('pages.cashbox'))->name('cashbox');
     Route::get('/drug-store', fn () => view('pages.drug-store'))->name('drug_store');
 });
+
+Route::get('/medical-consultation', fn () => view('medical-consultation'));
