@@ -40,7 +40,7 @@
             </div>
             <div class="form-check">
                 <input class="form-check-input" type="radio" name="precision" id="hospitalization" value="hospitalization">
-                <label class="form-check-label ml-2" for="hospitaliztion"> with direct hospitalization</label>
+                <label class="form-check-label ml-2" for="hospitalization"> with direct hospitalization</label>
             </div>
 
         </div>

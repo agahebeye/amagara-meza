@@ -11,7 +11,7 @@
 
                 <div role="tabpanel" class="tab-pane fade" id="profile">
                     <div id="show-patient" class="px-5" style="font-size: 1.25rem;">
-                        <div class="row no-gutters">
+                        <div class="row">
                             <div class="col-md-4">
                                 <p class="mt-4 font-weight-bold">Lastname</p>
                                 <p id="last_name"></p>
@@ -93,7 +93,7 @@
 
                             <div class="col-md-4">
                                 <p class="mt-4 font-weight-bold">Municipality</p>
-                                <p id=" municipality"></p>
+                                <p id="municipality"></p>
                             </div>
 
                             <div class="col-md-4">

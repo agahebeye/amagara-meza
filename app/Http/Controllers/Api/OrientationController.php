@@ -6,7 +6,9 @@ namespace App\Http\Controllers\Api;
 use App\Models\Patient;
 use App\Models\Orientation;
 use Barryvdh\Debugbar\Facades\Debugbar;
+use DebugBar\DebugBar as DebugBarDebugBar;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Http\Request;
 use Spatie\RouteAttributes\Attributes\Prefix;
 use Spatie\RouteAttributes\Attributes\ApiResource;
 
@@ -19,22 +21,20 @@ class OrientationController
 {
     public function index()
     {
-        $patients = Patient::whereHas(
-            'invoices',
+        $patients = Patient::with('latestInvoice')->whereHas(
+            'latestInvoice',
             fn (Builder $query) =>
-            $query->where('status', 1)
-                ->where('service', 'consultation')
+            $query->paid()->whereService('consultation')
         );
 
-        Debugbar::info(Patient::select('first_name')->with('invoices')->get()->toJson());
+        // DebugBar::info($patients->get()->toJson());
 
         return datatables($patients)->toJson();
     }
 
-    function store()
+    function store(Request $request)
     {
-        return request()->all();
-        Orientation::create(request()->all());
+        return $request;
 
         return response()->json([
             'data' => 'success'

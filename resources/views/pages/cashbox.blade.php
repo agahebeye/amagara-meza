@@ -83,12 +83,15 @@
                     invoice_id = button.data('id');
                     status = 1;
 
+                    $(this).find('#title').text('Payment confirmation');
+                    $(this).find('#message').text('Do you realy want to confirm this payment?');
+
                     const className = button.attr('class').split(' ')[0];
 
                     if (className === 'cancel-button') {
                         status = 2
                         $(this).find('#title').text('Payment Cancellation');
-                        $(this).find('#message').text('Do you really want to cancell this payment?');
+                        $(this).find('#message').text('Do you really want to cancel this payment?');
                     }
 
 
@@ -118,7 +121,7 @@
         </script>
     </x-slot>
 
-    <x-modals.confirmation title='Payment confirmation' message='Do you realy want to confirm this payment?' />
+    <x-modals.confirmation title='' message='' />
 
 
 </x-layouts.app>

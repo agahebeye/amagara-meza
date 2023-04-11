@@ -77,6 +77,7 @@
                     }],
                 });
 
+                //populate patient details
                 $('#orientation-modal').on('show.bs.modal', function(event) {
                     const button = $(event.relatedTarget);
                     const value = JSON.parse(decodeURIComponent(button.data('value')))
@@ -87,6 +88,7 @@
                     })
                 })
 
+                // save complaint and switch to orientation tab
                 $('#complaint-form').on('submit', function(e) {
                     e.preventDefault();
                     complaint = Object.fromEntries(new FormData(this).entries());
@@ -97,6 +99,21 @@
                 //TODO submit orientation with its complaint
                 $('#orientation-form').on('submit', function(e) {
                     e.preventDefault();
+
+                    const orientation = Object.fromEntries(new FormData(this).entries());
+
+                    fetch("{{route('api.v1.orientations.store')}}", {
+                            method: 'POST',
+                            body: JSON.stringify({
+                                complaint,
+                                orientation
+                            }),
+                            headers: {
+                                'Content-Type': 'application/json'
+                            }
+                        }).then(res => res.json())
+                        .then(console.log)
+                        .catch(console.error)
                     $(this).closest('#orientation-modal').modal('hide')
 
                 })
