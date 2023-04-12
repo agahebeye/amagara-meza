@@ -21,7 +21,7 @@
     <link href="/app/css/style.css" rel="stylesheet">
 
     <!-- color CSS -->
-    <link href="/app/css/colors/megna-dark.css" id="theme" rel="stylesheet">
+    <link href="/app/css/megna-dark.css" id="theme" rel="stylesheet">
 </head>
 
 <body>
@@ -31,7 +31,8 @@
     </div>
     <div id="wrapper">
         <x-navbar />
-        <x-left-navbar />
+
+        <x-sidebar />
 
         <!-- Page Content -->
         <div id="page-wrapper">
