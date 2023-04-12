@@ -31,7 +31,6 @@
     </div>
     <div id="wrapper">
         <x-navbar />
-
         <x-sidebar />
 
         <!-- Page Content -->
