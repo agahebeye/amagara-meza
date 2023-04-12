@@ -1,4 +1,4 @@
-<div class="modal fade" id="orientation-modal" tabindex="-1" role="dialog" aria-labelledby="deleteConfirmationModal" aria-hidden="true">
+<div class="modal fade" id="orientation-modal" tabindex="-1" role="dialog" aria-labelledby="deleteConfirmationModal" data-backdrop='false' aria-hidden="true">
     <div class="modal-dialog  modal-lg modal-dialog-centered" role="document">
         <div class="modal-content p-4 rounded-md">
             <ul class="nav customtab nav-tabs d-flex justify-content-between" role="tablist">

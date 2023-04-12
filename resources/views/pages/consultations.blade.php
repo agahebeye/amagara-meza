@@ -12,8 +12,10 @@
     <div class="row">
         <div class="col-sm-12">
             <div class="white-box rounded-md">
-                <div class="d-flex justify-content-between align-items-center">
-                    <h3 class="m-b-0">Oriented patients</h3>
+                <div class="d-flex align-items-center justify-content-between">
+                    <h3 class="m-0">Patients to orient</h3>
+
+                    <a href='#' class="font-weight-bold text-primary"><u>Oriented patients</u></a>
 
                 </div>
 
@@ -112,9 +114,17 @@
                                 'Content-Type': 'application/json'
                             }
                         }).then(res => res.json())
-                        .then(console.log)
+                        .then(({
+                            data
+                        }) => {
+                            $('#queue-number').text(data);
+                            $('#waiting-list-modal').modal('show')
+                        })
                         .catch(console.error)
-                    $(this).closest('#orientation-modal').modal('hide')
+                        .finally(() =>
+                            $(this).closest('#orientation-modal').modal('hide')
+                        )
+
 
                 })
             });
@@ -122,4 +132,21 @@
     </x-slot>
 
     <x-modals.new-orientation />
+
+    <div class="modal fade" id="waiting-list-modal" tabindex="-1" role="dialog" aria-labelledby="waitingListModal" data-backdrop='false' data-keyboard="false" aria-hidden="true">
+        <div class="modal-dialog h-100 d-flex flex-column justify-content-center my-0" role="document">
+            <div class="modal-content rounded-md">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h2 class="modal-title text-center" id="title">Waiting List</h2>
+                </div>
+
+                <div class="modal-body">
+                    <div class="d-flex flex-column align-items-center">
+                        <h1 class="text-center my-3" id='queue-number'></h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </x-layouts.app>

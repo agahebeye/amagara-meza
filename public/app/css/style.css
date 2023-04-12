@@ -747,6 +747,23 @@ pre {
   border-radius: 0px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
+
+.modal {
+  background-color: rgba(0, 0, 0, 0.1);
+
+}
+
+@supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
+  .modal {
+    -webkit-backdrop-filter: blur(30px);
+    backdrop-filter: blur(10px);
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+}
+
+.modal-backdrop {
+  display: none;
+}
 .alert {
   border-radius: 0px;
 }
