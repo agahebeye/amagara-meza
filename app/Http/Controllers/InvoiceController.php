@@ -24,6 +24,20 @@ class InvoiceController
         return datatables($invoices)->toJson();
     }
 
+    public function store(Request $request)
+    {
+        $patient = Patient::query()->firstWhere('id', $request->patient_id);
+
+        $invoice = $patient->invoices()->create([
+            'service' => $request->service
+        ]);
+
+        return response()->json([
+            'data' => $invoice,
+            'message' => 'success'
+        ]);
+    }
+
     public function destroy(Request $request, Invoice $invoice)
     {
         return tap($invoice)->update($request->all());

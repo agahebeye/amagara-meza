@@ -1,11 +1,16 @@
 <div class="modal fade" id="orientation-modal" tabindex="-1" role="dialog" aria-labelledby="deleteConfirmationModal" data-backdrop='false' aria-hidden="true">
     <div class="modal-dialog  modal-lg modal-dialog-centered" role="document">
-        <div class="modal-content p-4 rounded-md">
+        <div class="modal-content px-4 pb-4 rounded-md">
+            <div class="modal-header m-0">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            </div>
+
             <ul class="nav customtab nav-tabs d-flex justify-content-between" role="tablist">
                 <li role="presentation" class="nav-item"><a href="#profile" class="nav-link" aria-controls="profile" role="tab" data-toggle="tab" aria-expanded="false"><span class="visible-xs"><i class="ti-user"></i></span> <span class="hidden-xs">Profile</span></a></li>
                 <li role="presentation" class="nav-item"><a href="#complaint" class="nav-link active" aria-controls="home" role="tab" data-toggle="tab" aria-expanded="true"><span class="visible-xs"><i class="ti-home"></i></span><span class="hidden-xs"> Complaints</span></a></li>
                 <li role="presentation" class="nav-item"><a href="#orientation" class="nav-link" aria-controls="orientation" role="tab" data-toggle="tab" aria-expanded="false"><span class="visible-xs"><i class="ti-email"></i></span> <span class="hidden-xs">Orientation</span></a></li>
             </ul>
+
             <!-- Tab panes -->
             <div class="tab-content">
 

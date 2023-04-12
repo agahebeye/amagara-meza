@@ -2,12 +2,13 @@
 
 namespace App\Http\Controllers\Api;
 
+use App\Models\Patient;
 use App\Models\Complaint;
 use App\Models\Orientation;
-use App\Models\Patient;
-use Illuminate\Database\Eloquent\Builder;
+use Barryvdh\Debugbar\Facades\Debugbar;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
+use Illuminate\Database\Eloquent\Builder;
 use Spatie\RouteAttributes\Attributes\Prefix;
 use Spatie\RouteAttributes\Attributes\ApiResource;
 
@@ -20,26 +21,26 @@ class OrientationController
 {
     public function index()
     {
-        $patients = Patient::with('latestInvoice')->whereHas(
+        $patients = Patient::whereHas(
             'latestInvoice',
             fn (Builder $query) =>
             $query->paid()->whereService('consultation')
         );
 
-        // DebugBar::info($patients->get()->toJson());
+        Debugbar::info($patients->get()->toArray());
 
         return datatables($patients)->toJson();
     }
 
     function store(Request $request)
     {
-        // create complaint
-        // create orientation with new complaint
-        // show waiting list
+        // create complaint - OK
+        // create orientation with new complaint - OK
+        // show waiting list - OK
         // generate medical orientation
 
-        // $complaint = Complaint::create($request->complaint);
-        // $complaint->orientation()->create($request->orientation);
+        $complaint = Complaint::create($request->complaint);
+        $complaint->orientation()->create($request->orientation);
 
         $data = Orientation::waitingList(
             endDate: Carbon::now(),

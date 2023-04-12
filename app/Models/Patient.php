@@ -49,4 +49,9 @@ class Patient extends \Illuminate\Database\Eloquent\Model
     {
         return $this->hasMany(Complaint::class);
     }
+
+    public function latestComplaint()
+    {
+        return $this->hasOne(Complaint::class)->latestOfMany();
+    }
 }

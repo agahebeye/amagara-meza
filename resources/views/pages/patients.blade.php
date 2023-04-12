@@ -55,7 +55,7 @@
 
         <script>
             $(document).ready(function() {
-                let currentId;
+                let selectId;
 
                 const table = $('#patientTable').DataTable({
                     serverSide: true,
@@ -91,22 +91,46 @@
                 $('#show-patient-modal').on('show.bs.modal', function(event) {
                     const button = $(event.relatedTarget);
                     const value = JSON.parse(decodeURIComponent(button.data('value')))
+                    selectId = value.id;
+
                     $.map(value, function(v, i) {
                         $(`#show-patient`).find(`#${i}`).text(v)
                     })
                 })
 
+                $('#set-consulation-btn').on('click', function() {
+                    // get selected id
+                    // send post request to invoice
+                    // test value
+                    const btn = $(this);
+
+                    fetch("{{route('api.v1.invoices.store')}}", {
+                            method: 'POST',
+                            body: JSON.stringify({
+                                patient_id: selectId,
+                                service: 'consultation'
+                            }),
+                            headers: {
+                                'Content-Type': 'application/json'
+                            }
+                        })
+                        .then(res => res.json()).then(console.log)
+                        .catch(console.error)
+                        .finally(() => btn.closest('#show-patient-modal').modal('hide'));
+
+                })
+
                 $('#confirmation-modal').on('show.bs.modal', function(event) {
                     const button = $(event.relatedTarget);
-                    currentId = button.data('id');
-                    const parent = $(this);
+                    selectId = button.data('id');
+                    // const parent = $(this);
 
                 })
 
                 $('#confirm-button').on('click', () => {
                     let route = `{{route('api.v1.patients.destroy', ':id')}}`;
 
-                    fetch(route.replace(':id', currentId), {
+                    fetch(route.replace(':id', selectId), {
                             method: 'DELETE'
                         })
                         .then(res => {
