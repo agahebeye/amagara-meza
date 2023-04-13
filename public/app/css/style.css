@@ -980,7 +980,7 @@ pre {
 .bg-title .breadcrumb {
   background: none;
   margin-bottom: 0px;
-  float: right;
+  /* float: right; */
   padding: 0;
   margin-top: 8px;
 }
@@ -8671,5 +8671,11 @@ a.fc-event:not([href]):not([tabindex]) {
 
 .rounded-md {
   border-radius: 8px;
+}
+
+#footer {
+  font-size: 1.4rem;
+  background-color: #edf1f5;
+  padding: 2rem 0;
 }
 /*Top bar header*/

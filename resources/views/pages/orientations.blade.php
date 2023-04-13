@@ -22,7 +22,7 @@
 
 
                 <div class="table-responsive mt-5">
-                    <table id="patientTable" class="table table-striped">
+                    <table id="patientTable" class="display compact">
                         <thead>
                             <tr>
                                 <th>No</th>
@@ -67,7 +67,8 @@
                             data: 'actions',
                             render: function(data, type, row, meta) {
                                 const value = encodeURIComponent(JSON.stringify(row))
-                                return `<a title="Show Details" role="button"  data-value="${value}" data-toggle="modal" data-target="#orientation-modal" class="view-button"><i class="icon-eye"></i></a>`;
+                                return `
+                                <a title="Show Details" role="button"  data-value="${value}" data-toggle="modal" data-target="#orientation-modal" class="view-button"><x-icons.eye /></a>`;
                             }
                         }
 

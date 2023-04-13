@@ -1,6 +1,6 @@
 @props(['title', 'message'])
 
-<div class="modal fade" id="confirmation-modal" tabindex="-1" role="dialog" aria-labelledby="deleteConfirmationModal" data-backdrop="static" data-keyboard="false" aria-hidden="true">
+<div class="modal fade" id="confirmation-modal" tabindex="-1" role="dialog" aria-labelledby="deleteConfirmationModal" data-backdrop="false" data-keyboard="false" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content rounded-md">
             <div class="modal-header">

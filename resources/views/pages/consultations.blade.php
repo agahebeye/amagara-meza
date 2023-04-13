@@ -22,7 +22,7 @@
 
 
                 <div class="table-responsive mt-5">
-                    <table id="patientTable" class="table table-striped">
+                    <table id="patientTable" class="display compact">
                         <thead>
                             <tr>
                                 <th>No</th>
@@ -67,7 +67,7 @@
                             data: 'actions',
                             render: function(data, type, row, meta) {
                                 const value = encodeURIComponent(JSON.stringify(row))
-                                return `<a title="Show Details" role="button"  data-value="${value}" data-toggle="modal" data-target="#orientation-modal" class="view-button"><i class="icon-eye"></i></a>`;
+                                return `<a title="Show Details" role="button"  data-value="${value}" data-toggle="modal" data-target="#consultation-modal" class="view-button"><x-icons.eye /></a>`;
                             }
                         }
 
@@ -80,7 +80,7 @@
                 });
 
                 //populate patient details
-                $('#orientation-modal').on('show.bs.modal', function(event) {
+                $('#consultation-modal').on('show.bs.modal', function(event) {
                     const button = $(event.relatedTarget);
                     const value = JSON.parse(decodeURIComponent(button.data('value')))
                     $('.patient_id').val(value.id);
@@ -90,39 +90,23 @@
                     })
                 })
 
-                // save complaint and switch to orientation tab
-                $('#complaint-form').on('submit', function(e) {
-                    e.preventDefault();
-                    complaint = Object.fromEntries(new FormData(this).entries());
-                    $("a[href='#orientation']").click()
-
-                })
-
-                //TODO submit orientation with its complaint
-                $('#orientation-form').on('submit', function(e) {
+                //TODO submit consultation with its complaint
+                $('#consultation-form').on('submit', function(e) {
                     e.preventDefault();
 
-                    const orientation = Object.fromEntries(new FormData(this).entries());
+                    // const consultation = Object.fromEntries(new FormData(this).entries());
 
                     fetch("{{route('api.v1.orientations.store')}}", {
                             method: 'POST',
-                            body: JSON.stringify({
-                                complaint,
-                                orientation
-                            }),
+                            body: JSON.stringify({}),
                             headers: {
                                 'Content-Type': 'application/json'
                             }
                         }).then(res => res.json())
-                        .then(({
-                            data
-                        }) => {
-                            $('#queue-number').text(data);
-                            $('#waiting-list-modal').modal('show')
-                        })
+                        .then(console.log)
                         .catch(console.error)
                         .finally(() =>
-                            $(this).closest('#orientation-modal').modal('hide')
+                            $(this).closest('#consultation-modal').modal('hide')
                         )
 
 
@@ -131,22 +115,5 @@
         </script>
     </x-slot>
 
-    <x-modals.new-orientation />
-
-    <div class="modal fade" id="waiting-list-modal" tabindex="-1" role="dialog" aria-labelledby="waitingListModal" data-backdrop='false' data-keyboard="false" aria-hidden="true">
-        <div class="modal-dialog h-100 d-flex flex-column justify-content-center my-0" role="document">
-            <div class="modal-content rounded-md">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                    <h2 class="modal-title text-center" id="title">Waiting List</h2>
-                </div>
-
-                <div class="modal-body">
-                    <div class="d-flex flex-column align-items-center">
-                        <h1 class="text-center my-3" id='queue-number'></h1>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    <x-modals.new-consultation />
 </x-layouts.app>

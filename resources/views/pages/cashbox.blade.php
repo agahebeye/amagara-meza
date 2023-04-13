@@ -17,7 +17,7 @@
                 </div>
 
                 <div class="table-responsive mt-5">
-                    <table id="patientTable" class="table table-striped">
+                    <table id="patientTable" class="display compact">
                         <thead>
                             <tr>
                                 <th>No</th>
@@ -63,8 +63,12 @@
                             render: function(data, type, row) {
 
                                 return `
-                                <a title="Mark as paid" role="button" data-id="${row.id}" data-toggle="modal" data-target="#confirmation-modal" class="pay-button"><i class="icon-check"></i></a>
-                                <a title="Cancel payment" role="button" data-id="${row.id}" data-toggle="modal" data-target="#confirmation-modal" class="cancel-button ml-2"><i class="icon-close"></i></a>
+                                <a title="Mark as paid" role="button" data-id="${row.id}" data-toggle="modal" data-target="#confirmation-modal" class="pay-button">
+                                    <x-icons.bag-check />
+                                </a>
+                                <a title="Cancel payment" role="button" data-id="${row.id}" data-toggle="modal" data-target="#confirmation-modal" class="cancel-button ml-3">
+                                    <x-icons.close />
+                                </a>
                                 `;
                             }
                         }

@@ -13,20 +13,18 @@
         <div class="col-sm-12">
             <div class="white-box rounded-md">
                 <div class="d-flex justify-content-between align-items-center">
-                    <h3 class="m-b-0">Registered patients</h3>
-                    <div class="row">
-                        <div class="col-sm-12">
-                            <a data-toggle="modal" data-target="#new-patient-modal" class="btn btn-info rounded-md">Add new patient</a>
+                    <h3 class="m-0">Registered patients</h3>
+                    <div class="">
+                        <a data-toggle="modal" data-target="#new-patient-modal" class="btn btn-info rounded-md">Add new patient</a>
 
-                            <x-modals.new-patient />
+                        <x-modals.new-patient />
 
-                        </div>
                     </div>
                 </div>
 
 
                 <div class="table-responsive mt-5">
-                    <table id="patientTable" class="table table-striped">
+                    <table id="patientTable" class="display compact">
                         <thead>
                             <tr>
                                 <th>No</th>
@@ -73,9 +71,9 @@
                             render: function(data, type, row, meta) {
                                 const value = encodeURIComponent(JSON.stringify(row))
                                 return `
-                                <a title="Show Details" role="button" data-id="${row.id}" data-value="${value}" data-toggle="modal" data-target="#show-patient-modal" class="view-button"><i class="icon-eye"></i></a>
-                                <a title="Edit Patient" role="button" data-id="${row.id}" data-value="${value}" data-toggle="modal" data-target="#show-patient-modal" class="edit-button mx-3"><i class="icon-pencil"></i></a>
-                                <a title="Delete Patient" role="button" data-id="${row.id}" data-toggle="modal" data-target="#confirmation-modal" class="delete-button"><i class="icon-trash"></i></a>
+                                <a title="Show Details" role="button" data-id="${row.id}" data-value="${value}" data-toggle="modal" data-target="#show-patient-modal" class="view-button"><x-icons.eye /></a>
+                                <a title="Edit Patient" role="button" data-id="${row.id}" data-value="${value}" data-toggle="modal" data-target="#show-patient-modal" class="edit-button mx-3"><x-icons.pencil /></i></a>
+                                <a title="Delete Patient" role="button" data-id="${row.id}" data-toggle="modal" data-target="#confirmation-modal" class="delete-button"><x-icons.trash /></i></a>
                                 `;
                             }
                         }
