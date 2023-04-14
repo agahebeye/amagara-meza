@@ -68,7 +68,7 @@
                                 return `
                                 <a title="Show Details" role="button" data-id="${row.id}" data-value="${value}" data-toggle="modal" data-target="#show-patient-modal" class="view-button"><x-icons.eye /></a>
                                 <a title="Edit Patient" role="button" data-id="${row.id}" data-value="${value}" data-toggle="modal" data-target="#show-patient-modal" class="edit-button mx-3"><x-icons.pencil /></i></a>
-                                <a title="Delete Patient" role="button" data-id="${row.id}" data-toggle="modal" data-target="#confirmation-modal" class="delete-button"><x-icons.trash /></i></a>
+                                <a title="Delete Patient" role="button" data-id="${row.id}" data-toggle="modal" data-target="#confirmation" class="delete-button"><x-icons.trash /></i></a>
                                 `;
                             }
                         }
@@ -101,23 +101,21 @@
                             method: 'POST',
                             body: JSON.stringify({
                                 patient_id: selectId,
-                                service: 'consultation'
+                                services: [1] // 1 is consultation service
                             }),
                             headers: {
                                 'Content-Type': 'application/json'
                             }
                         })
-                        .then(res => res.json()).then(console.log)
-                        .catch(console.error)
+                        .then(_ => notify('Consultation notice', 'Patient set for consultation.'))
+                        .catch(_ => notify('Consultaion notice', 'Error setting a patient for consultation.', 'error'))
                         .finally(() => btn.closest('#show-patient-modal').modal('hide'));
 
                 })
 
-                $('#confirmation-modal').on('show.bs.modal', function(event) {
+                $('#confirmation').on('show.bs.modal', function(event) {
                     const button = $(event.relatedTarget);
                     selectId = button.data('id');
-                    // const parent = $(this);
-
                 })
 
                 $('#confirm-button').on('click', () => {
@@ -131,7 +129,7 @@
                             table.ajax.reload();
                         })
                         .catch(reason => notify('Delete notification', 'Error deleting a patient.'))
-                        .finally(() => $('#delete-confirmation-modal').modal('hide'));
+                        .finally(() => $('#confirmation').modal('hide'));
                 })
 
                 $('#identification-form').on('submit', function(event) {

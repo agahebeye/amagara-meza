@@ -8678,4 +8678,10 @@ a.fc-event:not([href]):not([tabindex]) {
   background-color: #edf1f5;
   padding: 2rem 0;
 }
+
+@media print {
+.d-print-none {
+    display: none !important;
+  }
+}
 /*Top bar header*/

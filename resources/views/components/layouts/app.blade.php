@@ -65,6 +65,7 @@
     <script src="/app/js/bootstrap-extension.min.js"></script>
     <script src="/app/js/sidebar-nav.min.js"></script>
     <script src="/app/js/jquery.slimscroll.js"></script>
+    <script src="/app/js/printThis.js"></script>
 
     {{ $moreScripts ?? '' }}
 

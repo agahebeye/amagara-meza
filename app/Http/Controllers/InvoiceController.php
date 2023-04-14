@@ -18,26 +18,27 @@ class InvoiceController
 {
     public function index()
     {
-        // $invoices = Invoice::pending()->select('id', 'patient_id')
-        //     ->with(['patient:id,first_name,last_name', 'items']);
         $patients = Patient::select('id', 'first_name', 'last_name')
             ->with('latestInvoice.items');
 
         return datatables($patients)->toJson();
     }
 
-    public function show(Patient $patient)
+    public function show(Invoice $invoice)
     {
-        return view('components.invoice');
+        return view('components.invoice', ['invoice' => $invoice->load([
+            'items',
+            'patient:id,first_name,last_name'
+        ])]);
     }
 
     public function store(Request $request)
     {
+        //TODO test to see it works!
         $patient = Patient::query()->firstWhere('id', $request->patient_id);
 
-        $invoice = $patient->invoices()->create([
-            'service' => $request->service
-        ]);
+        $invoice = $patient->invoices()->create([]);
+        $invoice->items()->attach($request->services);
 
         return response()->json([
             'data' => $invoice,
@@ -45,8 +46,9 @@ class InvoiceController
         ]);
     }
 
-    public function destroy(Request $request, Invoice $invoice)
+    public function update(Request $request, Invoice $invoice)
     {
-        return tap($invoice)->update($request->all());
+        //TODO test update invoice
+        return ['invoice' =>  $invoice, 'request' => $request->status];
     }
 }

@@ -24,7 +24,7 @@ class OrientationController
         $patients = Patient::whereHas(
             'latestInvoice',
             fn (Builder $query) =>
-            $query->paid()->whereService('consultation')
+            $query->paid()
         );
 
         Debugbar::info($patients->get()->toArray());

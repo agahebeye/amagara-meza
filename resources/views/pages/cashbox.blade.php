@@ -40,6 +40,7 @@
         <script>
             $(document).ready(function() {
                 let invoice_id, status;
+                const viewRoute = "{{route('api.v1.invoices.show', ':id')}}"
 
                 const table = $('#invoiceTable').DataTable({
                     serverSide: true,
@@ -55,11 +56,8 @@
                             data: 'actions',
                             render: function(data, type, row) {
                                 return `
-                                <a title="Mark as paid" role="button" data-id="${row.id}" data-toggle="modal" data-target="#show-invoice"  class="pay-button">
+                                <a title="Mark as paid" role="button" data-id="${row.latest_invoice.id}" data-toggle="modal" data-target="#show-invoice"  class="pay-button">
                                     <x-icons.bag-check />
-                                </a>
-                                <a title="Cancel payment" role="button" data-id="${row.id}" data-toggle="modal" data-target="#confirmation" class="cancel-button ml-3">
-                                    <x-icons.close />
                                 </a>
                                 `;
                             }
@@ -75,37 +73,7 @@
 
                 $('#show-invoice').on('show.bs.modal', function(event) {
                     const button = $(event.relatedTarget);
-
-                    let route = `{{route('api.v1.invoices.show', ':id')}}`
-
-                    $('#invoice-body').load(route.replace(':id', button.data('id')))
-                })
-
-                $('#confirmation').on('show.bs.modal', function(event) {
-
-                    const button = $(event.relatedTarget);
-                    invoice_id = button.data('id');
-
-                })
-
-                $('#confirm-button').on('click', () => {
-                    let route = `{{route('api.v1.invoices.destroy', ':id')}}`;
-
-                    fetch(route.replace(':id', invoice_id), {
-                            method: 'DELETE',
-                            headers: {
-                                'Content-type': 'application/json'
-                            },
-                            body: JSON.stringify({
-                                status
-                            })
-                        })
-                        .then(res => {
-                            notify('Payment notification', `Invoice #${invoice_id} paid successfully.`)
-                            table.ajax.reload()
-                        })
-                        .catch(reason => notify('Delete notification', 'Error deleting a ', 'error'))
-                        .finally(() => $('#confirmation-modal').modal('hide'));
+                    $('#invoice-body').load(viewRoute.replace(':id', button.data('id')))
                 })
 
             });
