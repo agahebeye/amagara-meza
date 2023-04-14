@@ -15,12 +15,12 @@
     </div>
 
     <div class="table-responsive mt-5">
-        <table id="patientTable" class="display compact">
+        <table id="invoiceTable" class="display compact">
             <thead>
                 <tr>
                     <th>No</th>
-                    <th>Full Name</th>
-                    <th>Service</th>
+                    <th>FirstName</th>
+                    <th>LastName</th>
                     <th>Actions</th>
                 </tr>
             </thead>
@@ -41,26 +41,24 @@
             $(document).ready(function() {
                 let invoice_id, status;
 
-                const table = $('#patientTable').DataTable({
+                const table = $('#invoiceTable').DataTable({
                     serverSide: true,
                     ajax: "{{route('api.v1.invoices.index')}}",
                     columns: [{
                             data: 'id'
                         }, {
-                            data: 'patient.full_name'
+                            data: 'first_name'
                         }, {
-                            data: 'service',
-
+                            data: 'last_name'
                         },
                         {
                             data: 'actions',
                             render: function(data, type, row) {
-
                                 return `
-                                <a title="Mark as paid" role="button" data-id="${row.id}" data-toggle="modal" data-target="#confirmation-modal" class="pay-button">
+                                <a title="Mark as paid" role="button" data-id="${row.id}" data-toggle="modal" data-target="#show-invoice"  class="pay-button">
                                     <x-icons.bag-check />
                                 </a>
-                                <a title="Cancel payment" role="button" data-id="${row.id}" data-toggle="modal" data-target="#confirmation-modal" class="cancel-button ml-3">
+                                <a title="Cancel payment" role="button" data-id="${row.id}" data-toggle="modal" data-target="#confirmation" class="cancel-button ml-3">
                                     <x-icons.close />
                                 </a>
                                 `;
@@ -75,23 +73,18 @@
                     }],
                 });
 
-                $('#confirmation-modal').on('show.bs.modal', function(event) {
+                $('#show-invoice').on('show.bs.modal', function(event) {
+                    const button = $(event.relatedTarget);
+
+                    let route = `{{route('api.v1.invoices.show', ':id')}}`
+
+                    $('#invoice-body').load(route.replace(':id', button.data('id')))
+                })
+
+                $('#confirmation').on('show.bs.modal', function(event) {
 
                     const button = $(event.relatedTarget);
                     invoice_id = button.data('id');
-                    status = 1;
-
-                    $(this).find('#title').text('Payment confirmation');
-                    $(this).find('#message').text('Do you realy want to confirm this payment?');
-
-                    const className = button.attr('class').split(' ')[0];
-
-                    if (className === 'cancel-button') {
-                        status = 2
-                        $(this).find('#title').text('Payment Cancellation');
-                        $(this).find('#message').text('Do you really want to cancel this payment?');
-                    }
-
 
                 })
 
@@ -111,7 +104,7 @@
                             notify('Payment notification', `Invoice #${invoice_id} paid successfully.`)
                             table.ajax.reload()
                         })
-                        .catch(reason => notify('Delete notification', 'Error deleting a patient.', 'error'))
+                        .catch(reason => notify('Delete notification', 'Error deleting a ', 'error'))
                         .finally(() => $('#confirmation-modal').modal('hide'));
                 })
 
@@ -119,7 +112,8 @@
         </script>
     </x-slot>
 
-    <x-modals.confirmation title='' message='' />
+    <x-modals.show-invoice />
+    <x-modals.confirmation title='Payment Cancellation' message='Do you really want to cancel this payment?' />
 
 
 </x-layouts.app>

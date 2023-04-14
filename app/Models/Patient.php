@@ -10,8 +10,6 @@ class Patient extends \Illuminate\Database\Eloquent\Model
     use HasFactory;
 
     protected $guarded = [];
-    protected $hidden = ['updated_at', 'created_at'];
-    protected $appends = ['full_name'];
     protected $casts = [
         'gender' => 'boolean',
     ];
@@ -23,12 +21,6 @@ class Patient extends \Illuminate\Database\Eloquent\Model
             $invoice = $model->invoices()->create([]);
             $invoice->items()->attach($service->id);
         });
-    }
-
-
-    public function getFullNameAttribute()
-    {
-        return "{$this->last_name} {$this->first_name} ";
     }
 
     public function getGenderAttribute($value)

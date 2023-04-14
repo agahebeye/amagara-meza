@@ -18,10 +18,17 @@ class InvoiceController
 {
     public function index()
     {
-        $invoices = Invoice::pending()->select('id', 'service', 'patient_id')
-            ->with('patient:id,first_name,last_name');
+        // $invoices = Invoice::pending()->select('id', 'patient_id')
+        //     ->with(['patient:id,first_name,last_name', 'items']);
+        $patients = Patient::select('id', 'first_name', 'last_name')
+            ->with('latestInvoice.items');
 
-        return datatables($invoices)->toJson();
+        return datatables($patients)->toJson();
+    }
+
+    public function show(Patient $patient)
+    {
+        return view('components.invoice');
     }
 
     public function store(Request $request)

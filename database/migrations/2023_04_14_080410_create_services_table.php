@@ -18,7 +18,6 @@ class CreateServicesTable extends Migration
             $table->string('name')->unique();
             $table->string('category');
             $table->decimal('price');
-            $table->timestamps();
         });
     }
 

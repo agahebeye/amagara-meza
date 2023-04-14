@@ -27,8 +27,8 @@
 
     <div id="wrapper">
 
-        <x-navbar />
-        <x-sidebar />
+        <x-layouts.navbar />
+        <x-layouts.sidebar />
 
         <div id="page-wrapper">
             <div class="container-fluid">
