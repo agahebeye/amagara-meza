@@ -1,5 +1,5 @@
 <x-layouts.app>
-    <x-slot name='title'>Patients</x-slot>
+    <x-slot name='title'>Cashbox</x-slot>
 
 
     <x-slot name='moreStyles'>
@@ -9,34 +9,28 @@
 
     </x-slot>
 
-    <div class="row">
-        <div class="col-sm-12">
-            <div class="white-box rounded-md">
-                <div class="d-flex justify-content-between align-items-center">
-                    <h3 class="m-b-0">Indebted patients</h3>
-                </div>
 
-                <div class="table-responsive mt-5">
-                    <table id="patientTable" class="display compact">
-                        <thead>
-                            <tr>
-                                <th>No</th>
-                                <th>Full Name</th>
-                                <th>Service</th>
-                                <th>Actions</th>
-                            </tr>
-                        </thead>
-
-                        <tbody>
-
-                        </tbody>
-                    </table>
-                </div>
-
-
-            </div>
-        </div>
+    <div class="d-flex justify-content-between align-items-center">
+        <h3 class="m-b-0">Indebted patients</h3>
     </div>
+
+    <div class="table-responsive mt-5">
+        <table id="patientTable" class="display compact">
+            <thead>
+                <tr>
+                    <th>No</th>
+                    <th>Full Name</th>
+                    <th>Service</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+
+            <tbody>
+
+            </tbody>
+        </table>
+    </div>
+
 
 
     <x-slot name='moreScripts'>

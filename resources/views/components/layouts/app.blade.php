@@ -46,7 +46,14 @@
                 </div>
             </div>
 
-            {{ $slot }}
+
+            <div class="row px-5">
+                <div class="col-sm-12">
+                    <div class="bg-white p-4 rounded-md">
+                        {{ $slot }}
+                    </div>
+                </div>
+            </div>
         </div>
 
         <footer id="footer" class="text-center"> &copy; 2023 Crafted by Bymas Empire</footer>

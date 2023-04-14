@@ -1,4 +1,4 @@
-<div class="modal fade" id="show-patient-modal" tabindex="-1" role="dialog" aria-pledby="showPatientModal" aria-hidden="true">
+<div class="modal fade" id="show-patient-modal" tabindex="-1" role="dialog" aria-pledby="showPatientModal" data-backdrop='false' aria-hidden="true">
     <div class="modal-dialog modal-lg modal-dialog-centered">
         <div class="modal-content rounded-md">
             <div class="modal-header">

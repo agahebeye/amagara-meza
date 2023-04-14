@@ -9,41 +9,36 @@
 
     </x-slot>
 
-    <div class="row">
-        <div class="col-sm-12">
-            <div class="white-box rounded-md">
-                <div class="d-flex justify-content-between align-items-center">
-                    <h3 class="m-0">Registered patients</h3>
-                    <div class="">
-                        <a data-toggle="modal" data-target="#new-patient-modal" class="btn btn-info rounded-md">Add new patient</a>
+    <div class="d-flex justify-content-between align-items-center">
+        <h3 class="m-0">Registered patients</h3>
+        <div class="">
+            <a data-toggle="modal" data-target="#new-patient-modal" class="btn btn-info rounded-md">Add new patient</a>
 
-                        <x-modals.new-patient />
+            <x-modals.new-patient />
 
-                    </div>
-                </div>
-
-
-                <div class="table-responsive mt-5">
-                    <table id="patientTable" class="display compact">
-                        <thead>
-                            <tr>
-                                <th>No</th>
-                                <th>FirstName</th>
-                                <th>LastName</th>
-                                <th>Actions</th>
-                            </tr>
-                        </thead>
-
-                        <tbody>
-
-                        </tbody>
-                    </table>
-                </div>
-
-
-            </div>
         </div>
     </div>
+
+
+    <div class="table-responsive mt-5">
+        <table id="patientTable" class="display compact">
+            <thead>
+                <tr>
+                    <th>No</th>
+                    <th>FirstName</th>
+                    <th>LastName</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+
+            <tbody>
+
+            </tbody>
+        </table>
+    </div>
+
+
+
 
 
 

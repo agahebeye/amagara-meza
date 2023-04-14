@@ -1,56 +1,58 @@
 <x-layouts.app>
-    <x-slot name='title'>Patients</x-slot>
+    <x-slot name='title'>Consultations</x-slot>
 
 
     <x-slot name='moreStyles'>
         <link href="/app/css/jquery.dataTables.min.css" rel="stylesheet" type="text/css" />
         <link href="/app/css/jquery.toast.css" rel="stylesheet" type="text/css" />
+        <link href="/app/css/select2.min.css" rel="stylesheet" type="text/css" />
 
 
     </x-slot>
 
-    <div class="row">
-        <div class="col-sm-12">
-            <div class="white-box rounded-md">
-                <div class="d-flex align-items-center justify-content-between">
-                    <h3 class="m-0">Patients to orient</h3>
 
-                    <a href='#' class="font-weight-bold text-primary"><u>Oriented patients</u></a>
+    <div class="d-flex align-items-center justify-content-between">
+        <h3 class="m-0">Patients to orient</h3>
 
-                </div>
+        <a href='#' class="font-weight-bold text-primary"><u>Oriented patients</u></a>
 
-
-
-                <div class="table-responsive mt-5">
-                    <table id="patientTable" class="display compact">
-                        <thead>
-                            <tr>
-                                <th>No</th>
-                                <th>FirstName</th>
-                                <th>LastName</th>
-                                <th>Actions</th>
-                            </tr>
-                        </thead>
-
-                        <tbody>
-
-                        </tbody>
-                    </table>
-                </div>
-
-
-            </div>
-        </div>
     </div>
+
+
+
+    <div class="table-responsive mt-5">
+        <table id="patientTable" class="display compact">
+            <thead>
+                <tr>
+                    <th>No</th>
+                    <th>FirstName</th>
+                    <th>LastName</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+
+            <tbody>
+
+            </tbody>
+        </table>
+    </div>
+
 
 
     <x-slot name='moreScripts'>
         <script src="/app/js/jquery.toast.js"></script>
         <script src="/app/js/jquery.dataTables.min.js"></script>
+        <script src="/app/js/select2.min.js"></script>
 
         <script>
             $(document).ready(function() {
-                let complaint;
+                $('input#examinations').attr('checked', true)
+                $('select.examination').select2()
+                $('select.prescriptions').select2()
+
+                $('input.result').on('click', function(e) {
+                    $('div.result').toggleClass('hidden')
+                })
 
                 const table = $('#patientTable').DataTable({
                     serverSide: true,

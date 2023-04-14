@@ -1,5 +1,5 @@
 <x-layouts.app>
-    <x-slot name='title'>Patients</x-slot>
+    <x-slot name='title'>Orientations</x-slot>
 
 
     <x-slot name='moreStyles'>
@@ -9,39 +9,33 @@
 
     </x-slot>
 
-    <div class="row">
-        <div class="col-sm-12">
-            <div class="white-box rounded-md">
-                <div class="d-flex align-items-center justify-content-between">
-                    <h3 class="m-0">Patients to orient</h3>
 
-                    <!-- <a href='#' class="font-weight-bold text-primary"><u>Oriented patients</u></a> -->
+    <div class="d-flex align-items-center justify-content-between">
+        <h3 class="m-0">Patients to orient</h3>
 
-                </div>
+        <!-- <a href='#' class="font-weight-bold text-primary"><u>Oriented patients</u></a> -->
 
-
-
-                <div class="table-responsive mt-5">
-                    <table id="patientTable" class="display compact">
-                        <thead>
-                            <tr>
-                                <th>No</th>
-                                <th>FirstName</th>
-                                <th>LastName</th>
-                                <th>Actions</th>
-                            </tr>
-                        </thead>
-
-                        <tbody>
-
-                        </tbody>
-                    </table>
-                </div>
-
-
-            </div>
-        </div>
     </div>
+
+
+
+    <div class="table-responsive mt-5">
+        <table id="patientTable" class="display compact">
+            <thead>
+                <tr>
+                    <th>No</th>
+                    <th>FirstName</th>
+                    <th>LastName</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+
+            <tbody>
+
+            </tbody>
+        </table>
+    </div>
+
 
 
     <x-slot name='moreScripts'>
