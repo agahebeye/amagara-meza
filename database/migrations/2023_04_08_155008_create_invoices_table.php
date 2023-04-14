@@ -16,7 +16,6 @@ class CreateInvoicesTable extends Migration
         Schema::create('invoices', function (Blueprint $table) {
             $table->id();
             $table->foreignId('patient_id')->constrained()->cascadeOnDelete();
-            $table->string('service');
             $table->integer('status')->default(0); // 0: pending, 1: paid, 2: cancelled
             $table->date('paidAt')->nullable();
         });

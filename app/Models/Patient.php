@@ -19,11 +19,12 @@ class Patient extends \Illuminate\Database\Eloquent\Model
     protected static function booted(): void
     {
         static::created(function ($model) {
-            $model->invoices()->create([
-                'service' => 'consultation'
-            ]);
+            $service = Service::query()->first();
+            $invoice = $model->invoices()->create([]);
+            $invoice->items()->attach($service->id);
         });
     }
+
 
     public function getFullNameAttribute()
     {
