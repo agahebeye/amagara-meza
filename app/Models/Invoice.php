@@ -31,4 +31,9 @@ class Invoice extends Model
     {
         return $query->where('status', 2);
     }
+
+    public function items()
+    {
+        return $this->belongsToMany(Service::class, 'invoice_items');
+    }
 }
