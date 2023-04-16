@@ -12,12 +12,9 @@
 
     <div class="d-flex align-items-center justify-content-between">
         <h3 class="m-0">Patients to orient</h3>
-
         <!-- <a href='#' class="font-weight-bold text-primary"><u>Oriented patients</u></a> -->
 
     </div>
-
-
 
     <div class="table-responsive mt-5">
         <table id="patientTable" class="display compact">
@@ -35,8 +32,6 @@
             </tbody>
         </table>
     </div>
-
-
 
     <x-slot name='moreScripts'>
         <script src="/app/js/jquery.toast.js"></script>
@@ -115,7 +110,7 @@
                             $('#queue-number').text(data);
                             $('#waiting-list-modal').modal('show')
                         })
-                        .catch(console.error)
+                        .catch(() => notify('Orientation Notice', 'Error while trying to save orientation', 'error'))
                         .finally(() =>
                             $(this).closest('#orientation-modal').modal('hide')
                         )

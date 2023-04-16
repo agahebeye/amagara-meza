@@ -7,7 +7,6 @@
         <link href="/app/css/jquery.toast.css" rel="stylesheet" type="text/css" />
         <link href="/app/css/select2.min.css" rel="stylesheet" type="text/css" />
 
-
     </x-slot>
 
 
@@ -17,8 +16,6 @@
         <a href='#' class="font-weight-bold text-primary"><u>Oriented patients</u></a>
 
     </div>
-
-
 
     <div class="table-responsive mt-5">
         <table id="patientTable" class="display compact">
@@ -37,8 +34,6 @@
         </table>
     </div>
 
-
-
     <x-slot name='moreScripts'>
         <script src="/app/js/jquery.toast.js"></script>
         <script src="/app/js/jquery.dataTables.min.js"></script>
@@ -46,6 +41,8 @@
 
         <script>
             $(document).ready(function() {
+                let patientId, medicalFormRoute = "{{route('api.v1.medical-form', ':id')}}";
+
                 $('input#examinations').attr('checked', true)
                 $('select.examination').select2()
                 $('select.prescriptions').select2()
@@ -68,8 +65,7 @@
                         }, {
                             data: 'actions',
                             render: function(data, type, row, meta) {
-                                const value = encodeURIComponent(JSON.stringify(row))
-                                return `<a title="Show Details" role="button"  data-value="${value}" data-toggle="modal" data-target="#consultation-modal" class="view-button"><x-icons.eye /></a>`;
+                                return `<a title="Show Details" role="button" data-id="${row.id}" data-toggle="modal" data-target="#consultation-modal" class="view-button"><x-icons.eye /></a>`;
                             }
                         }
 
@@ -81,16 +77,15 @@
                     }],
                 });
 
-                //populate patient details
                 $('#consultation-modal').on('show.bs.modal', function(event) {
                     const button = $(event.relatedTarget);
-                    const value = JSON.parse(decodeURIComponent(button.data('value')))
-                    $('.patient_id').val(value.id);
-
-                    $.map(value, function(v, i) {
-                        $('#show-patient').find(`#${i}`).text(v)
-                    })
+                    patientId = button.data('id')
                 })
+
+                $('a[href="#medical-form"]').click(function() {
+                    $('#medical-form').load(medicalFormRoute.replace(':id', patientId))
+                })
+
 
                 //TODO submit consultation with its complaint
                 $('#consultation-form').on('submit', function(e) {
@@ -110,8 +105,6 @@
                         .finally(() =>
                             $(this).closest('#consultation-modal').modal('hide')
                         )
-
-
                 })
             });
         </script>

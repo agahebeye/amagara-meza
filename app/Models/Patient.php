@@ -4,6 +4,7 @@ namespace App\Models;
 
 use App\Models\Invoice;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Support\Carbon;
 
 class Patient extends \Illuminate\Database\Eloquent\Model
 {
@@ -28,6 +29,12 @@ class Patient extends \Illuminate\Database\Eloquent\Model
         return $value ? 'F' : 'M';
     }
 
+    public function getAgeAttribute($value)
+    {
+        $birth_date = Carbon::parse($value);
+        return now()->diffInYears($birth_date);
+    }
+
     public function invoices()
     {
         return $this->hasMany(Invoice::class);
@@ -40,7 +47,7 @@ class Patient extends \Illuminate\Database\Eloquent\Model
 
     public function complaints()
     {
-        return $this->hasMany(Complaint::class);
+        return $this->hasMany(Complaint::class)->latest();
     }
 
     public function latestComplaint()

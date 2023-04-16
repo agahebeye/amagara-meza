@@ -23,11 +23,8 @@ class OrientationController
     {
         $patients = Patient::whereHas(
             'latestInvoice',
-            fn (Builder $query) =>
-            $query->paid()
+            fn (Builder $query) => $query->paid()
         );
-
-        Debugbar::info(Patient::with('latestInvoice')->get()->toArray());
 
         return datatables($patients)->toJson();
     }
@@ -37,7 +34,7 @@ class OrientationController
         // create complaint - OK
         // create orientation with new complaint - OK
         // show waiting list - OK
-        // generate medical orientation
+        // generate medical orientation - oK (automatic)
 
         $complaint = Complaint::create($request->complaint);
         $complaint->orientation()->create($request->orientation);

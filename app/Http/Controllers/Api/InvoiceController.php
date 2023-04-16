@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Api;
 
 use App\Models\Invoice;
 use App\Models\Patient;
@@ -9,9 +9,10 @@ use Illuminate\Http\Request;
 use Spatie\RouteAttributes\Attributes\Prefix;
 use Spatie\RouteAttributes\Attributes\ApiResource;
 
-#[Prefix('v1')]
+#[Prefix('api/v1')]
 #[ApiResource(
     resource: 'invoices',
+    shallow: true,
     names: 'api.v1.invoices'
 )]
 class InvoiceController
