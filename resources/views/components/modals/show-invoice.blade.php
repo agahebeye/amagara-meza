@@ -6,9 +6,7 @@
 
             </div>
 
-            <div class="modal-body" id='invoice-body'>
-
-            </div>
+            <div class="modal-body" id='invoice-body'></div>
         </div>
     </div>
 </div>

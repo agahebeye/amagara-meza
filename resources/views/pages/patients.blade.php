@@ -37,11 +37,6 @@
         </table>
     </div>
 
-
-
-
-
-
     <x-slot name='moreScripts'>
         <script src="/app/js/jquery.toast.js"></script>
         <script src="/app/js/jquery.dataTables.min.js"></script>

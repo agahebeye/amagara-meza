@@ -5,8 +5,6 @@
     <x-slot name='moreStyles'>
         <link href="/app/css/jquery.dataTables.min.css" rel="stylesheet" type="text/css" />
         <link href="/app/css/jquery.toast.css" rel="stylesheet" type="text/css" />
-
-
     </x-slot>
 
 

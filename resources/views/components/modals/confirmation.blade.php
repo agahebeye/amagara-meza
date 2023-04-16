@@ -10,8 +10,8 @@
 
             <div class="modal-body">
                 <div class="d-flex flex-column align-items-center">
-                    <p class="text-center my-3" id='message'>{{ $message }}</p>
-                    <button id='confirm-button' class="btn btn-danger rounded-md px-5">confirm</button>
+                    <p class="text-center" id='message'>{{ $message }}</p>
+                    <button id='confirm-button' class="btn btn-danger text-uppercase rounded-md px-5">confirm</button>
                 </div>
             </div>
         </div>

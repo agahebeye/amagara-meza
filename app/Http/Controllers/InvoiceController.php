@@ -18,6 +18,7 @@ class InvoiceController
 {
     public function index()
     {
+        //TODO retrieve only unpaid invoice
         $patients = Patient::select('id', 'first_name', 'last_name')
             ->with('latestInvoice.items');
 
@@ -34,7 +35,6 @@ class InvoiceController
 
     public function store(Request $request)
     {
-        //TODO test to see it works!
         $patient = Patient::query()->firstWhere('id', $request->patient_id);
 
         $invoice = $patient->invoices()->create([]);
@@ -48,7 +48,11 @@ class InvoiceController
 
     public function update(Request $request, Invoice $invoice)
     {
-        //TODO test update invoice
-        return ['invoice' =>  $invoice, 'request' => $request->status];
+        $invoice = tap($invoice)->update(['status' => $request->status]);
+
+        return response()->json([
+            'data' => $invoice,
+            'message' => 'success'
+        ], 200);
     }
 }

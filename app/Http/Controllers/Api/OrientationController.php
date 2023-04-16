@@ -27,7 +27,7 @@ class OrientationController
             $query->paid()
         );
 
-        Debugbar::info($patients->get()->toArray());
+        Debugbar::info(Patient::with('latestInvoice')->get()->toArray());
 
         return datatables($patients)->toJson();
     }
