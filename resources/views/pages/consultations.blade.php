@@ -13,7 +13,7 @@
     <div class="d-flex align-items-center justify-content-between">
         <h3 class="m-0">Patients to orient</h3>
 
-        <a href='#' class="font-weight-bold text-primary"><u>Oriented patients</u></a>
+        <!-- <a href='#' class="font-weight-bold text-primary"><u>Oriented patients</u></a> -->
 
     </div>
 
@@ -44,7 +44,7 @@
                 let patientId, medicalFormRoute = "{{route('api.v1.medical-form', ':id')}}";
 
                 $('input#examinations').attr('checked', true)
-                $('select.examination').select2({
+                $('select.examinations').select2({
                     placeholder: 'Select examinations',
                     ajax: {
                         url: "{{route('api.v1.services.index')}}",
@@ -131,11 +131,17 @@
                 $('#consultation-form').on('submit', function(e) {
                     e.preventDefault();
 
-                    // const consultation = Object.fromEntries(new FormData(this).entries());
+                    const consultation = Object.fromEntries(new FormData(this).entries());
+                    const examinations = $('select.examinations').val();
+                    const prescriptions = $('select.prescriptions').val();
 
                     fetch("{{route('api.v1.consultations.store')}}", {
                             method: 'POST',
-                            body: new FormData(this),
+                            body: JSON.stringify({
+                                ...consultation,
+                                examinations,
+                                prescriptions
+                            }),
                             headers: {
                                 'Content-Type': 'application/json'
                             }

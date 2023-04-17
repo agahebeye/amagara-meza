@@ -68,12 +68,12 @@
         </div>
 
         <div class="form-check form-check-inline">
-            <input class="form-check-input result" type="radio" id="prescriptions" name='result' value="prescriptions">
+            <input class="form-check-input result" type="radio" id="prescriptions" name='result' value="prescriptions" disabled>
             <label class="form-check-label ml-2" for="prescriptions">Prescriptions</label>
         </div>
 
         <div class="result col-md-12">
-            <select class="examination" multiple="multiple" data-placeholder="Choose examinations" style="width: 50%">
+            <select class="examinations" multiple="multiple" data-placeholder="Choose examinations" style="width: 50%">
                 <optgroup label="Laboratory examination">
                     <option value="Consultation ORL">Consultation ORL</option>
                     <option value="Consultation Ophta">Consultation Ophta</option>
