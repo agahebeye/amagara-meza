@@ -24,7 +24,7 @@ class OrientationController
         $patients = Patient::whereHas(
             'latestInvoice',
             fn (Builder $query) => $query->paid()
-        );
+        )->with(['latestComplaint']);
 
         return datatables($patients)->toJson();
     }

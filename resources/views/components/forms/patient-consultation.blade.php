@@ -3,10 +3,16 @@
         <div class="form-group col-12 mt-4" id='patient-id-wrapper'>
             <label class="col-sm-12">Patient ID</label>
             <div class="col-md-12">
-                <input type="number" name="patient_id" class="patient_id form-control" style="pointer-events: none;">
+                <input type="number" name="patient_id" id='patient_id' class="form-control" style="pointer-events: none;">
             </div>
         </div>
 
+        <div class="form-group col-12 mt-4" id='patient-id-wrapper'>
+            <label class="col-sm-12">Consultation date</label>
+            <div class="col-md-12">
+                <input type="date" name="consultation_date" id='consultation_date' class="form-control" disabled>
+            </div>
+        </div>
 
         <div class="form-group col-md-6">
             <label class="col-md-12 mt-4" for="chief_complaint">Chief complaint*</span>

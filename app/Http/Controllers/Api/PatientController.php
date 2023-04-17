@@ -6,7 +6,7 @@ use App\Models\Patient;
 use Spatie\RouteAttributes\Attributes\ApiResource;
 use Spatie\RouteAttributes\Attributes\Prefix;
 
-#[Prefix('v1')]
+#[Prefix('api/v1')]
 #[ApiResource(
     resource: 'patients',
     names: 'api.v1.patients'

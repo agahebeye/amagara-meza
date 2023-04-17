@@ -44,7 +44,34 @@
                 let patientId, medicalFormRoute = "{{route('api.v1.medical-form', ':id')}}";
 
                 $('input#examinations').attr('checked', true)
-                $('select.examination').select2()
+                $('select.examination').select2({
+                    placeholder: 'Select examinations',
+                    ajax: {
+                        url: "{{route('api.v1.services.index')}}",
+                        dataType: 'json',
+                        processResults: (data) => {
+                            const results = []
+
+                            results.push({
+                                text: 'Laboratory Examination',
+                                children: data.filter(x => x.category === 'Laboratory').map(x => ({
+                                    id: x.id,
+                                    text: x.name
+                                }))
+                            }, {
+                                text: 'Imaging Examination',
+                                children: data.filter(x => x.category === 'Imaging').map(x => ({
+                                    id: x.id,
+                                    text: x.name
+                                }))
+                            });
+
+                            return {
+                                results
+                            }
+                        }
+                    }
+                })
                 $('select.prescriptions').select2()
 
                 $('input.result').on('click', function(e) {
@@ -65,7 +92,13 @@
                         }, {
                             data: 'actions',
                             render: function(data, type, row, meta) {
-                                return `<a title="Show Details" role="button" data-id="${row.id}" data-toggle="modal" data-target="#consultation-modal" class="view-button"><x-icons.eye /></a>`;
+                                const value = encodeURIComponent(JSON.stringify({
+                                    patient_id: row.id,
+                                    chief_complaint: row.latest_complaint.complaint,
+                                    consultation_date: row.latest_complaint.date
+                                }));
+
+                                return `<a title="Show Details" role="button" data-value="${value}" data-toggle="modal" data-target="#consultation-modal" class="view-button"><x-icons.eye /></a>`;
                             }
                         }
 
@@ -79,7 +112,14 @@
 
                 $('#consultation-modal').on('show.bs.modal', function(event) {
                     const button = $(event.relatedTarget);
-                    patientId = button.data('id')
+                    const value = JSON.parse(decodeURIComponent(button.data('value')))
+                    patientId = value.patient_id
+
+                    $.map(value, function(v, i) {
+                        $(`#consultation-form`).find(`#${i}`).val(v)
+                    })
+
+
                 })
 
                 $('a[href="#medical-form"]').click(function() {
@@ -93,9 +133,9 @@
 
                     // const consultation = Object.fromEntries(new FormData(this).entries());
 
-                    fetch("{{route('api.v1.orientations.store')}}", {
+                    fetch("{{route('api.v1.consultations.store')}}", {
                             method: 'POST',
-                            body: JSON.stringify({}),
+                            body: new FormData(this),
                             headers: {
                                 'Content-Type': 'application/json'
                             }

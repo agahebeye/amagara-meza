@@ -7,7 +7,7 @@
 
             <ul class="nav customtab nav-tabs d-flex justify-content-between" role="tablist">
                 <li role="presentation" class="nav-item"><a href="#medical-form" class="nav-link" aria-controls="medicalForm" role="tab" data-toggle="tab" aria-expanded="true">Medical Form</a></li>
-                <li role="presentation" class="nav-item"><a href="#consultation" class="nav-link active" aria-controls="consultation" role="tab" data-toggle="tab" aria-expanded="false"> Consultaion</a></li>
+                <li role="presentation" class="nav-item"><a href="#consultation" class="nav-link active" aria-controls="consultation" role="tab" data-toggle="tab" aria-expanded="false"> Consultation</a></li>
             </ul>
 
             <div class="tab-content">
