@@ -24,13 +24,21 @@ class ConsultationController
         return datatables($consultations)->toJson();
     }
 
+    public function show(Patient $patient)
+    {
+    }
+
     public function store(Request $request)
     {
-        $patient = Patient::select('id', 'first_name')->with('latestComplaint.orientation')
-            ->firstWhere('id', $request->patient_id);
+        // get orientation
+        $orientation = Orientation::query()->firstWhere('complaint_id', $request->complaint_id);
+        $consultation = $orientation->consultation()->firstOrCreate($request->except(['complaint_id', 'examinations']));
+        return $consultation;
+        // create consultation from it
+        // link with examns
 
         return response()->json([
-            'data' => $patient,
+            'data' => $orientation,
             'message' => 'success'
         ], 201);
     }

@@ -18,7 +18,6 @@ class CreateConsultationsTable extends Migration
             $table->tinyText('chief_complaint');
             $table->tinyText('disease_history');
             $table->tinyText('medical_history');
-            $table->tinyText('medical_history');
             $table->tinyText('anamnesis');
             $table->tinyText('physical_examination');
             $table->tinyText('probable_diagnosis');

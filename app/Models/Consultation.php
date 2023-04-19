@@ -11,7 +11,14 @@ class Consultation extends Model
 {
     use HasFactory;
 
-    protected $guards = [];
+    protected $fillable = [
+        'chief_complaint',
+        'disease_history',
+        'medical_history',
+        'anamnesis',
+        'physical_examination',
+        'probable_diagnosis',
+    ];
 
     public function orientation()
     {

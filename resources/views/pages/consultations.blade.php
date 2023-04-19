@@ -43,7 +43,6 @@
             $(document).ready(function() {
                 let patientId, medicalFormRoute = "{{route('api.v1.medical-form', ':id')}}";
 
-                $('input#examinations').attr('checked', true)
                 $('select.examinations').select2({
                     placeholder: 'Select examinations',
                     ajax: {
@@ -72,7 +71,6 @@
                         }
                     }
                 })
-                $('select.prescriptions').select2()
 
                 $('input.result').on('click', function(e) {
                     $('div.result').toggleClass('hidden')
@@ -92,7 +90,6 @@
                         }, {
                             data: 'actions',
                             render: function(data, type, row, meta) {
-                                console.log(row);
                                 const value = encodeURIComponent(JSON.stringify({
                                     complaint_id: row.latest_complaint.id,
                                     chief_complaint: row.latest_complaint.complaint,
@@ -149,9 +146,10 @@
                         }).then(res => res.json())
                         .then(console.log)
                         .catch(console.error)
-                        .finally(() =>
-                            $(this).closest('#consultation-modal').modal('hide')
-                        )
+                        .finally(() => {
+                            $(this).closest('#consultation-modal').modal('hide');
+                            $(this).closest('#consultation-form').trigger('reset')
+                        })
                 })
             });
         </script>

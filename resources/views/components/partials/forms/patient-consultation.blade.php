@@ -1,6 +1,6 @@
 <form id="consultation-form" class="form-material" style="font-size: 1.25rem;">
     <div class="row no-gutters">
-        <div class="form-group col-12 mt-4">
+        <div class="form-group col-12 mt-4 d-none">
             <label class="col-sm-12">Complaint ID</label>
             <div class="col-md-12">
                 <input type="number" name="complaint_id" id='complaint_id' class="form-control">
@@ -62,36 +62,39 @@
             </div>
         </div>
 
-        <div class="form-check form-check-inline">
+        <!-- <div class="form-check form-check-inline">
             <input class="form-check-input result" type="radio" id="examinations" name='result' value="examinations" checked>
             <label class="form-check-label ml-2" for="examinations">Examens Labo</label>
+
         </div>
 
         <div class="form-check form-check-inline">
             <input class="form-check-input result" type="radio" id="prescriptions" name='result' value="prescriptions" disabled>
             <label class="form-check-label ml-2" for="prescriptions">Prescriptions</label>
+        </div> -->
+        <div class="form-group col-md-6">
+            <label class="col-md-12 mt-4" for="examinations">Exams Labo</span></label>
+            <div class="result">
+                <select class="examinations" multiple="multiple" id='examinations' data-placeholder="Choose examinations" style="width: 75%">
+                    <optgroup label="Laboratory examination">
+                        <option value="Consultation ORL">Consultation ORL</option>
+                        <option value="Consultation Ophta">Consultation Ophta</option>
+                        <option value="Consultation NUTR">Consultation NUTR</option>
+                        <option value="Consultation Kiné">Consultation Kiné</option>
+                    </optgroup>
+
+                    <optgroup label="Imaging examination">
+                        <option value="Consultation ORL">ASP</option>
+                        <option value="Consultation Ophta">Biopsie echo guidée</option>
+                        <option value="Consultation NUTR">Colonne Lombo-Sacre</option>
+                        <option value="Consultation Kiné">Echographie testiculaire</option>
+                    </optgroup>
+                </select>
+
+
+            </div>
         </div>
-
-        <div class="result col-md-12">
-            <select class="examinations" multiple="multiple" data-placeholder="Choose examinations" style="width: 50%">
-                <optgroup label="Laboratory examination">
-                    <option value="Consultation ORL">Consultation ORL</option>
-                    <option value="Consultation Ophta">Consultation Ophta</option>
-                    <option value="Consultation NUTR">Consultation NUTR</option>
-                    <option value="Consultation Kiné">Consultation Kiné</option>
-                </optgroup>
-
-                <optgroup label="Imaging examination">
-                    <option value="Consultation ORL">ASP</option>
-                    <option value="Consultation Ophta">Biopsie echo guidée</option>
-                    <option value="Consultation NUTR">Colonne Lombo-Sacre</option>
-                    <option value="Consultation Kiné">Echographie testiculaire</option>
-                </optgroup>
-            </select>
-
-
-        </div>
-
+        <!--
         <div class="result col-md-12 hidden">
             <select class="prescriptions" multiple="multiple" data-placeholder="Choose prescriptions" style="width: 50%">
                 <optgroup label="Alaskan/Hawaiian Time Zone">
@@ -101,7 +104,7 @@
                     <option value="NV">Nevada</option>
                 </optgroup>
             </select>
-        </div>
+        </div> -->
 
         <div class="d-flex col-12 justify-content-center mt-5">
             <button type="submit" class="btn btn-info px-5 rounded-md d-flex justify-items-center" id='submit-patient'>
