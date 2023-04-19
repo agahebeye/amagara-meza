@@ -92,8 +92,9 @@
                         }, {
                             data: 'actions',
                             render: function(data, type, row, meta) {
+                                console.log(row);
                                 const value = encodeURIComponent(JSON.stringify({
-                                    patient_id: row.id,
+                                    complaint_id: row.latest_complaint.id,
                                     chief_complaint: row.latest_complaint.complaint,
                                     consultation_date: row.latest_complaint.date
                                 }));

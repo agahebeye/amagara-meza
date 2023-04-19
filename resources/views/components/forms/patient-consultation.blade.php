@@ -1,9 +1,9 @@
 <form id="consultation-form" class="form-material" style="font-size: 1.25rem;">
     <div class="row no-gutters">
-        <div class="form-group col-12 mt-4" id='patient-id-wrapper'>
-            <label class="col-sm-12">Patient ID</label>
+        <div class="form-group col-12 mt-4">
+            <label class="col-sm-12">Complaint ID</label>
             <div class="col-md-12">
-                <input type="number" name="patient_id" id='patient_id' class="form-control" style="pointer-events: none;">
+                <input type="number" name="complaint_id" id='complaint_id' class="form-control">
             </div>
         </div>
 

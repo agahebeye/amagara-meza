@@ -16,15 +16,20 @@ class Orientation extends Model
         'orientation_date' => 'immutable_datetime',
     ];
 
+    public function scopeWaitingList($query, $endDate, $department)
+    {
+        $startDate = Carbon::now()->startOfDay();
+
+        return $query->whereDepartment($department)->whereBetween('created_at', [$startDate, $endDate])->count();
+    }
+
     public function complaint(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {
         return $this->belongsTo(Complaint::class);
     }
 
-    public function scopeWaitingList($query, $endDate, $department)
+    public function consultation()
     {
-        $startDate = Carbon::now()->startOfDay();
-
-        return $query->whereDepartment($department)->whereBetween('created_at', [$startDate, $endDate])->count()/* ->whereBetween('created_at', [$startDate, $endDate]) */;
+        return $this->hasOne(Consultation::class);
     }
 }

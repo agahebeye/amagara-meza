@@ -22,6 +22,9 @@ class CreateConsultationsTable extends Migration
             $table->tinyText('anamnesis');
             $table->tinyText('physical_examination');
             $table->tinyText('probable_diagnosis');
+
+            $table->foreignId('orientation_id')->constrained()->cascadeOnDelete();
+
             $table->timestamps();
         });
     }
