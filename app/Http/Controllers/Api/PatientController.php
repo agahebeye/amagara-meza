@@ -31,7 +31,7 @@ class PatientController
     public function store(Request $request)
     {
 
-        $newPatient = Patient::create($request);
+        $newPatient = Patient::create($request->all());
 
         return response()->json([
             'data' => $newPatient,

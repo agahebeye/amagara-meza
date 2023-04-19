@@ -60,7 +60,7 @@
             $(document).ready(function() {
                 let selectId;
 
-                const table = $('#patientTable').DataTable({
+                var table = $('#patientTable').DataTable({
                     serverSide: true,
                     ajax: "{{route('api.v1.patients.index')}}",
                     columns: [{

@@ -210,13 +210,13 @@
             .then(_ => {
 
                 notify('Patient registration', 'Patient registered succefully.')
-                table.ajax.reload();
+                $('#patientTable').DataTable().ajax.reload();
                 $(this).trigger('reset');
-                $('#new-patient-modal').modal('hide');
-
             })
-            .catch(reason => notify('Patient registration', 'Error registering new patient.', 'error'));
-
+            .catch(reason => notify('Patient registration', 'Error registering new patient.', 'error'))
+            .finally(() => {
+                $('#new-patient-modal').modal('hide');
+            });
     })
 </script>
 @endpush

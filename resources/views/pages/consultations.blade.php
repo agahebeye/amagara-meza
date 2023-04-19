@@ -155,5 +155,5 @@
         </script>
     </x-slot>
 
-    <x-modals.new-consultation />
+    <x-partials.modals.new-consultation />
 </x-layouts.app>

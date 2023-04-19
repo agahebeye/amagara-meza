@@ -16,7 +16,7 @@
                 </div>
 
                 <div role="tabpanel" class="tab-pane fade active in  px-5" id="consultation">
-                    <x-forms.patient-consultation />
+                    <x-partials.forms.patient-consultation />
                 </div>
 
             </div>
