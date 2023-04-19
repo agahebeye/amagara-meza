@@ -139,12 +139,12 @@
                 </div>
 
                 <div role="tabpanel" class="tab-pane fade active in px-5" id="complaint">
-                    <x-forms.patient-complaint />
+                    <x-partials.forms.patient-complaint />
                 </div>
 
 
                 <div role="tabpanel" class="tab-pane fade px-5" id="orientation">
-                    <x-forms.patient-orientation />
+                    <x-partials.forms.patient-orientation />
                 </div>
 
             </div>

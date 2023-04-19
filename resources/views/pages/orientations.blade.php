@@ -12,8 +12,6 @@
 
     <div class="d-flex align-items-center justify-content-between">
         <h3 class="m-0">Patients to orient</h3>
-        <!-- <a href='#' class="font-weight-bold text-primary"><u>Oriented patients</u></a> -->
-
     </div>
 
     <div class="table-responsive mt-5">
@@ -121,7 +119,7 @@
         </script>
     </x-slot>
 
-    <x-modals.new-orientation />
+    <x-partials.modals.new-orientation />
 
     <div class="modal fade" id="waiting-list-modal" tabindex="-1" role="dialog" aria-labelledby="waitingListModal" data-backdrop='false' data-keyboard="false" aria-hidden="true">
         <div class="modal-dialog h-100 d-flex flex-column justify-content-center my-0" role="document">

@@ -8,7 +8,6 @@
 
             <div class="modal-body">
                 <form id="identification-form" class="form-material px-5" style="font-size: 1.25rem;">
-
                     <div class="row no-gutters">
                         <div class="form-group col-md-6">
                             <label class="col-md-12 mt-4" for="lastname">Lastname*</span>
@@ -198,3 +197,26 @@
         </div>
     </div>
 </div>
+
+@push('scripts')
+<script>
+    $('#identification-form').on('submit', function(event) {
+        event.preventDefault()
+
+        fetch("{{route('api.v1.patients.store')}}", {
+                method: 'POST',
+                body: new FormData(this),
+            })
+            .then(_ => {
+
+                notify('Patient registration', 'Patient registered succefully.')
+                table.ajax.reload();
+                $(this).trigger('reset');
+                $('#new-patient-modal').modal('hide');
+
+            })
+            .catch(reason => notify('Patient registration', 'Error registering new patient.', 'error'));
+
+    })
+</script>
+@endpush

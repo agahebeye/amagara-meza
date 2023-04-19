@@ -66,11 +66,10 @@
     <script src="/app/js/sidebar-nav.min.js"></script>
     <script src="/app/js/jquery.slimscroll.js"></script>
     <script src="/app/js/printThis.js"></script>
-
-    {{ $moreScripts ?? '' }}
-
     <script src="/app/js/custom.min.js"></script>
 
+    {{ $moreScripts ?? '' }}
+    @stack('scripts')
 </body>
 
 </html>

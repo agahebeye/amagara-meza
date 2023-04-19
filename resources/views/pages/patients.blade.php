@@ -14,7 +14,7 @@
         <div class="">
             <a data-toggle="modal" data-target="#new-patient-modal" class="btn btn-info rounded-md">Add new patient</a>
 
-            <x-modals.new-patient />
+            <x-partials.modals.new-patient />
 
         </div>
     </div>
@@ -36,6 +36,21 @@
             </tbody>
         </table>
     </div>
+
+    <div class="modal fade" id="show-patient-modal" tabindex="-1" role="dialog" aria-pledby="showPatientModal" data-backdrop='false' aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content rounded-md">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h2 class="modal-title text-center" id="myModalp">Patient Details</h2>
+                </div>
+
+                <div class="modal-body" id='patient-content'></div>
+            </div>
+        </div>
+    </div>
+
+    <x-partials.modals.confirmation title="Delete confirmation" message='Do you really want to delete this patient?' />
 
     <x-slot name='moreScripts'>
         <script src="/app/js/jquery.toast.js"></script>
@@ -78,35 +93,14 @@
 
                 $('#show-patient-modal').on('show.bs.modal', function(event) {
                     const button = $(event.relatedTarget);
-                    const value = JSON.parse(decodeURIComponent(button.data('value')))
-                    selectId = value.id;
 
-                    $.map(value, function(v, i) {
-                        $(`#show-patient`).find(`#${i}`).text(v)
-                    })
+                    $('#patient-content')
+                        .load(
+                            `{{route('api.v1.patients.show', ':id')}}
+                        `.replace(':id', button.data('id'))
+                        )
                 })
 
-                $('#set-consulation-btn').on('click', function() {
-                    // get selected id
-                    // send post request to invoice
-                    // test value
-                    const btn = $(this);
-
-                    fetch("{{route('api.v1.invoices.store')}}", {
-                            method: 'POST',
-                            body: JSON.stringify({
-                                patient_id: selectId,
-                                services: [1] // 1 is consultation service
-                            }),
-                            headers: {
-                                'Content-Type': 'application/json'
-                            }
-                        })
-                        .then(_ => notify('Consultation notice', 'Patient set for consultation.'))
-                        .catch(_ => notify('Consultaion notice', 'Error setting a patient for consultation.', 'error'))
-                        .finally(() => btn.closest('#show-patient-modal').modal('hide'));
-
-                })
 
                 $('#confirmation').on('show.bs.modal', function(event) {
                     const button = $(event.relatedTarget);
@@ -126,29 +120,9 @@
                         .catch(reason => notify('Delete notification', 'Error deleting a patient.'))
                         .finally(() => $('#confirmation').modal('hide'));
                 })
-
-                $('#identification-form').on('submit', function(event) {
-                    event.preventDefault()
-
-
-                    fetch("{{route('api.v1.patients.store')}}", {
-                            method: 'POST',
-                            body: new FormData(this),
-                        })
-                        .then(_ => {
-                            notify('Patient registration', 'Patient registered succefully.')
-                            table.ajax.reload();
-                            $(this).trigger('reset');
-
-                            $('#new-patient-modal').modal('hide');
-                        })
-                        .catch(reason => notify('Patient registration', 'Error registering new patient.', 'error'));
-
-                })
             });
         </script>
     </x-slot>
 
-    <x-modals.show-patient />
-    <x-modals.confirmation title="Delete confirmation" message='Do you really want to delete this patient?' />
+
 </x-layouts.app>

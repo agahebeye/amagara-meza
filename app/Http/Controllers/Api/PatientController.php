@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Models\Patient;
+use Illuminate\Http\Request;
 use Spatie\RouteAttributes\Attributes\ApiResource;
 use Spatie\RouteAttributes\Attributes\Prefix;
 
@@ -20,10 +21,17 @@ class PatientController
         return datatables($patients)->toJson();
     }
 
-    public function store()
+    public function show(Patient $patient)
+    {
+        return view('components.partials.modals.show-patient', [
+            'patient' => $patient
+        ]);
+    }
+
+    public function store(Request $request)
     {
 
-        $newPatient = Patient::create(request()->all());
+        $newPatient = Patient::create($request);
 
         return response()->json([
             'data' => $newPatient,

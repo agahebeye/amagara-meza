@@ -29,8 +29,6 @@
         </table>
     </div>
 
-
-
     <x-slot name='moreScripts'>
         <script src="/app/js/jquery.toast.js"></script>
         <script src="/app/js/jquery.dataTables.min.js"></script>
@@ -78,8 +76,8 @@
         </script>
     </x-slot>
 
-    <x-modals.show-invoice />
-    <x-modals.confirmation title='Payment Cancellation' message='Do you really want to cancel this payment?' />
+    <x-partials.modals.show-invoice />
+    <x-partials.modals.confirmation title='Payment Cancellation' message='Do you really want to cancel this payment?' />
 
 
 </x-layouts.app>

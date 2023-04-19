@@ -28,7 +28,7 @@ class InvoiceController
 
     public function show(Invoice $invoice)
     {
-        return view('components.invoice', ['invoice' => $invoice->load([
+        return view('components.partials.invoice', ['invoice' => $invoice->load([
             'items',
             'patient:id,first_name,last_name'
         ])]);
