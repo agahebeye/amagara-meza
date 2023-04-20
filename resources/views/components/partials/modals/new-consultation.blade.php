@@ -23,3 +23,20 @@
         </div>
     </div>
 </div>
+
+@push('scripts')
+<script>
+    let medicalFormRoute = "{{route('api.v1.medical-form', ':id')}}"
+
+    $('#consultation-modal').on('show.bs.modal', function(event) {
+        const button = $(event.relatedTarget);
+        const value = JSON.parse(decodeURIComponent(button.data('value')))
+
+        $.map(value, function(v, i) {
+            $(`#consultation-form`).find(`#${i}`).val(v)
+        })
+
+        $('#medical-form').load(medicalFormRoute.replace(':id', value.id));
+    })
+</script>
+@endpush

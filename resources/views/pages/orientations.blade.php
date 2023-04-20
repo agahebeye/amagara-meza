@@ -15,7 +15,7 @@
     </div>
 
     <div class="table-responsive mt-5">
-        <table id="patientTable" class="display compact">
+        <table id="orientationTable" class="display compact">
             <thead>
                 <tr>
                     <th>No</th>
@@ -39,7 +39,7 @@
             $(document).ready(function() {
                 let complaint;
 
-                const table = $('#patientTable').DataTable({
+                const table = $('#orientationTable').DataTable({
                     serverSide: true,
                     ajax: "{{route('api.v1.orientations.index')}}",
                     columns: [{
@@ -55,7 +55,7 @@
                             render: function(data, type, row, meta) {
                                 const value = encodeURIComponent(JSON.stringify(row))
                                 return `
-                                <a title="Show Details" role="button"  data-value="${value}" data-toggle="modal" data-target="#orientation-modal" class="view-button"><x-icons.eye /></a>`;
+                                <a title="Show Details" role="button" data-value="${value}" data-toggle="modal" data-target="#orientation-modal" class="view-button"><x-icons.eye /></a>`;
                             }
                         }
 
@@ -67,7 +67,7 @@
                     }],
                 });
 
-                //populate patient details
+                //populate patient details - OK
                 $('#orientation-modal').on('show.bs.modal', function(event) {
                     const button = $(event.relatedTarget);
                     const value = JSON.parse(decodeURIComponent(button.data('value')))
@@ -78,7 +78,7 @@
                     })
                 })
 
-                // save complaint and switch to orientation tab
+                // save complaint and switch to orientation tab - Ok
                 $('#complaint-form').on('submit', function(e) {
                     e.preventDefault();
                     complaint = Object.fromEntries(new FormData(this).entries());
@@ -86,7 +86,7 @@
 
                 })
 
-                //TODO submit orientation with its complaint
+                // submit orientation with its complaint - Ok
                 $('#orientation-form').on('submit', function(e) {
                     e.preventDefault();
 

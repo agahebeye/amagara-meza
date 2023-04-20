@@ -13,7 +13,6 @@
 
             <!-- Tab panes -->
             <div class="tab-content">
-
                 <div role="tabpanel" class="tab-pane fade" id="profile">
                     <div id="show-patient" class="px-5" style="font-size: 1.25rem;">
                         <div class="row">

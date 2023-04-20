@@ -21,11 +21,10 @@ class OrientationController
 {
     public function index()
     {
-        $patients = Patient::select('id', 'first_name', 'last_name')
-            ->whereHas(
-                'latestInvoice',
-                fn (Builder $query) => $query->paid()
-            )->with(['latestComplaint']);
+        $patients = Patient::whereHas(
+            'latestInvoice',
+            fn (Builder $query) => $query->paid()
+        );
 
         return datatables($patients)->toJson();
     }

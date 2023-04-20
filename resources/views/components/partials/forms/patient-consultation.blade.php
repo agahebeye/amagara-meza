@@ -117,3 +117,34 @@
 
     </div>
 </form>
+
+@push('scripts')
+<script>
+    //TODO submit consultation with its complaint
+    $('#consultation-form').on('submit', function(e) {
+        e.preventDefault();
+
+        const consultation = Object.fromEntries(new FormData(this).entries());
+        const examinations = $('select.examinations').val();
+        const prescriptions = $('select.prescriptions').val();
+
+        fetch("{{route('api.v1.consultations.store')}}", {
+                method: 'POST',
+                body: JSON.stringify({
+                    ...consultation,
+                    examinations,
+                    prescriptions
+                }),
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            }).then(res => res.json())
+            .then(console.log)
+            .catch(console.error)
+            .finally(() => {
+                $(this).closest('#consultation-modal').modal('hide');
+                $(this).closest('#consultation-form').trigger('reset')
+            })
+    })
+</script>
+@endpush

@@ -74,10 +74,9 @@
                         }, {
                             data: 'actions',
                             render: function(data, type, row, meta) {
-                                const value = encodeURIComponent(JSON.stringify(row))
                                 return `
-                                <a title="Show Details" role="button" data-id="${row.id}" data-value="${value}" data-toggle="modal" data-target="#show-patient-modal" class="view-button"><x-icons.eye /></a>
-                                <a title="Edit Patient" role="button" data-id="${row.id}" data-value="${value}" data-toggle="modal" data-target="#show-patient-modal" class="edit-button mx-3"><x-icons.pencil /></i></a>
+                                <a title="Show Details" role="button" data-id="${row.id}" data-toggle="modal" data-target="#show-patient-modal" class="view-button"><x-icons.eye /></a>
+                                <a title="Edit Patient" role="button" data-id="${row.id}" data-toggle="modal" data-target="#show-patient-modal" class="edit-button mx-3"><x-icons.pencil /></i></a>
                                 <a title="Delete Patient" role="button" data-id="${row.id}" data-toggle="modal" data-target="#confirmation" class="delete-button"><x-icons.trash /></i></a>
                                 `;
                             }
