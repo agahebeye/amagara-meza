@@ -59,7 +59,7 @@
              <div class="clearfix"></div>
              <hr>
              <div class="text-right">
-                 <button class="btn btn-danger rounded-md d-print-none checkout" data-id={{ $invoice->id }} type="button"> Proceed to payment </button>
+                 <button class="btn btn-danger rounded-md d-print-none checkout" data-id="{{ $invoice->id }}" type="button"> Proceed to payment </button>
              </div>
          </div>
      </div>
@@ -84,7 +84,7 @@
                  })
                  .then(() => {
                      notify('Invoice notice', `Invoice #${invoiceId} was paid succefully.`)
-
+                     $('#invoiceTable').DataTable().ajax.reload();
                      // TODO close parent modal after printing
                      $('.invoice').printThis({
                          pageTitle: "Invoice #{{$invoice->id}}",

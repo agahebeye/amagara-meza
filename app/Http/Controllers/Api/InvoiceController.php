@@ -19,9 +19,9 @@ class InvoiceController
 {
     public function index()
     {
-        //TODO retrieve only unpaid invoice
         $patients = Patient::select('id', 'first_name', 'last_name')
-            ->with('latestInvoice.items');
+            ->with('latestInvoice.items')
+            ->whereHas('latestInvoice', fn ($query) => $query->pending());
 
         return datatables($patients)->toJson();
     }
