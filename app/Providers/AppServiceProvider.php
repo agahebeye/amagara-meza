@@ -31,5 +31,6 @@ class AppServiceProvider extends ServiceProvider
         ]);
 
         $this->loadViewsFrom(app_path('Modules/Consultation/views'), 'consultation');
+        $this->loadViewsFrom(app_path('Modules/Patient/views'), 'patient');
     }
 }

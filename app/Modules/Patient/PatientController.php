@@ -23,7 +23,7 @@ class PatientController
 
     public function show(Patient $patient)
     {
-        return view('components.partials.modals.show-patient', [
+        return view('patient::show', [
             'patient' => $patient
         ]);
     }
