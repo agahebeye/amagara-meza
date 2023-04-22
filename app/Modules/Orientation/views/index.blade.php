@@ -67,59 +67,22 @@
                     }],
                 });
 
-                //populate patient details - OK
-                $('#orientation-modal').on('show.bs.modal', function(event) {
-                    const button = $(event.relatedTarget);
-                    const value = JSON.parse(decodeURIComponent(button.data('value')))
-                    $('.patient_id').val(value.id);
-
-                    $.map(value, function(v, i) {
-                        $('#show-patient').find(`#${i}`).text(v)
-                    })
-                })
-
-                // save complaint and switch to orientation tab - Ok
-                $('#complaint-form').on('submit', function(e) {
-                    e.preventDefault();
-                    complaint = Object.fromEntries(new FormData(this).entries());
-                    $("a[href='#orientation']").click()
-
-                })
-
-                // submit orientation with its complaint - Ok
-                $('#orientation-form').on('submit', function(e) {
-                    e.preventDefault();
-
-                    const orientation = Object.fromEntries(new FormData(this).entries());
-
-                    fetch("{{route('api.v1.orientations.store')}}", {
-                            method: 'POST',
-                            body: JSON.stringify({
-                                complaint,
-                                orientation
-                            }),
-                            headers: {
-                                'Content-Type': 'application/json'
-                            }
-                        }).then(res => res.json())
-                        .then(({
-                            data
-                        }) => {
-                            $('#queue-number').text(data);
-                            $('#waiting-list-modal').modal('show')
-                        })
-                        .catch(() => notify('Orientation Notice', 'Error while trying to save orientation', 'error'))
-                        .finally(() =>
-                            $(this).closest('#orientation-modal').modal('hide')
-                        )
-
-
-                })
             });
+
+            //populate patient details - OK
+            $('#orientation-modal').on('show.bs.modal', function(event) {
+                const button = $(event.relatedTarget);
+                const value = JSON.parse(decodeURIComponent(button.data('value')))
+                $('.patient_id').val(value.id);
+
+                $.map(value, function(v, i) {
+                    $('#show-patient').find(`#${i}`).text(v)
+                })
+            })
         </script>
     </x-slot>
 
-    <x-partials.modals.new-orientation />
+    <x-orientation::new />
 
     <div class="modal fade" id="waiting-list-modal" tabindex="-1" role="dialog" aria-labelledby="waitingListModal" data-backdrop='false' data-keyboard="false" aria-hidden="true">
         <div class="modal-dialog h-100 d-flex flex-column justify-content-center my-0" role="document">

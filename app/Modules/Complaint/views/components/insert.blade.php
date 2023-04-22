@@ -1,9 +1,11 @@
 <form id="complaint-form" class="form-material" style="font-size: 1.25rem;">
     <div class="row no-gutters">
-        <div class="form-group col-12 mt-4" id='patient-id-wrapper'>
+        <input type="hidden" name="patient_id" class="form-control">
+
+        <div class="form-group col-12 mt-4">
             <label class="col-sm-12">Patient ID</label>
             <div class="col-md-12">
-                <input type="number" name="patient_id" class="patient_id form-control" style="pointer-events: none;">
+                <input type="number" class="patient_id form-control" disabled>
             </div>
         </div>
 
@@ -111,3 +113,15 @@
     </div>
 
 </form>
+
+@push('scripts')
+<script>
+    // save complaint and switch to orientation tab - Ok
+    $('#complaint-form').on('submit', function(e) {
+        e.preventDefault();
+        complaint = Object.fromEntries(new FormData(this).entries());
+        $("a[href='#orientation']").click()
+
+    })
+</script>
+@endpush
