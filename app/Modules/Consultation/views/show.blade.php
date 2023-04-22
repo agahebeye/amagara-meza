@@ -1,12 +1,11 @@
 <ul class="nav customtab nav-tabs d-flex justify-content-between" role="tablist">
     <li role="presentation" class="nav-item"><a href="#medical-form" class="nav-link" aria-controls="medicalForm" role="tab" data-toggle="tab" data-patient-id="{{ $complaint->patient_id }}" aria-expanded="true">Medical Form</a></li>
     <li role="presentation" class="nav-item"><a href="#consultation" class="nav-link active" aria-controls="consultation" role="tab" data-toggle="tab" aria-expanded="false"> Consultation</a></li>
-    @if ($consultation) <li role="presentation" class="nav-item"><a href="#prescriptions" class="nav-link" aria-controls="prescriptions" role="tab" data-toggle="tab" aria-expanded="false"> Prescriptions</a></li> @endif
+    <li role="presentation" class="nav-item"><a href="#prescriptions" class="nav-link" aria-controls="prescriptions" role="tab" data-toggle="tab" aria-expanded="false"> Prescriptions</a></li>
 </ul>
 
 <div class="tab-content">
-    <div role="tabpanel" class="tab-pane fade" id="medical-form">
-    </div>
+    <div role="tabpanel" class="tab-pane fade" id="medical-form"></div>
 
     <div role="tabpanel" class="tab-pane fade active in  px-5" id="consultation">
         @if(! $consultation)
@@ -15,8 +14,7 @@
         <x-consultation::result :complaint="$complaint" :consultation="$consultation" />
         @endif
     </div>
-    <div role="tabpanel" class="tab-pane fade active in  px-5" id="prescriptions">
-    </div>
+    <div role="tabpanel" class="tab-pane fade" id="prescriptions"></div>
 </div>
 
 

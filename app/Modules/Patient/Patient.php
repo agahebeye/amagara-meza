@@ -2,10 +2,10 @@
 
 namespace App\Modules\Patient;
 
-use App\Models\Invoice;
-use App\Models\Service;
-use App\Models\Complaint;
 use Illuminate\Support\Carbon;
+use App\Modules\Invoice\Invoice;
+use App\Modules\Service\Service;
+use App\Modules\Complaint\Complaint;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Patient extends \Illuminate\Database\Eloquent\Model

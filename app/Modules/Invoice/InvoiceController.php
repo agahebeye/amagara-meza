@@ -1,19 +1,21 @@
 <?php
 
-namespace App\Http\Controllers\Api;
+namespace App\Modules\Invoice;
 
-use App\Models\Invoice;
 use Illuminate\Http\Request;
+use App\Modules\Invoice\Invoice;
 use App\Modules\Patient\Patient;
 use Barryvdh\Debugbar\Facades\Debugbar;
 use Spatie\RouteAttributes\Attributes\Prefix;
 use Spatie\RouteAttributes\Attributes\ApiResource;
+use Spatie\RouteAttributes\Attributes\Get;
 
 #[Prefix('api/v1')]
 #[ApiResource(
     resource: 'invoices',
     shallow: true,
-    names: 'api.v1.invoices'
+    names: 'api.v1.invoices',
+    except: ['__invoke']
 )]
 class InvoiceController
 {

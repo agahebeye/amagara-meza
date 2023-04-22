@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Models;
+namespace App\Modules\Orientation;
 
-use App\Models\Complaint;
 use Illuminate\Support\Carbon;
+use App\Modules\Complaint\Complaint;
 use Illuminate\Database\Eloquent\Model;
 use App\Modules\Consultation\Consultation;
 use Illuminate\Database\Eloquent\Factories\HasFactory;

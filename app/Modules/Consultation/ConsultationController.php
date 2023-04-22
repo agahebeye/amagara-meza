@@ -2,20 +2,22 @@
 
 namespace App\Modules\Consultation;
 
-use App\Models\Invoice;
-use App\Models\Complaint;
-use App\Models\Orientation;
 use Illuminate\Http\Request;
+use App\Modules\Invoice\Invoice;
 use App\Modules\Patient\Patient;
+use App\Modules\Complaint\Complaint;
 use Barryvdh\Debugbar\Facades\Debugbar;
+use App\Modules\Orientation\Orientation;
 use App\Modules\Consultation\Consultation;
+use Spatie\RouteAttributes\Attributes\Get;
 use Spatie\RouteAttributes\Attributes\Prefix;
 use Spatie\RouteAttributes\Attributes\ApiResource;
 
 #[Prefix('api/v1')]
 #[ApiResource(
     resource: 'consultations',
-    names: 'api.v1.consultations'
+    names: 'api.v1.consultations',
+    except: ['__invoke']
 )]
 class ConsultationController
 {

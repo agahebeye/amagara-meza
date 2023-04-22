@@ -13,10 +13,8 @@ return [
      * Optionally, you can specify group configuration by using key/values
      */
     'directories' => [
-        app_path('Http/Controllers'),
-        app_path('Http/Controllers/Api') => [
-            'middleware' => 'api',
-        ],
+        app_path('Modules'),
+
         app_path('Modules') => [
             'middleware' => 'api',
         ],

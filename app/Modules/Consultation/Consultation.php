@@ -2,9 +2,9 @@
 
 namespace App\Modules\Consultation;
 
-use App\Models\Service;
-use App\Models\Orientation;
+use App\Modules\Service\Service;
 use Illuminate\Database\Eloquent\Model;
+use App\Modules\Orientation\Orientation;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Consultation extends Model

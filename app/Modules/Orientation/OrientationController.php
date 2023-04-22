@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Http\Controllers\Api;
+namespace App\Modules\Orientation;
 
-use App\Models\Patient;
-use App\Models\Complaint;
-use App\Models\Orientation;
-use Barryvdh\Debugbar\Facades\Debugbar;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
+use App\Modules\Patient\Patient;
+use App\Modules\Complaint\Complaint;
+use Barryvdh\Debugbar\Facades\Debugbar;
+use App\Modules\Orientation\Orientation;
 use Illuminate\Database\Eloquent\Builder;
 use Spatie\RouteAttributes\Attributes\Prefix;
 use Spatie\RouteAttributes\Attributes\ApiResource;

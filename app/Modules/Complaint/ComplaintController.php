@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\Api;
+namespace App\Modules\Complaint;
 
 
-use App\Models\Complaint;
-use Spatie\RouteAttributes\Attributes\ApiResource;
+use App\Modules\Complaint\Complaint;
 use Spatie\RouteAttributes\Attributes\Prefix;
+use Spatie\RouteAttributes\Attributes\ApiResource;
 
 #[Prefix('v1')]
 #[ApiResource(
