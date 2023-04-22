@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Models;
+namespace App\Modules\Consultation;
 
 use App\Models\Service;
 use App\Models\Orientation;

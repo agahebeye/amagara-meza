@@ -13,7 +13,7 @@ class CreateTableExaminations extends Migration
      */
     public function up()
     {
-        Schema::create('table_examinations', function (Blueprint $table) {
+        Schema::create('examinations', function (Blueprint $table) {
             $table->id();
             $table->foreignId('consultation_id')->constrained()->cascadeOnDelete();
             $table->foreignId('service_id')->constrained()->cascadeOnDelete();

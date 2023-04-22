@@ -85,9 +85,13 @@
                  .then(() => {
                      notify('Invoice notice', `Invoice #${invoiceId} was paid succefully.`)
                      $('#invoiceTable').DataTable().ajax.reload();
-                     // TODO close parent modal after printing
+
+                     // close parent modal after printing - OK
                      $('.invoice').printThis({
                          pageTitle: "Invoice #{{$invoice->id}}",
+                         afterPrint() {
+                             btn.closest('#show-invoice').modal('hide');
+                         }
                      });
                  })
                  .catch(console.error)

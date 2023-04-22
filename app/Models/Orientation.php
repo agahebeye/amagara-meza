@@ -3,9 +3,10 @@
 namespace App\Models;
 
 use App\Models\Complaint;
-use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Support\Carbon;
+use Illuminate\Database\Eloquent\Model;
+use App\Modules\Consultation\Consultation;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Orientation extends Model
 {

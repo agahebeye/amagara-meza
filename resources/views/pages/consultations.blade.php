@@ -6,12 +6,11 @@
         <link href="/app/css/jquery.dataTables.min.css" rel="stylesheet" type="text/css" />
         <link href="/app/css/jquery.toast.css" rel="stylesheet" type="text/css" />
         <link href="/app/css/select2.min.css" rel="stylesheet" type="text/css" />
-
     </x-slot>
 
 
     <div class="d-flex align-items-center justify-content-between">
-        <h3 class="m-0">Patients to orient</h3>
+        <h3 class="m-0">Patients to consult</h3>
     </div>
 
     <div class="table-responsive mt-5">
@@ -38,35 +37,6 @@
 
         <script>
             $(document).ready(function() {
-                $('select.examinations').select2({
-                    placeholder: 'Select examinations',
-                    ajax: {
-                        url: "{{route('api.v1.services.index')}}",
-                        dataType: 'json',
-                        processResults: (data) => {
-                            const results = []
-
-                            results.push({
-                                text: 'Laboratory Examination',
-                                children: data.filter(x => x.category === 'Laboratory').map(x => ({
-                                    id: x.id,
-                                    text: x.name
-                                }))
-                            }, {
-                                text: 'Imaging Examination',
-                                children: data.filter(x => x.category === 'Imaging').map(x => ({
-                                    id: x.id,
-                                    text: x.name
-                                }))
-                            });
-
-                            return {
-                                results
-                            }
-                        }
-                    }
-                })
-
                 const table = $('#consultationTable').DataTable({
                     serverSide: true,
                     ajax: "{{route('api.v1.consultations.index')}}",
@@ -82,10 +52,9 @@
                             data: 'actions',
                             render: function(data, type, row, meta) {
                                 const value = encodeURIComponent(JSON.stringify({
-                                    id: row.id, // id of patient
                                     complaint_id: row.latest_complaint.id,
-                                    chief_complaint: row.latest_complaint.complaint,
-                                    consultation_date: row.latest_complaint.date
+                                    consultation: row.latest_complaint.orientation.consultation
+                                    // consultation: row.complaint.orientation.consultation
                                 }));
 
                                 return `<a title="Show Details" role="button" data-value="${value}" data-toggle="modal" data-target="#consultation-modal" class="view-button"><x-icons.eye /></a>`;
@@ -99,9 +68,32 @@
                         targets: [-1]
                     }],
                 });
+
+                $('#consultation-modal').on('show.bs.modal', function(event) {
+                    const button = $(event.relatedTarget);
+                    const value = JSON.parse(decodeURIComponent(button.data('value')))
+
+                    $('#patient-consultation').load(
+                        "{{route('api.v1.consultations.show', ':id')}}".replace(':id', value.complaint_id)
+                    );
+                });
+
+
             });
         </script>
     </x-slot>
 
-    <x-partials.modals.new-consultation />
+    <div class="modal fade" id="consultation-modal" tabindex="-1" role="dialog" aria-labelledby="newConsultationModal" data-backdrop='false' aria-hidden="true">
+        <div class="modal-dialog  modal-lg modal-dialog-centered" role="document">
+            <div class="modal-content px-4 pb-4 rounded-md">
+                <div class="modal-header m-0">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                </div>
+
+                <div id="patient-consultation">
+
+                </div>
+            </div>
+        </div>
+    </div>
 </x-layouts.app>

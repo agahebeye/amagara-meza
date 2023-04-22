@@ -3,8 +3,9 @@
 namespace App\Providers;
 
 use App\Models\Orientation;
-use Illuminate\Database\Eloquent\Relations\Relation;
+use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Database\Eloquent\Relations\Relation;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -28,5 +29,7 @@ class AppServiceProvider extends ServiceProvider
         Relation::enforceMorphMap([
             'orientation' => Orientation::class
         ]);
+
+        $this->loadViewsFrom(app_path('Modules/Consultation/views'), 'consultation');
     }
 }

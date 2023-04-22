@@ -1,5 +1,4 @@
 <form id="orientation-form" class="form-material patient-form" style="font-size: 1.25rem;">
-
     <div class="row no-gutters mt-4">
         <div class="form-group col-12" id='patient-id-wrapper'>
             <label class="col-sm-12">Patient ID</label>

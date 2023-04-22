@@ -21,7 +21,7 @@ class OrientationController
 {
     public function index()
     {
-        $patients = Patient::whereHas(
+        $patients = Patient::doesntHave('latestComplaint')->whereHas(
             'latestInvoice',
             fn (Builder $query) => $query->paid()
         );
@@ -46,7 +46,7 @@ class OrientationController
 
 
         return response()->json([
-            'data' => $data + 1,
+            'data' => $data,
             'message' => 'success'
         ], 201);
     }
