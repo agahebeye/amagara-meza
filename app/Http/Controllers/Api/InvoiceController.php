@@ -3,9 +3,9 @@
 namespace App\Http\Controllers\Api;
 
 use App\Models\Invoice;
-use App\Models\Patient;
-use Barryvdh\Debugbar\Facades\Debugbar;
 use Illuminate\Http\Request;
+use App\Modules\Patient\Patient;
+use Barryvdh\Debugbar\Facades\Debugbar;
 use Spatie\RouteAttributes\Attributes\Prefix;
 use Spatie\RouteAttributes\Attributes\ApiResource;
 

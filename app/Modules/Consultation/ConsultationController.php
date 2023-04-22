@@ -3,10 +3,10 @@
 namespace App\Modules\Consultation;
 
 use App\Models\Invoice;
-use App\Models\Patient;
 use App\Models\Complaint;
 use App\Models\Orientation;
 use Illuminate\Http\Request;
+use App\Modules\Patient\Patient;
 use Barryvdh\Debugbar\Facades\Debugbar;
 use App\Modules\Consultation\Consultation;
 use Spatie\RouteAttributes\Attributes\Prefix;
@@ -23,8 +23,8 @@ class ConsultationController
     {
         $patients = Patient::select('id', 'first_name', 'last_name')
             ->has('latestComplaint')
-            ->with(['latestComplaint.orientation.consultation']);
-        Debugbar::debug($patients->get()->toArray());
+            ->with(['latestComplaint']);
+
         return datatables($patients)->toJson();
     }
 

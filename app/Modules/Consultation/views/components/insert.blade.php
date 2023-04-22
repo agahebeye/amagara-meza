@@ -65,19 +65,6 @@
              <label class="col-md-12" for="examinations">Exams Labo</span></label>
              <div class="result">
                  <select class="examinations" multiple="multiple" id='examinations' data-placeholder="Choose examinations" style="width: 75%">
-                     <optgroup label="Laboratory examination">
-                         <option value="Consultation ORL">Consultation ORL</option>
-                         <option value="Consultation Ophta">Consultation Ophta</option>
-                         <option value="Consultation NUTR">Consultation NUTR</option>
-                         <option value="Consultation Kiné">Consultation Kiné</option>
-                     </optgroup>
-
-                     <optgroup label="Imaging examination">
-                         <option value="Consultation ORL">ASP</option>
-                         <option value="Consultation Ophta">Biopsie echo guidée</option>
-                         <option value="Consultation NUTR">Colonne Lombo-Sacre</option>
-                         <option value="Consultation Kiné">Echographie testiculaire</option>
-                     </optgroup>
                  </select>
              </div>
          </div>
@@ -93,3 +80,34 @@
 
      </div>
  </form>
+
+ <script>
+     $('select.examinations').select2({
+         placeholder: 'Select examinations',
+         ajax: {
+             url: "{{route('api.v1.services.index')}}",
+             dataType: 'json',
+             processResults: (data) => {
+                 const results = []
+
+                 results.push({
+                     text: 'Laboratory Examination',
+                     children: data.filter(x => x.category === 'Laboratory').map(x => ({
+                         id: x.id,
+                         text: x.name
+                     }))
+                 }, {
+                     text: 'Imaging Examination',
+                     children: data.filter(x => x.category === 'Imaging').map(x => ({
+                         id: x.id,
+                         text: x.name
+                     }))
+                 });
+
+                 return {
+                     results
+                 }
+             }
+         }
+     })
+ </script>

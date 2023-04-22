@@ -17,7 +17,7 @@ return [
         app_path('Http/Controllers/Api') => [
             'middleware' => 'api',
         ],
-        app_path('Modules/Consultation') => [
+        app_path('Modules') => [
             'middleware' => 'api',
         ],
     ],

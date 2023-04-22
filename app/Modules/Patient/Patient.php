@@ -1,10 +1,12 @@
 <?php
 
-namespace App\Models;
+namespace App\Modules\Patient;
 
 use App\Models\Invoice;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\Service;
+use App\Models\Complaint;
 use Illuminate\Support\Carbon;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Patient extends \Illuminate\Database\Eloquent\Model
 {
@@ -27,12 +29,6 @@ class Patient extends \Illuminate\Database\Eloquent\Model
     public function getGenderAttribute($value)
     {
         return $value ? 'F' : 'M';
-    }
-
-    public function getAgeAttribute($value)
-    {
-        $birth_date = Carbon::parse($value);
-        return now()->diffInYears($birth_date);
     }
 
     public function invoices()

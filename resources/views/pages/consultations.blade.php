@@ -51,13 +51,12 @@
                         }, {
                             data: 'actions',
                             render: function(data, type, row, meta) {
-                                const value = encodeURIComponent(JSON.stringify({
-                                    complaint_id: row.latest_complaint.id,
-                                    consultation: row.latest_complaint.orientation.consultation
-                                    // consultation: row.complaint.orientation.consultation
-                                }));
-
-                                return `<a title="Show Details" role="button" data-value="${value}" data-toggle="modal" data-target="#consultation-modal" class="view-button"><x-icons.eye /></a>`;
+                                return `<a title="Show Details" role="button"
+                                            data-complaint-id="${row.latest_complaint.id}"
+                                            data-toggle="modal" data-target="#consultation-modal"
+                                            class="view-button">
+                                                <x-icons.eye />
+                                        </a>`;
                             }
                         }
 
@@ -71,10 +70,9 @@
 
                 $('#consultation-modal').on('show.bs.modal', function(event) {
                     const button = $(event.relatedTarget);
-                    const value = JSON.parse(decodeURIComponent(button.data('value')))
 
                     $('#patient-consultation').load(
-                        "{{route('api.v1.consultations.show', ':id')}}".replace(':id', value.complaint_id)
+                        "{{route('api.v1.consultations.show', ':id')}}".replace(':id', button.data('complaintId'))
                     );
                 });
 
@@ -90,9 +88,7 @@
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                 </div>
 
-                <div id="patient-consultation">
-
-                </div>
+                <div id="patient-consultation"></div>
             </div>
         </div>
     </div>

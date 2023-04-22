@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\Api;
+namespace App\Modules\Patient;
 
-use App\Models\Patient;
 use Illuminate\Http\Request;
-use Spatie\RouteAttributes\Attributes\ApiResource;
+use App\Modules\Patient\Patient;
 use Spatie\RouteAttributes\Attributes\Prefix;
+use Spatie\RouteAttributes\Attributes\ApiResource;
 
 #[Prefix('api/v1')]
 #[ApiResource(
