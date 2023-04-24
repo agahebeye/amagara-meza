@@ -8,7 +8,6 @@ use App\Modules\Patient\Patient;
 use Barryvdh\Debugbar\Facades\Debugbar;
 use Spatie\RouteAttributes\Attributes\Prefix;
 use Spatie\RouteAttributes\Attributes\ApiResource;
-use Spatie\RouteAttributes\Attributes\Get;
 
 #[Prefix('api/v1')]
 #[ApiResource(
@@ -30,7 +29,7 @@ class InvoiceController
 
     public function show(Invoice $invoice)
     {
-        return view('components.partials.invoice', ['invoice' => $invoice->load([
+        return view('invoice::show', ['invoice' => $invoice->load([
             'items',
             'patient:id,first_name,last_name'
         ])]);

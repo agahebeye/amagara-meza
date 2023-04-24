@@ -5,7 +5,7 @@
     <x-slot name='moreStyles'>
         <link href="/app/css/jquery.dataTables.min.css" rel="stylesheet" type="text/css" />
         <link href="/app/css/jquery.toast.css" rel="stylesheet" type="text/css" />
-        <link href="/app/css/select2.min.css" rel="stylesheet" type="text/css" />
+        <link href="/app/css/selectize.min.css" rel="stylesheet" type="text/css" />
     </x-slot>
 
 
@@ -33,7 +33,7 @@
     <x-slot name='moreScripts'>
         <script src="/app/js/jquery.toast.js"></script>
         <script src="/app/js/jquery.dataTables.min.js"></script>
-        <script src="/app/js/select2.min.js"></script>
+        <script src="/app/js/selectize.min.js"></script>
 
         <script>
             $(document).ready(function() {
@@ -78,6 +78,35 @@
 
 
             });
+
+            // $('select.examinations').select2({
+            //     placeholder: 'Select examinations',
+            //     ajax: {
+            //         url: "{{route('api.v1.services.index')}}",
+            //         dataType: 'json',
+            //         processResults: (data) => {
+            //             const results = []
+
+            //             results.push({
+            //                 text: 'Laboratory Examination',
+            //                 children: data.filter(x => x.category === 'Laboratory').map(x => ({
+            //                     id: x.id,
+            //                     text: x.name
+            //                 }))
+            //             }, {
+            //                 text: 'Imaging Examination',
+            //                 children: data.filter(x => x.category === 'Imaging').map(x => ({
+            //                     id: x.id,
+            //                     text: x.name
+            //                 }))
+            //             });
+
+            //             return {
+            //                 results
+            //             }
+            //         }
+            //     }
+            // })
         </script>
     </x-slot>
 

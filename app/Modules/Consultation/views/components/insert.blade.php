@@ -63,11 +63,17 @@
 
          <div class="form-group col-md-6">
              <label class="col-md-12" for="examinations">Exams Labo</span></label>
-             <div class="result">
-                 <select class="examinations" multiple="multiple" id='examinations' data-placeholder="Choose examinations" style="width: 75%">
-                 </select>
+             <div class="">
+                 <select class="examinations" multiple="multiple" id='examinations' placeholder="Choose labo"></select>
              </div>
          </div>
+
+         <!-- <div class="form-group col-12">
+             <div class="">
+                 <input type="checkbox" id="prescribed">
+                 <label for="prescribed">Prescriptions?</span></label>
+             </div>
+         </div> -->
 
          <div class="d-flex col-12 justify-content-center mt-5">
              <button type="submit" class="btn btn-info px-5 rounded-md d-flex justify-items-center" id='submit-patient'>
@@ -82,32 +88,32 @@
  </form>
 
  <script>
-     $('select.examinations').select2({
-         placeholder: 'Select examinations',
-         ajax: {
-             url: "{{route('api.v1.services.index')}}",
-             dataType: 'json',
-             processResults: (data) => {
-                 const results = []
-
-                 results.push({
-                     text: 'Laboratory Examination',
-                     children: data.filter(x => x.category === 'Laboratory').map(x => ({
-                         id: x.id,
-                         text: x.name
-                     }))
-                 }, {
-                     text: 'Imaging Examination',
-                     children: data.filter(x => x.category === 'Imaging').map(x => ({
-                         id: x.id,
-                         text: x.name
-                     }))
-                 });
-
-                 return {
-                     results
-                 }
+     $('#examinations').selectize({
+         dropdownParent: 'body',
+         valueField: 'id',
+         labelField: 'title',
+         searchField: 'title',
+         options: [{
+                 id: 1,
+                 title: 'Spectrometer',
+                 url: 'http://en.wikipedia.org/wiki/Spectrometers'
+             },
+             {
+                 id: 2,
+                 title: 'Star Chart',
+                 url: 'http://en.wikipedia.org/wiki/Star_chart'
+             },
+             {
+                 id: 3,
+                 title: 'Electrical Tape',
+                 url: 'http://en.wikipedia.org/wiki/Electrical_tape'
              }
-         }
+         ],
+         create: true
+     });
+
+     $('#prescribed').on('click', function(e) {
+         const checked = $(this).prop('checked')
+         $('select.examinations').prop('disabled', checked)
      })
  </script>

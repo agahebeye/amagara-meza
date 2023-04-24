@@ -8684,4 +8684,6 @@ a.fc-event:not([href]):not([tabindex]) {
     display: none !important;
   }
 }
+
+.selectize-dropdown { z-index: 9999; }
 /*Top bar header*/

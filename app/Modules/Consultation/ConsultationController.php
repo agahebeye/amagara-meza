@@ -44,6 +44,7 @@ class ConsultationController
 
     public function store(Request $request)
     {
+        return $request->all();
         // get orientation - Ok
         // find or create consultation from it - Ok
         // link with examns - ok

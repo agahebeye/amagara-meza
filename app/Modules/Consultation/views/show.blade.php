@@ -14,7 +14,9 @@
         <x-consultation::result :complaint="$complaint" :consultation="$consultation" />
         @endif
     </div>
-    <div role="tabpanel" class="tab-pane fade" id="prescriptions"></div>
+    <div role="tabpanel" class="tab-pane fade px-5" id="prescriptions">
+        <x-consultation::prescriptions />
+    </div>
 </div>
 
 
@@ -44,13 +46,18 @@
                 headers: {
                     'Content-Type': 'application/json'
                 }
-            }).then(res => res.json())
-            .then(console.log)
+            }).then(res => {
+                if ($('#prescribed').prop('checked')) {
+                    $('a[href="#prescriptions"]').click();
+                }
+            })
             .catch(console.error)
             .finally(() => {
-                $(this).closest('#consultation-modal').modal('hide');
-                $(this).trigger('reset')
-                $('select.examinations').val(null).trigger('change');
+                if (!$('#prescribed').prop('checked')) {
+                    $(this).closest('#consultation-modal').modal('hide');
+                    $(this).trigger('reset')
+                    $('select.examinations').val(null).trigger('change');
+                }
             })
     })
 </script>
