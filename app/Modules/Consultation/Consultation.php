@@ -2,6 +2,7 @@
 
 namespace App\Modules\Consultation;
 
+use App\Modules\Medic\Medic;
 use App\Modules\Service\Service;
 use Illuminate\Database\Eloquent\Model;
 use App\Modules\Orientation\Orientation;
@@ -28,5 +29,10 @@ class Consultation extends Model
     public function examinations()
     {
         return $this->belongsToMany(Service::class, 'examinations');
+    }
+
+    public function prescriptions()
+    {
+        return $this->belongsToMany(Medic::class, 'prescriptions');
     }
 }

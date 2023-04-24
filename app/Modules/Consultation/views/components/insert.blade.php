@@ -64,23 +64,21 @@
          <div class="form-group col-md-6">
              <label class="col-md-12" for="examinations">Exams Labo</span></label>
              <div class="">
-                 <select class="examinations" multiple="multiple" id='examinations' placeholder="Choose labo"></select>
+                 <select class="examinations" multiple="multiple" id='examinations' placeholder="Choose examination"></select>
              </div>
          </div>
 
-         <!-- <div class="form-group col-12">
-             <div class="">
-                 <input type="checkbox" id="prescribed">
-                 <label for="prescribed">Prescriptions?</span></label>
-             </div>
-         </div> -->
+         <div class="form-check col-12">
+             <input class="form-check-input" type="checkbox" value="" id="prescribed">
+             <label class="form-check-label ml-2 mt-1" for="prescribed">
+                 Do you want to prescribe?
+             </label>
+         </div>
 
          <div class="d-flex col-12 justify-content-center mt-5">
              <button type="submit" class="btn btn-info px-5 rounded-md d-flex justify-items-center" id='submit-patient'>
                  <span>Submit</span>
-                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-lg ml-2" viewBox="0 0 16 16">
-                     <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z" />
-                 </svg>
+                 <x-icons.check />
              </button>
          </div>
 
@@ -88,32 +86,47 @@
  </form>
 
  <script>
-     $('#examinations').selectize({
+     var $selectized = $('#examinations').selectize({
          dropdownParent: 'body',
          valueField: 'id',
-         labelField: 'title',
-         searchField: 'title',
-         options: [{
-                 id: 1,
-                 title: 'Spectrometer',
-                 url: 'http://en.wikipedia.org/wiki/Spectrometers'
-             },
-             {
-                 id: 2,
-                 title: 'Star Chart',
-                 url: 'http://en.wikipedia.org/wiki/Star_chart'
-             },
-             {
-                 id: 3,
-                 title: 'Electrical Tape',
-                 url: 'http://en.wikipedia.org/wiki/Electrical_tape'
-             }
-         ],
-         create: true
+         optgroupField: 'category',
+         labelField: 'name',
+         searchField: ['name'],
+         optionGroupRegister: function(optgroup) {
+             var capitalised = optgroup.charAt(0).toUpperCase() + optgroup.substring(1);
+             var group = {
+                 label: 'Category: ' + capitalised
+             };
+
+             group[this.settings.optgroupValueField] = optgroup;
+
+             return group;
+         },
+
+         options: [],
+         persist: true,
+
+         load: function(query, callback) {
+             let url = "{{ route('api.v1.services.index') }}";
+             if (!query.length) return callback();
+
+             $.ajax({
+                 url,
+                 type: 'GET',
+                 error: function() {
+                     callback();
+                 },
+                 success: function(res) {
+                     callback(res);
+                 }
+             });
+         },
      });
 
      $('#prescribed').on('click', function(e) {
          const checked = $(this).prop('checked')
-         $('select.examinations').prop('disabled', checked)
+
+         if (checked) $selectized[0].selectize.disable();
+         else $selectized[0].selectize.enable();
      })
  </script>

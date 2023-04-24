@@ -46,7 +46,9 @@
                 headers: {
                     'Content-Type': 'application/json'
                 }
-            }).then(res => {
+            }).then(res => res.json()).then(res => {
+                console.log(res);
+                // a doctor wants to prescribe
                 if ($('#prescribed').prop('checked')) {
                     $('a[href="#prescriptions"]').click();
                 }

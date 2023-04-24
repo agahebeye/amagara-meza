@@ -8686,4 +8686,17 @@ a.fc-event:not([href]):not([tabindex]) {
 }
 
 .selectize-dropdown { z-index: 9999; }
+.selectize-control.multi .selectize-input [data-value] {
+  color: white;
+  border-radius: 3px;
+  background-color: #03a9f3;
+}
+.selectize-dropdown .selected {
+    background-color: #92c836;
+    color: #fff;
+}
+.selectize-dropdown .optgroup-header {
+  font-weight: bold;
+}
+/* scrollbar */
 /*Top bar header*/

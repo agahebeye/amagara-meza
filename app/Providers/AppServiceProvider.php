@@ -3,7 +3,9 @@
 namespace App\Providers;
 
 use App\Models\Orientation;
+use Illuminate\Support\Str;
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Database\Eloquent\Relations\Relation;
 
 class AppServiceProvider extends ServiceProvider
@@ -25,15 +27,18 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        Relation::enforceMorphMap([
-            'orientation' => Orientation::class
-        ]);
 
-        $this->loadViewsFrom(app_path('Modules/Consultation/views'), 'consultation');
-        $this->loadViewsFrom(app_path('Modules/Patient/views'), 'patient');
-        $this->loadViewsFrom(app_path('Modules/Complaint/views'), 'complaint');
-        $this->loadViewsFrom(app_path('Modules/Orientation/views'), 'orientation');
-        $this->loadViewsFrom(app_path('Modules/Invoice/views'), 'invoice');
-        $this->loadViewsFrom(app_path('Modules/Service/views'), 'invoice');
+        collect([
+            'Consultation', 'Patient', 'Complaint', 'Orientation', 'Invoice', 'Service'
+        ])->each(
+            fn ($namespace) =>
+            $this->loadViewsFrom(app_path("Modules/{$namespace}/views"), Str::lower($namespace))
+        );
+
+        // Factory::guessFactoryNamesUsing(function (string $model_name) {
+        //     $namespace = 'Database\\Factories\\';
+        //     $model_name = Str::beforeLast($model_name, '\\');
+        //     return $model_name . 'Factory';
+        // });
     }
 }

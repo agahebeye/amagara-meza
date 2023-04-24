@@ -15,6 +15,6 @@ class ServiceController
 {
     public function index()
     {
-        return Service::all();
+        return Service::query()->where('category', '<>', 'Consultation')->get();
     }
 }
