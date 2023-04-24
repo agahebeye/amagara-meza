@@ -35,13 +35,13 @@
         e.preventDefault();
 
         const consultation = Object.fromEntries(new FormData(this).entries());
-        const examinations = $('select.examinations').val();
+        const selectized = $('#examinations').selectize({});
 
         fetch("{{route('api.v1.consultations.store')}}", {
                 method: 'POST',
                 body: JSON.stringify({
                     ...consultation,
-                    examinations,
+                    examinations: selectized[0].selectize.items,
                 }),
                 headers: {
                     'Content-Type': 'application/json'

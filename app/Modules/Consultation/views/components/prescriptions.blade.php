@@ -53,14 +53,14 @@
                 <div>
                    <label>Posology</label>
                    <div>
-                       <input type="text" class="form-control posology">
+                       <input type="text" class="posology form-control">
                    </div>
                 </div>
 
                 <div>
                    <label>Qty</label>
                    <div>
-                       <input type="text" class="form-control qty">
+                       <input type="number" class="qty form-control">
                    </div>
                 </div>
 
@@ -88,5 +88,16 @@
              e.preventDefault();
              $('#new-prescription').click()
          }
+     })
+
+     $('#prescriptions-form').on('submit', function(e) {
+
+         e.preventDefault();
+         let data = [];
+
+         $(this).find('select.medecine, .posology, .qty').each(function(i) {
+             const cl = $(this)[0].classList[0];
+             console.log(i % 3 === 0);
+         })
      })
  </script>
