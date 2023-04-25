@@ -9,7 +9,6 @@
 
     </x-slot>
 
-
     <div class="d-flex align-items-center justify-content-between">
         <h3 class="m-0">Patients to orient</h3>
     </div>

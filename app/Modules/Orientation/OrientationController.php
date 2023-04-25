@@ -31,6 +31,7 @@ class OrientationController
 
     function store(Request $request)
     {
+        return $request->all();
         // create complaint - OK
         // create orientation with new complaint - OK
         // show waiting list - OK

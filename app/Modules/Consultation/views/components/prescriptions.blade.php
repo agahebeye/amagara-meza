@@ -1,4 +1,7 @@
+ @props(['consultation'])
  <form id="prescriptions-form" class="form-material mt-5" style="font-size: 1.25rem;">
+     <input type="hidden" id='consultation_id' value="">
+
      <button type="button" style="display: table; margin: auto;" id="new-prescription">&plus; add prescription</button>
 
      <div class="d-flex col-12 justify-content-center mt-5 submit-container">
@@ -46,7 +49,7 @@
                 <div>
                    <label>Medicament</span></label>
                    <div>
-                       <select class="medecine" placeholder="Choose medics" style="flex-grow: 2; width: 20rem;"></select>
+                       <select class="medic_id" placeholder="Choose medics" style="flex-grow: 2; width: 20rem;"></select>
                    </div>
                 </div>
 
@@ -67,7 +70,7 @@
          `)
 
          $div.insertBefore('.submit-container')
-         var selectized = $div.find('.medecine').selectize(selectizeOptions);
+         var selectized = $div.find('.medic_id').selectize(selectizeOptions);
          selectized[0].selectize.focus();
 
          selectized.on('change', function() {
@@ -93,11 +96,18 @@
      $('#prescriptions-form').on('submit', function(e) {
 
          e.preventDefault();
-         let data = [];
+         let data = [],
+             medic = {};
 
          $(this).find('select.medecine, .posology, .qty').each(function(i) {
              const cl = $(this)[0].classList[0];
-             console.log(i % 3 === 0);
+             medic[cl] = $(this).val()
+
+             // on each third iteration, we make sure we save object with all
+             // possible value for us to send to the server
+             if (i % 3 === 0) data.push(medic)
          })
+
+         console.log(consultation, data);
      })
  </script>

@@ -21,6 +21,17 @@
 
 
 <script>
+    var consultation = @json($consultation);
+    var prescribed = $('#prescribed').prop('checked');
+
+    if (!prescribed) {
+        $('a[href="#prescriptions"]').addClass('disabled') /* .attr('aria-disabled', true) */
+    }
+
+    if (consultation) {
+        $('a[href="#prescriptions"]').removeClass('disabled')
+    }
+
     $('a[href="#medical-form"]').on('click', function(e) {
         e.preventDefault();
         const patientId = $(this).data('patientId');
@@ -34,23 +45,24 @@
     $('#consultation-form').on('submit', function(e) {
         e.preventDefault();
 
-        const consultation = Object.fromEntries(new FormData(this).entries());
         const selectized = $('#examinations').selectize({});
 
         fetch("{{route('api.v1.consultations.store')}}", {
                 method: 'POST',
                 body: JSON.stringify({
-                    ...consultation,
+                    ...Object.fromEntries(new FormData(this).entries()),
                     examinations: selectized[0].selectize.items,
                 }),
                 headers: {
                     'Content-Type': 'application/json'
                 }
             }).then(res => res.json()).then(res => {
-                console.log(res);
-                // a doctor wants to prescribe
+                // in case a doctor wants to directly prescribe medics
                 if ($('#prescribed').prop('checked')) {
                     $('a[href="#prescriptions"]').click();
+                    consultation = {
+                        ...res
+                    };
                 }
             })
             .catch(console.error)

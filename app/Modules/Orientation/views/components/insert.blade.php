@@ -74,6 +74,7 @@
             .then(({
                 data
             }) => {
+                console.log(data);
                 $('#queue-number').text(data);
                 $('#waiting-list-modal').modal('show')
             })
