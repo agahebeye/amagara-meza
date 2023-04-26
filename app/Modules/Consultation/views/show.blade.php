@@ -21,7 +21,7 @@
 
 
 <script>
-    var consultation = @json($consultation);
+    var consultation = "@json($consultation)";
     var prescribed = $('#prescribed').prop('checked');
 
     if (!prescribed) {
