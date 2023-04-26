@@ -1,9 +1,10 @@
 <?php
 
-namespace App\Modules\Invoice;
+namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\Invoice;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class InvoiceItem extends Model
 {

@@ -2,8 +2,8 @@
 
 namespace App\Controllers;
 
+use App\Models\Patient;
 use Illuminate\Http\Request;
-use App\Modules\Patient\Patient;
 use Spatie\RouteAttributes\Attributes\Prefix;
 use Spatie\RouteAttributes\Attributes\ApiResource;
 

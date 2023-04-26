@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Modules\Orientation;
+namespace App\Models;
 
+use App\Models\Complaint;
+use App\Models\Consultation;
 use Illuminate\Support\Carbon;
-use App\Modules\Complaint\Complaint;
 use Illuminate\Database\Eloquent\Model;
-use App\Modules\Consultation\Consultation;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Orientation extends Model

@@ -2,9 +2,10 @@
 
 namespace App\Controllers;
 
-use Barryvdh\Debugbar\Facades\Debugbar;
-use Illuminate\Database\Query\Builder;
+use App\Models\Medic;
 use Illuminate\Http\Request;
+use Illuminate\Database\Query\Builder;
+use Barryvdh\Debugbar\Facades\Debugbar;
 use Spatie\RouteAttributes\Attributes\Prefix;
 use Spatie\RouteAttributes\Attributes\ApiResource;
 

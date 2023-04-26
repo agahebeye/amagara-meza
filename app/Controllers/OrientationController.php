@@ -2,12 +2,12 @@
 
 namespace App\Controllers;
 
+use App\Models\Patient;
+use App\Models\Complaint;
+use App\Models\Orientation;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
-use App\Modules\Patient\Patient;
-use App\Modules\Complaint\Complaint;
 use Barryvdh\Debugbar\Facades\Debugbar;
-use App\Modules\Orientation\Orientation;
 use Illuminate\Database\Eloquent\Builder;
 use Spatie\RouteAttributes\Attributes\Prefix;
 use Spatie\RouteAttributes\Attributes\ApiResource;

@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Modules\Complaint;
+namespace App\Models;
 
-use App\Modules\Patient\Patient;
+use App\Models\Patient;
+use App\Models\Orientation;
 use Illuminate\Database\Eloquent\Model;
-use App\Modules\Orientation\Orientation;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Complaint extends Model

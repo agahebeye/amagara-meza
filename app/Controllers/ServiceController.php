@@ -2,7 +2,7 @@
 
 namespace App\Controllers;
 
-use App\Modules\Service\Service;
+use App\Models\Service;
 use Spatie\RouteAttributes\Attributes\Prefix;
 use Spatie\RouteAttributes\Attributes\ApiResource;
 

@@ -2,13 +2,13 @@
 
 namespace App\Controllers;
 
+use App\Models\Invoice;
+use App\Models\Patient;
+use App\Models\Complaint;
+use App\Models\Orientation;
+use App\Models\Consultation;
 use Illuminate\Http\Request;
-use App\Modules\Invoice\Invoice;
-use App\Modules\Patient\Patient;
-use App\Modules\Complaint\Complaint;
 use Barryvdh\Debugbar\Facades\Debugbar;
-use App\Modules\Orientation\Orientation;
-use App\Modules\Consultation\Consultation;
 use Spatie\RouteAttributes\Attributes\Get;
 use Spatie\RouteAttributes\Attributes\Prefix;
 use Spatie\RouteAttributes\Attributes\ApiResource;

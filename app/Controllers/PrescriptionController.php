@@ -2,12 +2,12 @@
 
 namespace App\Controllers;
 
-use App\Modules\Consultation\Consultation;
-use Barryvdh\Debugbar\Facades\Debugbar;
-use Illuminate\Database\Query\Builder;
+use App\Models\Consultation;
 use Illuminate\Http\Request;
-use Spatie\RouteAttributes\Attributes\Prefix;
+use Illuminate\Database\Query\Builder;
+use Barryvdh\Debugbar\Facades\Debugbar;
 use Spatie\RouteAttributes\Attributes\Post;
+use Spatie\RouteAttributes\Attributes\Prefix;
 
 #[Prefix('api/v1')]
 class PrescriptionController

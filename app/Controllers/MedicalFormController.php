@@ -2,8 +2,8 @@
 
 namespace App\Controllers;
 
+use App\Models\Patient;
 use Illuminate\Http\Request;
-use App\Modules\Patient\Patient;
 use Barryvdh\Debugbar\Facades\Debugbar;
 use Spatie\RouteAttributes\Attributes\Get;
 use Spatie\RouteAttributes\Attributes\Prefix;

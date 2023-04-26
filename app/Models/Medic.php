@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Modules\Medic;
+namespace App\Models;
 
-use App\Modules\Consultation\Consultation;
-use App\Modules\Invoice\InvoiceItem;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\InvoiceItem;
+use App\Models\Consultation;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Medic extends Model
 {

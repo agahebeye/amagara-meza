@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Modules\Consultation;
+namespace App\Models;
 
-use App\Modules\Medic\Medic;
-use App\Modules\Service\Service;
+use App\Models\Medic;
+use App\Models\Service;
+use App\Models\Orientation;
 use Illuminate\Database\Eloquent\Model;
-use App\Modules\Orientation\Orientation;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Consultation extends Model

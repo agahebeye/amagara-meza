@@ -2,9 +2,9 @@
 
 namespace App\Controllers;
 
+use App\Models\Invoice;
+use App\Models\Patient;
 use Illuminate\Http\Request;
-use App\Modules\Invoice\Invoice;
-use App\Modules\Patient\Patient;
 use Barryvdh\Debugbar\Facades\Debugbar;
 use Spatie\RouteAttributes\Attributes\Prefix;
 use Spatie\RouteAttributes\Attributes\ApiResource;

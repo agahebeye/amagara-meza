@@ -3,7 +3,7 @@
 namespace App\Controllers;
 
 
-use App\Modules\Complaint\Complaint;
+use App\Models\Complaint;
 use Spatie\RouteAttributes\Attributes\Prefix;
 use Spatie\RouteAttributes\Attributes\ApiResource;
 
