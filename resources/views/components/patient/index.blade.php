@@ -1,4 +1,4 @@
-<x-layouts.app>
+<x-core.layouts.app>
     <x-slot name='title'>Patients</x-slot>
 
 
@@ -14,7 +14,7 @@
         <div class="">
             <a data-toggle="modal" data-target="#new-patient-modal" class="btn btn-info rounded-md">Add new patient</a>
 
-            <x-patient::new />
+            <x-patient.new />
 
         </div>
     </div>
@@ -50,7 +50,7 @@
         </div>
     </div>
 
-    <x-patient::delete />
+    <x-patient.delete />
 
     <x-slot name='moreScripts'>
         <script src="/app/js/jquery.toast.js"></script>
@@ -75,9 +75,9 @@
                             data: 'actions',
                             render: function(data, type, row, meta) {
                                 return `
-                                <a title="Show Details" role="button" data-id="${row.id}" data-toggle="modal" data-target="#show-patient-modal" class="view-button"><x-icons.eye /></a>
-                                <a title="Edit Patient" role="button" data-id="${row.id}" data-toggle="modal" data-target="#show-patient-modal" class="edit-button mx-3"><x-icons.pencil /></i></a>
-                                <a title="Delete Patient" role="button" data-id="${row.id}" data-toggle="modal" data-target="#confirmation" class="delete-button"><x-icons.trash /></i></a>
+                                <a title="Show Details" role="button" data-id="${row.id}" data-toggle="modal" data-target="#show-patient-modal" class="view-button"><x-core.icons.eye /></a>
+                                <a title="Edit Patient" role="button" data-id="${row.id}" data-toggle="modal" data-target="#show-patient-modal" class="edit-button mx-3"><x-core.icons.pencil /></i></a>
+                                <a title="Delete Patient" role="button" data-id="${row.id}" data-toggle="modal" data-target="#confirmation" class="delete-button"><x-core.icons.trash /></i></a>
                                 `;
                             }
                         }
@@ -104,4 +104,4 @@
     </x-slot>
 
 
-</x-layouts.app>
+</x-core.layouts.app>

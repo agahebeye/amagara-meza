@@ -27,8 +27,8 @@
 
     <div id="wrapper">
 
-        <x-layouts.navbar />
-        <x-layouts.sidebar />
+        <x-core.layouts.navbar />
+        <x-core.layouts.sidebar />
 
         <div id="page-wrapper">
             <div class="container-fluid">
@@ -69,6 +69,7 @@
     <script src="/app/js/custom.min.js"></script>
 
     {{ $moreScripts ?? '' }}
+
     @stack('scripts')
 </body>
 

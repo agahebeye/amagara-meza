@@ -16,14 +16,14 @@ class PatientController
 {
     public function index()
     {
-        $patients = Patient::query();
+        $patients = Patient::select('id', 'first_name', 'last_name');
 
         return datatables($patients)->toJson();
     }
 
     public function show(Patient $patient)
     {
-        return view('patient::show', [
+        return view('components.patient.show', [
             'patient' => $patient
         ]);
     }

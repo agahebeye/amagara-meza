@@ -26,7 +26,7 @@
             </li>
 
             <li> <a href="javascript:void(0);" class="d-flex align-items-center">
-                    <x-icons.calendar />
+                    <x-core.icons.calendar />
                     <span class="hide-menu ml-3"> Appointment </span></a>
                 <ul class="nav nav-second-level">
                     <li> <a href="#">Doctor Schedule</a> </li>

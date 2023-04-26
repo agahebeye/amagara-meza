@@ -1,4 +1,4 @@
- <x-partials.modals.confirmation title="Delete confirmation" message='Do you really want to delete this patient?' />
+ <x-core.modals.confirmation title="Delete confirmation" message='Do you really want to delete this patient?' />
 
  @push('scripts')
  <script>
@@ -15,9 +15,9 @@
              })
              .then(res => {
                  notify('Delete notification', 'Patient deleted succefully.');
-                 table.ajax.reload();
+                 $('#patientTable').DataTable().ajax.reload();
              })
-             .catch(reason => notify('Delete notification', 'Error deleting a patient.'))
+             .catch(reason => notify('Delete notification', 'Error deleting a patient.', 'error'))
              .finally(() => $('#confirmation').modal('hide'));
      })
  </script>

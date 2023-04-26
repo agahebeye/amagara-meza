@@ -1,8 +1,4 @@
-<x-layouts.app>
-
-    <x-slot name='moreStyles'>
-        <link href="/app/css/morris.css" rel="stylesheet">
-    </x-slot>
+<x-core.layouts.app>
 
     <div class="row">
         <div class="col-md-3 col-sm-6">
@@ -207,4 +203,4 @@
         </div>
     </div>
 
-</x-layouts.app>
+</x-core.layouts.app>
