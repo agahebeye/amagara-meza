@@ -24,12 +24,8 @@ class Patient extends \Illuminate\Database\Eloquent\Model
             // need to pay for her medical form
 
             $service = Service::query()->first();
-            $invoice = $model->invoices()->create([]);
-            // $service->invoices()->create(['invoice_id' => $invoice->id]);
-            $invoice->items()->create([
-                'billable_id' => $service->id,
-                'billable_type' => get_class($service)
-            ]);
+            $invoice = $model->invoices()->create();
+            $service->invoices()->save($invoice);
         });
     }
 

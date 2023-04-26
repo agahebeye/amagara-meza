@@ -2,8 +2,9 @@
 
 namespace App\Models;
 
+use App\Models\Medic;
 use App\Models\Patient;
-use App\Models\InvoiceItem;
+use App\Models\Service;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
@@ -16,6 +17,16 @@ class Invoice extends Model
     public function patient()
     {
         return $this->belongsTo(Patient::class);
+    }
+
+    public function services()
+    {
+        return $this->morphedByMany(Service::class, 'invoiceable');
+    }
+
+    public function medics()
+    {
+        return $this->morphedByMany(Medic::class, 'invoiceable');
     }
 
     public function scopePending($query)

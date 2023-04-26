@@ -17,5 +17,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+        Service::factory()->create(['category' => 'Consultation']);
+        Service::factory()->count(4)->create();
     }
 }

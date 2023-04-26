@@ -6,6 +6,7 @@ use App\Models\Invoice;
 use App\Models\Patient;
 use Illuminate\Http\Request;
 use Barryvdh\Debugbar\Facades\Debugbar;
+use DebugBar\DebugBar as DebugBarDebugBar;
 use Spatie\RouteAttributes\Attributes\Prefix;
 use Spatie\RouteAttributes\Attributes\ApiResource;
 
@@ -14,7 +15,6 @@ use Spatie\RouteAttributes\Attributes\ApiResource;
     resource: 'invoices',
     shallow: true,
     names: 'api.v1.invoices',
-    except: ['__invoke']
 )]
 class InvoiceController
 {
@@ -29,18 +29,31 @@ class InvoiceController
 
     public function show(Invoice $invoice)
     {
-        return view('components.invoice.show', ['invoice' => $invoice->load([
-            'items',
+        $invoice = $invoice->load([
+            'services:id,name,price',
+            'medics',
             'patient:id,first_name,last_name'
-        ])]);
+        ]);
+
+        Debugbar::debug($invoice);
+
+        $serviceSum = $invoice->services->sum('price');
+        $total = $invoice->medics->sum(function ($medic) {
+            return $medic['unit_price'] * $medic['pivot']['qty'];
+        });
+
+        return view('components.invoice.show', [
+            'invoice' => $invoice,
+            'total' => $total
+        ]);
     }
 
     public function store(Request $request)
     {
-        $patient = Patient::query()->firstWhere('id', $request->patient_id);
+        $patient = Patient::select('id')->find($request->patient_id);
 
         $invoice = $patient->invoices()->create([]);
-        $invoice->items()->attach($request->services);
+        $invoice->services()->attach($request->services);
 
         return response()->json([
             'data' => $invoice,

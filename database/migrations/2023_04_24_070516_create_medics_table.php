@@ -19,6 +19,7 @@ class CreateMedicsTable extends Migration
             $table->string('ref');
             $table->string('category');
             $table->integer('qty');
+            $table->decimal('unit_price', 10, 2);
             $table->string('image')->nullable();
             $table->date('expiredAt')->nullable();
             $table->timestamps();

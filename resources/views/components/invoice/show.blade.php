@@ -38,8 +38,25 @@
                          </tr>
                      </thead>
                      <tbody>
+                         @foreach($invoice->services as $service)
                          <tr>
+                             <td class="text-center">{{ $service->id }}</td>
+                             <td>{{ $service->name }}</td>
+                             <td class="text-right">-</td>
+                             <td class="text-right">{{$service->price}} Fbu </td>
+                             <td class="text-right">{{$service->price}} Fbu</td>
                          </tr>
+                         @endforeach
+
+                         @foreach($invoice->medics as $medic)
+                         <tr>
+                             <td class="text-center">{{ $medic->id }}</td>
+                             <td>{{ $medic->name }}</td>
+                             <td class="text-right">-</td>
+                             <td class="text-right">{{$medic->unit_price}} Fbu </td>
+                             <td class="text-right">{{$medic->unit_price}} Fbu</td>
+                         </tr>
+                         @endforeach
                      </tbody>
                  </table>
              </div>
@@ -47,7 +64,6 @@
 
          <div class="col-md-12">
              <div class="pull-right m-t-30 text-right">
-                 {{-- <!-- <h3><b>Total :</b> {{ array_reduce($invoice->items->toArray(), fn($curr, $item) => $curr + $item['price'], 0) }}</h3> -->--}}
              </div>
              <div class="clearfix"></div>
              <hr>
