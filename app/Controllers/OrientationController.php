@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Modules\Orientation;
+namespace App\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;

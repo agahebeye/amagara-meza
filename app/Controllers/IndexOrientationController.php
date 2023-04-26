@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Modules\Orientation\views;
+namespace App\Controllers;
 
 use Spatie\RouteAttributes\Attributes\Get;
 

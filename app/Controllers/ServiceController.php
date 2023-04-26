@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Modules\Service;
+namespace App\Controllers;
 
 use App\Modules\Service\Service;
 use Spatie\RouteAttributes\Attributes\Prefix;

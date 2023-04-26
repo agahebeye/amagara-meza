@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Modules\Medic;
+namespace App\Controllers;
 
 use Barryvdh\Debugbar\Facades\Debugbar;
 use Illuminate\Database\Query\Builder;

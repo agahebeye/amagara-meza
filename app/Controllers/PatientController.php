@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Modules\Patient;
+namespace App\Controllers;
 
 use Illuminate\Http\Request;
 use App\Modules\Patient\Patient;

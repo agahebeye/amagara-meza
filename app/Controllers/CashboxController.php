@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Modules\Invoice;
+namespace App\Controllers;
 
 use Spatie\RouteAttributes\Attributes\Get;
 

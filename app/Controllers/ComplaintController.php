@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Modules\Complaint;
+namespace App\Controllers;
 
 
 use App\Modules\Complaint\Complaint;

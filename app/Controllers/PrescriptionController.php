@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Modules\Medics;
+namespace App\Controllers;
 
 use App\Modules\Consultation\Consultation;
 use Barryvdh\Debugbar\Facades\Debugbar;
