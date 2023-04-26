@@ -1,4 +1,4 @@
-<x-layouts.app>
+<x-core.layouts.app>
     <x-slot name='title'>Consultations</x-slot>
 
 
@@ -55,7 +55,7 @@
                                             data-complaint-id="${row.latest_complaint.id}"
                                             data-toggle="modal" data-target="#consultation-modal"
                                             class="view-button">
-                                                <x-icons.eye />
+                                                <x-core.icons.eye />
                                         </a>`;
                             }
                         }
@@ -78,35 +78,6 @@
 
 
             });
-
-            // $('select.examinations').select2({
-            //     placeholder: 'Select examinations',
-            //     ajax: {
-            //         url: "{{route('api.v1.services.index')}}",
-            //         dataType: 'json',
-            //         processResults: (data) => {
-            //             const results = []
-
-            //             results.push({
-            //                 text: 'Laboratory Examination',
-            //                 children: data.filter(x => x.category === 'Laboratory').map(x => ({
-            //                     id: x.id,
-            //                     text: x.name
-            //                 }))
-            //             }, {
-            //                 text: 'Imaging Examination',
-            //                 children: data.filter(x => x.category === 'Imaging').map(x => ({
-            //                     id: x.id,
-            //                     text: x.name
-            //                 }))
-            //             });
-
-            //             return {
-            //                 results
-            //             }
-            //         }
-            //     }
-            // })
         </script>
     </x-slot>
 
@@ -121,4 +92,4 @@
             </div>
         </div>
     </div>
-</x-layouts.app>
+</x-core.layouts.app>

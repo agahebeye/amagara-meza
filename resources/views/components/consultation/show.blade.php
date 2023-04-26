@@ -9,23 +9,24 @@
 
     <div role="tabpanel" class="tab-pane fade active in  px-5" id="consultation">
         @if(! $consultation)
-        <x-consultation::insert :complaint="$complaint" />
+        <x-consultation.insert :complaint="$complaint" />
         @else
-        <x-consultation::result :complaint="$complaint" :consultation="$consultation" />
+        <x-consultation.result :complaint="$complaint" :consultation="$consultation" />
         @endif
     </div>
     <div role="tabpanel" class="tab-pane fade px-5" id="prescriptions">
-        <x-consultation::prescriptions />
+        <x-consultation.prescriptions />
     </div>
 </div>
 
 
 <script>
-    var consultation = "@json($consultation)";
+    var consultation = @json($consultation);
+
     var prescribed = $('#prescribed').prop('checked');
 
     if (!prescribed) {
-        $('a[href="#prescriptions"]').addClass('disabled') /* .attr('aria-disabled', true) */
+        $('a[href="#prescriptions"]').addClass('disabled')
     }
 
     if (consultation) {
@@ -60,9 +61,8 @@
                 // in case a doctor wants to directly prescribe medics
                 if ($('#prescribed').prop('checked')) {
                     $('a[href="#prescriptions"]').removeClass('disabled').click();
-                    consultation = {
-                        ...res
-                    };
+
+                    consultation = res.data
                 }
             })
             .catch(console.error)

@@ -10,6 +10,6 @@ class IndexConsultationController
     #[Get('/hospital/consultations', name: 'consultations')]
     public function __invoke()
     {
-        return view('consultation::index');
+        return view('components.consultation.index');
     }
 }

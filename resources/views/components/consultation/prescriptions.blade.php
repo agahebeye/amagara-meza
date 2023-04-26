@@ -7,7 +7,7 @@
      <div class="d-flex col-12 justify-content-center mt-5 submit-container">
          <button type="submit" class="btn btn-info px-5 rounded-md d-flex justify-items-center" id='submit-patient'>
              <span>Submit</span>
-             <x-icons.check />
+             <x-core.icons.check />
          </button>
      </div>
  </form>
@@ -108,23 +108,24 @@
              }
          });
 
+         console.log(consultation);
 
-         fetch("{{route('api.v1.prescriptions.store')}}", {
-                 method: 'POST',
-                 body: JSON.stringify({
-                     consultation_id: consultation.id,
-                     medics
-                 }),
-                 headers: {
-                     'Content-Type': 'application/json'
-                 }
-             }).then(res => res.json()).then(res => {
-                 console.log(res);
-             })
-             .catch(console.error)
-             .finally(() => {
-                 $(this).closest('#consultation-modal').modal('hide');
-                 $(this).trigger('reset')
-             })
+         //  fetch("{{route('api.v1.prescriptions.store')}}", {
+         //          method: 'POST',
+         //          body: JSON.stringify({
+         //              consultation_id: consultation.id,
+         //              medics
+         //          }),
+         //          headers: {
+         //              'Content-Type': 'application/json'
+         //          }
+         //      }).then(res => res.json()).then(res => {
+         //          console.log(res);
+         //      })
+         //      .catch(console.error)
+         //      .finally(() => {
+         //          $(this).closest('#consultation-modal').modal('hide');
+         //          $(this).trigger('reset')
+         //      })
      })
  </script>

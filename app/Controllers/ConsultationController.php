@@ -35,7 +35,7 @@ class ConsultationController
         $complaint = Complaint::select('id', 'complaint', 'date', 'patient_id')
             ->with(['orientation.consultation'])->firstWhere('id', $id);
 
-        return view('consultation::show', [
+        return view('components.consultation.show', [
             'complaint' => $complaint,
             'consultation' => $complaint->orientation?->consultation,
         ]);
@@ -43,7 +43,6 @@ class ConsultationController
 
     public function store(Request $request)
     {
-        return $request->all();
         // get orientation - Ok
         // find or create consultation from it - Ok
         // link with examns - ok
@@ -53,7 +52,7 @@ class ConsultationController
 
         $consultation->examinations()->attach($request->examinations);
         $invoice = Invoice::create(['patient_id' => $request->patient_id]);
-        $invoice->items()->attach($request->examinations);
+        $invoice->services()->attach($request->examinations);
 
         return response()->json([
             'data' => $consultation,

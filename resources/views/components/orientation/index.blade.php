@@ -1,4 +1,4 @@
-<x-layouts.app>
+<x-core.layouts.app>
     <x-slot name='title'>Orientations</x-slot>
 
 
@@ -54,7 +54,7 @@
                             render: function(data, type, row, meta) {
                                 const value = encodeURIComponent(JSON.stringify(row))
                                 return `
-                                <a title="Show Details" role="button" data-value="${value}" data-toggle="modal" data-target="#orientation-modal" class="view-button"><x-icons.eye /></a>`;
+                                <a title="Show Details" role="button" data-value="${value}" data-toggle="modal" data-target="#orientation-modal" class="view-button"><x-core.icons.eye /></a>`;
                             }
                         }
 
@@ -81,7 +81,7 @@
         </script>
     </x-slot>
 
-    <x-orientation::new />
+    <x-orientation.new />
 
     <div class="modal fade" id="waiting-list-modal" tabindex="-1" role="dialog" aria-labelledby="waitingListModal" data-backdrop='false' data-keyboard="false" aria-hidden="true">
         <div class="modal-dialog h-100 d-flex flex-column justify-content-center my-0" role="document">
@@ -99,4 +99,4 @@
             </div>
         </div>
     </div>
-</x-layouts.app>
+</x-core.layouts.app>

@@ -13,6 +13,6 @@ class MedicalFormController
     #[Get('/medical-form/{patient}', name: 'api.v1.medical-form')]
     public function __invoke(Patient $patient)
     {
-        return view('patient::medical-form', ['patient' => $patient, 'complaint' => $patient->latestComplaint]);
+        return view('components.patient.medical-form', ['patient' => $patient, 'complaint' => $patient->latestComplaint]);
     }
 }

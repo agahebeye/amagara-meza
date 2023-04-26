@@ -9,6 +9,6 @@ class IndexOrientationController
     #[Get('/hospital/orientations', name: 'orientations')]
     public function __invoke()
     {
-        return view('orientation::index');
+        return view('components.orientation.index');
     }
 }

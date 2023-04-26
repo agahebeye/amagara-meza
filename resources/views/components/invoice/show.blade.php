@@ -52,7 +52,7 @@
                          <tr>
                              <td class="text-center">{{ $medic->id }}</td>
                              <td>{{ $medic->name }}</td>
-                             <td class="text-right">-</td>
+                             <td class="text-right">{{ $medic->pivot->qty }}</td>
                              <td class="text-right">{{$medic->unit_price}} Fbu </td>
                              <td class="text-right">{{$medic->unit_price}} Fbu</td>
                          </tr>
@@ -63,8 +63,7 @@
          </div>
 
          <div class="col-md-12">
-             <div class="pull-right m-t-30 text-right">
-             </div>
+             <div class="pull-right m-t-30 text-right">{{ $total }}</div>
              <div class="clearfix"></div>
              <hr>
              <div class="text-right">

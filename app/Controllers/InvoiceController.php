@@ -35,16 +35,16 @@ class InvoiceController
             'patient:id,first_name,last_name'
         ]);
 
-        Debugbar::debug($invoice);
+        Debugbar::debug($invoice->services->toArray());
 
-        $serviceSum = $invoice->services->sum('price');
-        $total = $invoice->medics->sum(function ($medic) {
+        $st = $invoice->services->sum('price');
+        $mt = $invoice->medics->sum(function ($medic) {
             return $medic['unit_price'] * $medic['pivot']['qty'];
         });
 
         return view('components.invoice.show', [
             'invoice' => $invoice,
-            'total' => $total
+            'total' => $st + $mt
         ]);
     }
 
@@ -63,7 +63,7 @@ class InvoiceController
 
     public function update(Request $request, Invoice $invoice)
     {
-        $invoice = tap($invoice)->update(['status' => $request->status]);
+        $invoice = tap($invoice)->update(['status' => $request->status, 'paidAt' => now()]);
 
         return response()->json([
             'data' => $invoice,

@@ -17,7 +17,7 @@
              <label class="col-md-12" for="chief_complaint">Chief complaint*</span>
              </label>
              <div class="col-md-12">
-                 <textarea class="form-control" name="chief_complaint" id="chief_complaint" rows="3" required></textarea>
+                 <textarea class="form-control" name="chief_complaint" id="chief_complaint" rows="3" required>{{ $complaint->complaint }}</textarea>
              </div>
          </div>
 
@@ -78,7 +78,7 @@
          <div class="d-flex col-12 justify-content-center mt-5">
              <button type="submit" class="btn btn-info px-5 rounded-md d-flex justify-items-center" id='submit-patient'>
                  <span>Submit</span>
-                 <x-icons.check />
+                 <x-core.icons.check />
              </button>
          </div>
 

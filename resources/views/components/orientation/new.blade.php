@@ -138,12 +138,12 @@
                 </div>
 
                 <div role="tabpanel" class="tab-pane fade active in px-5" id="complaint">
-                    <x-complaint::insert />
+                    <x-complaint.insert />
                 </div>
 
 
                 <div role="tabpanel" class="tab-pane fade px-5" id="orientation">
-                    <x-orientation::insert />
+                    <x-orientation.insert />
                 </div>
 
             </div>
