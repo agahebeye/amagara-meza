@@ -1,13 +1,13 @@
 <form id="orientation-form" class="form-material patient-form" style="font-size: 1.25rem;">
     <div class="row no-gutters mt-4">
-        <div class="form-group col-12" id='patient-id-wrapper'>
+        <!-- <div class="form-group col-12" id='patient-id-wrapper'>
             <label class="col-sm-12">Patient ID</label>
             <div class="col-md-12">
                 <input type="number" name="patient_id" class="patient_id form-control" disabled>
             </div>
-        </div>
+        </div> -->
 
-        <div class="form-group col-md-6">
+        <div class="form-group col-md-6 mt-4">
             <label class="col-md-12 mt-4" for="orientation_date">Orientation Date*</span>
             </label>
 
@@ -16,7 +16,7 @@
             </div>
         </div>
 
-        <div class="form-group col-md-6 align-self-end ">
+        <div class="form-group col-md-6 mt-5">
 
             <label class="col-sm-12">Department*</label>
 
@@ -71,19 +71,15 @@
                     'Content-Type': 'application/json'
                 }
             }).then(res => res.json())
-            .then(({
-                data
-            }) => {
-                console.log(data);
-                $('#queue-number').text(data);
+            .then((res) => {
+                $('#queue-number').text(res.data);
                 $('#waiting-list-modal').modal('show')
+                $('#orientationTable').Datatable().ajax.reload()
             })
             .catch(() => notify('Orientation Notice', 'Error while trying to save orientation', 'error'))
             .finally(() =>
                 $(this).closest('#orientation-modal').modal('hide')
             )
-
-
     })
 </script>
 @endpush

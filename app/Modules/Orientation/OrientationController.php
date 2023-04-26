@@ -12,7 +12,7 @@ use Illuminate\Database\Eloquent\Builder;
 use Spatie\RouteAttributes\Attributes\Prefix;
 use Spatie\RouteAttributes\Attributes\ApiResource;
 
-#[Prefix('v1')]
+#[Prefix('api/v1')]
 #[ApiResource(
     resource: 'orientations',
     names: 'api.v1.orientations'
@@ -31,7 +31,6 @@ class OrientationController
 
     function store(Request $request)
     {
-        return $request->all();
         // create complaint - OK
         // create orientation with new complaint - OK
         // show waiting list - OK

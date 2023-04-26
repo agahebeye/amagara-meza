@@ -20,9 +20,16 @@ class Patient extends \Illuminate\Database\Eloquent\Model
     protected static function booted(): void
     {
         static::created(function ($model) {
+            // upon regestering a new patient, he will
+            // need to pay for her medical form
+
             $service = Service::query()->first();
             $invoice = $model->invoices()->create([]);
-            $invoice->items()->attach($service->id);
+            // $service->invoices()->create(['invoice_id' => $invoice->id]);
+            $invoice->items()->create([
+                'billable_id' => $service->id,
+                'billable_type' => get_class($service)
+            ]);
         });
     }
 

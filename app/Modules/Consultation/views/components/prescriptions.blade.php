@@ -96,18 +96,35 @@
      $('#prescriptions-form').on('submit', function(e) {
 
          e.preventDefault();
-         let data = [],
-             medic = {};
+         let medics = {};
 
-         $(this).find('select.medecine, .posology, .qty').each(function(i) {
-             const cl = $(this)[0].classList[0];
-             medic[cl] = $(this).val()
+         $(this).find('select.medic_id').each(function() {
+             const posology = $(this).closest('.prescription').find('.posology')
+             const qty = $(this).closest('.prescription').find('.qty')
 
-             // on each third iteration, we make sure we save object with all
-             // possible value for us to send to the server
-             if (i % 3 === 0) data.push(medic)
-         })
+             medics[$(this).val()] = {
+                 posology: posology.val(),
+                 qty: qty.val(),
+             }
+         });
 
-         console.log(consultation, data);
+
+         fetch("{{route('api.v1.prescriptions.store')}}", {
+                 method: 'POST',
+                 body: JSON.stringify({
+                     consultation_id: consultation.id,
+                     medics
+                 }),
+                 headers: {
+                     'Content-Type': 'application/json'
+                 }
+             }).then(res => res.json()).then(res => {
+                 console.log(res);
+             })
+             .catch(console.error)
+             .finally(() => {
+                 $(this).closest('#consultation-modal').modal('hide');
+                 $(this).trigger('reset')
+             })
      })
  </script>

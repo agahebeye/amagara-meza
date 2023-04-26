@@ -1,15 +1,15 @@
 <form id="complaint-form" class="form-material" style="font-size: 1.25rem;">
     <div class="row no-gutters">
-        <input type="hidden" name="patient_id" class="form-control">
+        <input type="hidden" name="patient_id">
 
-        <div class="form-group col-12 mt-4">
+        <!-- <div class="form-group col-12 mt-4">
             <label class="col-sm-12">Patient ID</label>
             <div class="col-md-12">
-                <input type="number" class="patient_id form-control" disabled>
+                <input type="number"  class="form-control" style="pointer-events: none; cursor: not-allowed;">
             </div>
-        </div>
+        </div> -->
 
-        <div class="form-group col-md-6 align-self-end ">
+        <div class="form-group col-md-6 align-self-end mt-4">
             <label class="col-sm-12">Taken care?*</label>
 
             <div class="form-check">
@@ -23,7 +23,7 @@
 
         </div>
 
-        <div class="form-group col-md-6">
+        <div class="form-group col-md-6 mt-4">
             <label class="col-md-12 mt-4" for="lastname">Weight</span>
             </label>
             <div class="col-md-12">
@@ -116,6 +116,7 @@
 
 @push('scripts')
 <script>
+    let complaint;
     // save complaint and switch to orientation tab - Ok
     $('#complaint-form').on('submit', function(e) {
         e.preventDefault();

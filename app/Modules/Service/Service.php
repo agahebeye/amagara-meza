@@ -5,6 +5,7 @@ namespace App\Modules\Service;
 use App\Models\Invoice;
 use Illuminate\Database\Eloquent\Model;
 use App\Modules\Consultation\Consultation;
+use App\Modules\Invoice\InvoiceItem;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Service extends Model
@@ -17,7 +18,7 @@ class Service extends Model
 
     public function invoices()
     {
-        return $this->belongsToMany(Invoice::class, 'invoice_items');
+        return $this->morphMany(InvoiceItem::class, 'billable');
     }
 
     public function consultations()

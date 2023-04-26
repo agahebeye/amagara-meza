@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use App\Models\Orientation;
+use App\Modules\Service\Service;
 use Illuminate\Support\Str;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Database\Eloquent\Factories\Factory;
@@ -35,10 +36,8 @@ class AppServiceProvider extends ServiceProvider
             $this->loadViewsFrom(app_path("Modules/{$namespace}/views"), Str::lower($namespace))
         );
 
-        // Factory::guessFactoryNamesUsing(function (string $model_name) {
-        //     $namespace = 'Database\\Factories\\';
-        //     $model_name = Str::beforeLast($model_name, '\\');
-        //     return $model_name . 'Factory';
-        // });
+        Relation::enforceMorphMap([
+            'Service' => Service::class
+        ]);
     }
 }

@@ -59,7 +59,7 @@
             }).then(res => res.json()).then(res => {
                 // in case a doctor wants to directly prescribe medics
                 if ($('#prescribed').prop('checked')) {
-                    $('a[href="#prescriptions"]').click();
+                    $('a[href="#prescriptions"]').removeClass('disabled').click();
                     consultation = {
                         ...res
                     };
@@ -70,7 +70,6 @@
                 if (!$('#prescribed').prop('checked')) {
                     $(this).closest('#consultation-modal').modal('hide');
                     $(this).trigger('reset')
-                    $('select.examinations').val(null).trigger('change');
                 }
             })
     })

@@ -17,7 +17,6 @@ use Spatie\RouteAttributes\Attributes\ApiResource;
 #[ApiResource(
     resource: 'consultations',
     names: 'api.v1.consultations',
-    except: ['__invoke']
 )]
 class ConsultationController
 {
@@ -25,7 +24,7 @@ class ConsultationController
     {
         $patients = Patient::select('id', 'first_name', 'last_name')
             ->has('latestComplaint')
-            ->with(['latestComplaint']);
+            ->with(['latestComplaint'])->latest();
 
         return datatables($patients)->toJson();
     }
@@ -44,6 +43,7 @@ class ConsultationController
 
     public function store(Request $request)
     {
+        return $request->all();
         // get orientation - Ok
         // find or create consultation from it - Ok
         // link with examns - ok
@@ -51,9 +51,9 @@ class ConsultationController
         $orientation = Orientation::query()->firstWhere('complaint_id', $request->complaint_id);
         $consultation = $orientation->consultation()->firstOrCreate($request->except(['complaint_id', 'patient_id', 'examinations']));
 
-        // $consultation->examinations()->attach($request->examinations);
-        // $invoice = Invoice::create(['patient_id' => $request->patient_id]);
-        // $invoice->items()->attach($request->examinations);
+        $consultation->examinations()->attach($request->examinations);
+        $invoice = Invoice::create(['patient_id' => $request->patient_id]);
+        $invoice->items()->attach($request->examinations);
 
         return response()->json([
             'data' => $consultation,

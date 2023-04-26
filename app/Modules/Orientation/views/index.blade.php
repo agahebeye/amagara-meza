@@ -72,7 +72,7 @@
             $('#orientation-modal').on('show.bs.modal', function(event) {
                 const button = $(event.relatedTarget);
                 const value = JSON.parse(decodeURIComponent(button.data('value')))
-                $('.patient_id').val(value.id);
+                $('input[name=patient_id]').val(value.id);
 
                 $.map(value, function(v, i) {
                     $('#show-patient').find(`#${i}`).text(v)
