@@ -28,16 +28,5 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-
-        collect([
-            'Consultation', 'Patient', 'Complaint', 'Orientation', 'Invoice', 'Service'
-        ])->each(
-            fn ($namespace) =>
-            $this->loadViewsFrom(app_path("Modules/{$namespace}/views"), Str::lower($namespace))
-        );
-
-        Relation::enforceMorphMap([
-            'Service' => Service::class
-        ]);
     }
 }

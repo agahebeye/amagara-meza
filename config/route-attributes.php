@@ -13,9 +13,9 @@ return [
      * Optionally, you can specify group configuration by using key/values
      */
     'directories' => [
-        app_path('Modules'),
+        app_path('Controllers'),
 
-        app_path('Modules') => [
+        app_path('Controllers') => [
             'middleware' => 'api',
         ],
     ],
