@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Modules\Medic;
+namespace Database\Factories;
 
 use Illuminate\Support\Str;
 use App\Modules\Medic\Medic;
@@ -13,8 +13,6 @@ class MedicFactory extends Factory
      *
      * @return array
      */
-    protected $model = Medic::class;
-
     public function definition()
     {
         return [

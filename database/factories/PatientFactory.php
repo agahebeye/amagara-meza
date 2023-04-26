@@ -1,6 +1,7 @@
 <?php
 
-namespace App\Modules\Patient;
+namespace Database\Factories;
+
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Foundation\Testing\WithFaker;
@@ -9,7 +10,6 @@ class PatientFactory extends Factory
 {
     use WithFaker;
 
-    protected $model = Patient::class;
     /**
      * Define the model's default state.
      *
