@@ -1,4 +1,4 @@
-<x-layouts.app>
+<x-core.layouts.app>
     <x-slot name='title'>Cashbox</x-slot>
 
 
@@ -53,7 +53,7 @@
                             render: function(data, type, row) {
                                 return `
                                 <a title="Mark as paid" role="button" data-id="${row.latest_invoice.id}" data-toggle="modal" data-target="#show-invoice"  class="pay-button">
-                                    <x-icons.bag-check />
+                                    <x-core.icons.bag-check />
                                 </a>
                                 `;
                             }
@@ -89,7 +89,7 @@
         </div>
     </div>
 
-    <x-partials.modals.confirmation title='Payment Cancellation' message='Do you really want to cancel this payment?' />
+    <x-core.modals.confirmation title='Payment Cancellation' message='Do you really want to cancel this payment?' />
 
 
-</x-layouts.app>
+</x-core.layouts.app>

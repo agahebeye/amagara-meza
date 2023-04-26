@@ -21,7 +21,7 @@ class InvoiceController
     public function index()
     {
         $patients = Patient::select('id', 'first_name', 'last_name')
-            ->with('latestInvoice.items')
+            ->with(['latestInvoice'])
             ->whereHas('latestInvoice', fn ($query) => $query->pending());
 
         return datatables($patients)->toJson();
@@ -29,7 +29,7 @@ class InvoiceController
 
     public function show(Invoice $invoice)
     {
-        return view('invoice::show', ['invoice' => $invoice->load([
+        return view('components.invoice.show', ['invoice' => $invoice->load([
             'items',
             'patient:id,first_name,last_name'
         ])]);

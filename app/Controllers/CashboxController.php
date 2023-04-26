@@ -9,6 +9,6 @@ class CashboxController
     #[Get('/hospital/cashbox', name: 'cashbox')]
     public function __invoke()
     {
-        return view('invoice::cashbox');
+        return view('components.invoice.cashbox');
     }
 }

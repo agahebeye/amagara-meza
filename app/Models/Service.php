@@ -16,11 +16,6 @@ class Service extends Model
 
     protected $fillable = ['name', 'category', 'price'];
 
-    public function invoices()
-    {
-        return $this->morphMany(InvoiceItem::class, 'billable');
-    }
-
     public function consultations()
     {
         return $this->belongsToMany(Consultation::class, 'examinations');

@@ -18,7 +18,7 @@
                      <h4 class="font-bold">{{ $invoice->patient->first_name}} {{ $invoice->patient->last_name}}</h4>
                      <p class="m-t-30 mb-0"><b>Invoice Date </b></p>
                      <p class="m-0">
-                         <x-icons.calendar />
+                         <x-core.icons.calendar />
                          <span style="position: relative; bottom: 2px">{{ now()->format('l jS, M Y h:i:s A') }}</span>
                      </p>
                  </address>
@@ -38,15 +38,8 @@
                          </tr>
                      </thead>
                      <tbody>
-                         @foreach($invoice->items as $item)
                          <tr>
-                             <td class="text-center">{{ $item->id }}</td>
-                             <td>{{ $item->name }}</td>
-                             <td class="text-right">-</td>
-                             <td class="text-right">{{$item->price}} Fbu </td>
-                             <td class="text-right">{{$item->price}} Fbu</td>
                          </tr>
-                         @endforeach
                      </tbody>
                  </table>
              </div>
@@ -54,7 +47,7 @@
 
          <div class="col-md-12">
              <div class="pull-right m-t-30 text-right">
-                 <h3><b>Total :</b> {{ array_reduce($invoice->items->toArray(), fn($curr, $item) => $curr + $item['price'], 0) }}</h3>
+                 {{-- <!-- <h3><b>Total :</b> {{ array_reduce($invoice->items->toArray(), fn($curr, $item) => $curr + $item['price'], 0) }}</h3> -->--}}
              </div>
              <div class="clearfix"></div>
              <hr>

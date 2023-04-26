@@ -32,9 +32,4 @@ class Invoice extends Model
     {
         return $query->where('status', 2);
     }
-
-    public function items()
-    {
-        return $this->hasMany(InvoiceItem::class);
-    }
 }

@@ -16,9 +16,4 @@ class Medic extends Model
     {
         return $this->belongsToMany(Consultation::class, 'prescriptions');
     }
-
-    public function invoices()
-    {
-        return $this->morphMany(InvoiceItem::class, 'billable');
-    }
 }
