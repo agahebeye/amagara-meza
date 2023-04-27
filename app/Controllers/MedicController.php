@@ -4,8 +4,6 @@ namespace App\Controllers;
 
 use App\Models\Medic;
 use Illuminate\Http\Request;
-use Illuminate\Database\Query\Builder;
-use Barryvdh\Debugbar\Facades\Debugbar;
 use Spatie\RouteAttributes\Attributes\Prefix;
 use Spatie\RouteAttributes\Attributes\ApiResource;
 
@@ -24,11 +22,12 @@ class MedicController
     public function index(Request $request)
     {
         $medics = Medic::query()
-            /* ->when(
+            ->select('id', 'name')
+            ->when(
                 $request->q,
-                fn (Builder $query) =>
+                fn ($query) =>
                 $query->where('name', 'LIKE', "%{$request->q}%")
-            ) */->get();
+            )->get();
 
         return $medics;
     }

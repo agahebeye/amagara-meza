@@ -20,6 +20,7 @@ class MedicFactory extends Factory
             'ref' => Str::random(5),
             'category' => $this->faker->randomElement(['tablet', 'blister', 'injectable']),
             'qty' => $this->faker->numberBetween(1, 50),
+            'unit_price' => $this->faker->numberBetween(1000, 50_000),
             'expiredAt' => $this->faker->dateTimeBetween('-1year')
         ];
     }

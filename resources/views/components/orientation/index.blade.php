@@ -38,7 +38,7 @@
             $(document).ready(function() {
                 let complaint;
 
-                const table = $('#orientationTable').DataTable({
+                var table = $('#orientationTable').DataTable({
                     serverSide: true,
                     ajax: "{{route('api.v1.orientations.index')}}",
                     columns: [{

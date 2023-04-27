@@ -20,9 +20,6 @@
          searchField: 'name',
          options: [],
          persist: true,
-         create: true,
-
-         onChange: function(value) {},
 
          load: function(query, callback) {
              let url = "{{ route('api.v1.medics.index') }}";
@@ -31,14 +28,19 @@
              $.ajax({
                  url,
                  type: 'GET',
+                 data: {
+                     q: query
+                 },
                  error: function() {
                      callback();
                  },
-                 success: function(res) {
-                     callback(res);
+                 success: function(medics) {
+                     callback(medics);
                  }
              });
          },
+         // TODO: dynamically append non-existent medics
+         create: true,
      }
 
      $('form').on('click', '#new-prescription', function(e) {
@@ -102,10 +104,11 @@
          let medics = {};
 
          $(this).find('select.medic_id').each(function() {
+             const val = $(this).val()
              const posology = $(this).closest('.prescription').find('.posology')
              const qty = $(this).closest('.prescription').find('.qty')
 
-             medics[$(this).val()] = {
+             medics[val] = {
                  posology: posology.val(),
                  qty: qty.val(),
              }
@@ -127,8 +130,8 @@
              })
              .catch(console.error)
              .finally(() => {
-                 //  $(this).closest('#consultation-modal').modal('hide');
-                 //  $(this).trigger('reset')
+                 $(this).closest('#consultation-modal').modal('hide');
+                 $(this).trigger('reset')
              })
      })
  </script>

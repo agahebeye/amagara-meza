@@ -97,6 +97,7 @@
                      // close parent modal after printing - OK
                      $('.invoice').printThis({
                          pageTitle: "Invoice #{{$invoice->id}}",
+                         printDelay: 500,
                          afterPrint() {
                              btn.closest('#show-invoice').modal('hide');
                          }

@@ -19,7 +19,6 @@ class CreateTablePrescriptions extends Migration
             $table->foreignId('medic_id')->constrained()->cascadeOnDelete();
             $table->string('posology');
             $table->integer('qty');
-            $table->date('prescribedAt')->useCurrent();
             $table->timestamps();
         });
     }

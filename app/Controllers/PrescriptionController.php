@@ -18,10 +18,8 @@ class PrescriptionController
     public function store(Request $request)
     {
 
-
-        // $consultation = Consultation::find($request->consultation_id);
-        // $prescription = $consultation->prescriptions()->sync($request->medics);
-        // $invoice = Invoice::create(['patient_id' => $request->patient_id]);
+        $consultation = Consultation::find($request->consultation_id);
+        $consultation->prescriptions()->sync($request->medics);
 
         // we iterate to remove posology as we don't
         // need it in invoice,
@@ -31,16 +29,18 @@ class PrescriptionController
             $medics[$k] = ['qty' => $v['qty']];
         }
 
-        // $invoice->medics()->sync($medics);
+        $invoice = Invoice::create(['patient_id' => $request->patient_id]);
+        $invoice->medics()->sync($medics);
 
-        $res = [];
         // after generating invoice, we then
         // need to substract qty from stock
         foreach ($medics as $k => $v) {
-            $medic = Medic::query()->find($k)?->decrement('qty', $v['qty']);
-            array_push($res, $medic);
+            Medic::query()->find($k)?->decrement('qty', $v['qty']);
         }
 
-        return $res;
+        return response()->json([
+            'data' => $consultation->load('prescriptions'),
+            'message' => 'success'
+        ], 201);
     }
 }

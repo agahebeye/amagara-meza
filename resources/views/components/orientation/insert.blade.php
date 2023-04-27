@@ -74,9 +74,12 @@
             .then((res) => {
                 $('#queue-number').text(res.data);
                 $('#waiting-list-modal').modal('show')
-                $('#orientationTable').Datatable().ajax.reload()
+                table.ajax.reload()
             })
-            .catch(() => notify('Orientation Notice', 'Error while trying to save orientation', 'error'))
+            .catch((reason) => {
+                console.log(reason);
+                notify('Orientation Notice', 'Error while trying to save orientation', 'error')
+            })
             .finally(() =>
                 $(this).closest('#orientation-modal').modal('hide')
             )
