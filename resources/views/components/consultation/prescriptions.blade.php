@@ -1,4 +1,4 @@
- @props(['consultation'])
+ @props(['patient_id'])
  <form id="prescriptions-form" class="form-material mt-5" style="font-size: 1.25rem;">
      <input type="hidden" id='consultation_id' value="">
 
@@ -20,6 +20,7 @@
          searchField: 'name',
          options: [],
          persist: true,
+         create: true,
 
          onChange: function(value) {},
 
@@ -86,6 +87,8 @@
          }
      })
 
+     // TODO: make sure we verify there enough
+     // in the stock
      $('form').on('keydown', '.qty', function(e) {
          if (e.which === 13) {
              e.preventDefault();
@@ -106,26 +109,26 @@
                  posology: posology.val(),
                  qty: qty.val(),
              }
+
          });
 
-         console.log(consultation);
-
-         //  fetch("{{route('api.v1.prescriptions.store')}}", {
-         //          method: 'POST',
-         //          body: JSON.stringify({
-         //              consultation_id: consultation.id,
-         //              medics
-         //          }),
-         //          headers: {
-         //              'Content-Type': 'application/json'
-         //          }
-         //      }).then(res => res.json()).then(res => {
-         //          console.log(res);
-         //      })
-         //      .catch(console.error)
-         //      .finally(() => {
-         //          $(this).closest('#consultation-modal').modal('hide');
-         //          $(this).trigger('reset')
-         //      })
+         fetch("{{route('api.v1.prescriptions.store')}}", {
+                 method: 'POST',
+                 body: JSON.stringify({
+                     patient_id: complaint.id,
+                     consultation_id: consultation.id,
+                     medics
+                 }),
+                 headers: {
+                     'Content-Type': 'application/json'
+                 }
+             }).then(res => res.json()).then(res => {
+                 console.log(res);
+             })
+             .catch(console.error)
+             .finally(() => {
+                 //  $(this).closest('#consultation-modal').modal('hide');
+                 //  $(this).trigger('reset')
+             })
      })
  </script>

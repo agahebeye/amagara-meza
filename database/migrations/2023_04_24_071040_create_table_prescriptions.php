@@ -13,13 +13,13 @@ class CreateTablePrescriptions extends Migration
      */
     public function up()
     {
-        Schema::create('table_prescriptions', function (Blueprint $table) {
+        Schema::create('prescriptions', function (Blueprint $table) {
             $table->id();
             $table->foreignId('consultation_id')->constrained()->cascadeOnDelete();
             $table->foreignId('medic_id')->constrained()->cascadeOnDelete();
             $table->string('posology');
             $table->integer('qty');
-            $table->date('prescribedAt')->nullable();
+            $table->date('prescribedAt')->useCurrent();
             $table->timestamps();
         });
     }

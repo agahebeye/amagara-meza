@@ -15,13 +15,14 @@
         @endif
     </div>
     <div role="tabpanel" class="tab-pane fade px-5" id="prescriptions">
-        <x-consultation.prescriptions />
+        <x-consultation.prescriptions :patientId="$complaint->patient_id" />
     </div>
 </div>
 
 
 <script>
-    var consultation = @json($consultation);
+    var consultation = <?= json_encode($consultation) ?>;
+    var complaint = <?= json_encode($complaint) ?>;
 
     var prescribed = $('#prescribed').prop('checked');
 
