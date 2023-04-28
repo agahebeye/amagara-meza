@@ -26,7 +26,9 @@ class Invoice extends Model
 
     public function medics()
     {
-        return $this->morphedByMany(Medic::class, 'invoiceable');
+        return $this->morphedByMany(Medic::class, 'invoiceable')
+            ->as('prescription')
+            ->withPivot('qty');
     }
 
     public function scopePending($query)

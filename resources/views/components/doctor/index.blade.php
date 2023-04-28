@@ -1,5 +1,6 @@
-<x-layouts.app>
+<x-core.layouts.app>
     <x-slot name='title'>Doctors</x-slot>
+
 
     <div class="row">
         <!-- .col -->
@@ -254,4 +255,5 @@
             </div>
         </div>
     </div>
-</x-layouts.app>
+
+</x-core.layouts.app>

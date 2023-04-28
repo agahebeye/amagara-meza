@@ -35,11 +35,11 @@ class InvoiceController
             'patient:id,first_name,last_name'
         ]);
 
-        Debugbar::debug($invoice->services->toArray());
+        Debugbar::debug($invoice->toArray());
 
         $st = $invoice->services->sum('price');
         $mt = $invoice->medics->sum(function ($medic) {
-            return $medic['unit_price'] * $medic['pivot']['qty'];
+            return $medic['unit_price'] * $medic['prescription']['qty'];
         });
 
         return view('components.invoice.show', [
