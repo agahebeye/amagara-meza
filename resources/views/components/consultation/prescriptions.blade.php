@@ -43,7 +43,6 @@
          create: true,
 
          onOptionAdd(value) {
-             console.log(Object.keys(this.options).length);
              //  $('#colori')[0].selectize.removeItem(colore);
              //  $('#colori')[0].selectize.updateOption(colore, {
              //      title: colore,
@@ -127,25 +126,24 @@
 
          });
 
-         console.log(medics);
-
-         //  fetch("{{route('api.v1.prescriptions.store')}}", {
-         //          method: 'POST',
-         //          body: JSON.stringify({
-         //              patient_id: complaint.id,
-         //              consultation_id: consultation.id,
-         //              medics
-         //          }),
-         //          headers: {
-         //              'Content-Type': 'application/json'
-         //          }
-         //      }).then(res => res.json()).then(res => {
-         //          console.log(res);
-         //      })
-         //      .catch(console.error)
-         //      .finally(() => {
-         //          $(this).closest('#consultation-modal').modal('hide');
-         //          $(this).trigger('reset')
-         //      })
+         fetch("{{route('api.v1.prescriptions.store')}}", {
+                 method: 'POST',
+                 body: JSON.stringify({
+                     patient_id: complaint.id,
+                     consultation_id: consultation.id,
+                     medics
+                 }),
+                 headers: {
+                     'Content-Type': 'application/json'
+                 }
+             }).then(res => res.json()).then(res => {
+                 console.log(res);
+             })
+             .catch(console.error)
+             .finally(() => {
+                 $(this).closest('#consultation-modal').modal('hide');
+                 $(this).trigger('reset')
+                 $('#consultationTable').DataTable().ajax.reload();
+             })
      })
  </script>

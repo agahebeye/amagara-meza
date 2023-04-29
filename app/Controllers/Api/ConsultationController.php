@@ -23,6 +23,7 @@ class ConsultationController
     public function index()
     {
         $patients = Patient::select('id', 'first_name', 'last_name')
+            ->doesntHave('latestComplaint.consultation.prescriptions')
             ->has('latestComplaint')
             ->with(['latestComplaint'])->latest();
 

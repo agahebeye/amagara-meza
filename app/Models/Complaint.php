@@ -30,4 +30,9 @@ class Complaint extends Model
     {
         return $this->hasOne(Orientation::class);
     }
+
+    public function consultation()
+    {
+        return $this->hasOneThrough(Consultation::class, Orientation::class);
+    }
 }
