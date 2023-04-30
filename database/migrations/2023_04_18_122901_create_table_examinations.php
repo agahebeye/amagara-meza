@@ -16,7 +16,8 @@ class CreateTableExaminations extends Migration
         Schema::create('examinations', function (Blueprint $table) {
             $table->id();
             $table->foreignId('consultation_id')->constrained()->cascadeOnDelete();
-            $table->foreignId('service_id')->constrained()->cascadeOnDelete();
+            $table->integer('service_id');
+            $table->integer('intra_id');
             $table->string('result')->nullable();
             $table->timestamps();
         });

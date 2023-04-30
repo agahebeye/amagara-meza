@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Complaint;
+use App\Models\Intra;
 use App\Models\Medic;
 use App\Models\Patient;
 use App\Models\Service;
@@ -21,5 +22,6 @@ class DatabaseSeeder extends Seeder
         Service::factory()->create(['category' => 'Consultation']);
         Service::factory()->count(4)->create();
         Medic::factory()->count(20)->create();
+        Intra::factory()->count(5)->create();
     }
 }

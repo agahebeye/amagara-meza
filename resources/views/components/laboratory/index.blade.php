@@ -6,6 +6,7 @@
         <link href="/app/css/jquery.dataTables.min.css" rel="stylesheet" type="text/css" />
         <link href="/app/css/jquery.toast.css" rel="stylesheet" type="text/css" />
         <link href="/app/css/selectize.min.css" rel="stylesheet" type="text/css" />
+        <link href="/app/css/dropify.min.css" rel="stylesheet" type="text/css" />
     </x-slot>
 
 
@@ -17,7 +18,7 @@
         <table id="consultationTable" class="display compact">
             <thead>
                 <tr>
-                    <th>No</th>
+                    <th>#</th>
                     <th>FirstName</th>
                     <th>LastName</th>
                     <th>Actions</th>
@@ -34,6 +35,7 @@
         <script src="/app/js/jquery.toast.js"></script>
         <script src="/app/js/jquery.dataTables.min.js"></script>
         <script src="/app/js/selectize.min.js"></script>
+        <script src="/app/js/dropify.min.js"></script>
 
         <script>
             $(document).ready(function() {
@@ -53,6 +55,7 @@
                             render: function(data, type, row, meta) {
                                 return `<a title="Show Details" role="button"
                                             data-toggle="modal" data-target="#laboratory-modal"
+                                            data-consultation-id=${row.latest_complaint.consultation.id}
                                             class="view-button">
                                                 <x-core.icons.eye />
                                         </a>`;
@@ -71,7 +74,7 @@
                     const button = $(event.relatedTarget);
 
                     $('#patient-laboratory').load(
-                        "{{route('api.v1.laboratories.show', ':id')}}".replace(':id', button.data('complaintId'))
+                        "{{route('api.v1.laboratories.show', ':id')}}".replace(':id', button.data('consultationId'))
                     );
                 });
 

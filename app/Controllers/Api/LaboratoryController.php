@@ -2,6 +2,7 @@
 
 namespace App\Controllers\Api;
 
+use App\Models\Consultation;
 use App\Models\Patient;
 use Barryvdh\Debugbar\Facades\Debugbar;
 use Illuminate\Http\Request;
@@ -18,17 +19,18 @@ class LaboratoryController
     public function index()
     {
         $patients = Patient::select('id', 'first_name', 'last_name')
-            ->has('latestComplaint.consultation');
-
-        Debugbar::debug($patients->get()->toArray());
+            ->has('latestComplaint.consultation.examinations')
+            ->with('latestComplaint.consultation');
 
         return datatables($patients)->toJson();
     }
 
-    public function show(Patient $patient)
+    public function show($id)
     {
-        return view('components.patient.show', [
-            'patient' => $patient
+        $consultation = Consultation::with('examinations')->firstWhere('id', $id);
+
+        return view('components.laboratory.show', [
+            'consultation' => $consultation
         ]);
     }
 
@@ -43,8 +45,9 @@ class LaboratoryController
         ], 201);
     }
 
-    public function destroy(Patient $patient)
+    public function update($id, Request $request)
     {
-        return tap($patient)->delete();
+        $consultation = Consultation::query()->firstWhere('id', $id);
+        return $request->all();
     }
 }

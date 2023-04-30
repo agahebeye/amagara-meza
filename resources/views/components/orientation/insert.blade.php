@@ -55,34 +55,36 @@
 
 @push('scripts')
 <script>
-    // submit orientation with its complaint - Ok
-    $('#orientation-form').on('submit', function(e) {
-        e.preventDefault();
+    $(document).ready(function() {
+        // submit orientation with its complaint - Ok
+        $('#orientation-form').on('submit', function(e) {
+            e.preventDefault();
 
-        const orientation = Object.fromEntries(new FormData(this).entries());
+            const orientation = Object.fromEntries(new FormData(this).entries());
 
-        fetch("{{route('api.v1.orientations.store')}}", {
-                method: 'POST',
-                body: JSON.stringify({
-                    complaint,
-                    orientation
-                }),
-                headers: {
-                    'Content-Type': 'application/json'
-                }
-            }).then(res => res.json())
-            .then((res) => {
-                $('#queue-number').text(res.data);
-                $('#waiting-list-modal').modal('show')
-                table.ajax.reload()
-            })
-            .catch((reason) => {
-                console.log(reason);
-                notify('Orientation Notice', 'Error while trying to save orientation', 'error')
-            })
-            .finally(() =>
-                $(this).closest('#orientation-modal').modal('hide')
-            )
+            fetch("{{route('api.v1.orientations.store')}}", {
+                    method: 'POST',
+                    body: JSON.stringify({
+                        complaint,
+                        orientation
+                    }),
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                }).then(res => res.json())
+                .then((res) => {
+                    $('#queue-number').text(res.data);
+                    $('#waiting-list-modal').modal('show')
+                    $('#orientationTable').DataTable().ajax.reload()
+                })
+                .catch((reason) => {
+                    console.log(reason);
+                    notify('Orientation Notice', 'Error while trying to save orientation', 'error')
+                })
+                .finally(() =>
+                    $(this).closest('#orientation-modal').modal('hide')
+                )
+        })
     })
 </script>
 @endpush

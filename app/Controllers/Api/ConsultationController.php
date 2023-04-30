@@ -34,11 +34,11 @@ class ConsultationController
     public function show($id)
     {
         $complaint = Complaint::select('id', 'complaint', 'date', 'patient_id')
-            ->with(['orientation.consultation'])->firstWhere('id', $id);
+            ->with(['consultation'])->firstWhere('id', $id);
 
         return view('components.consultation.show', [
             'complaint' => $complaint,
-            'consultation' => $complaint->orientation?->consultation,
+            'consultation' => $complaint?->consultation,
         ]);
     }
 

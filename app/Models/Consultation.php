@@ -28,7 +28,9 @@ class Consultation extends Model
 
     public function examinations()
     {
-        return $this->belongsToMany(Service::class, 'examinations');
+        return $this->belongsToMany(Service::class, 'examinations')
+            ->as('exam')
+            ->withPivot('result');
     }
 
     public function prescriptions()

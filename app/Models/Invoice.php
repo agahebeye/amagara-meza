@@ -11,7 +11,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 class Invoice extends Model
 {
     use HasFactory;
-    public $timestamps = false;
+    const UPDATED_AT = null;
     protected $guarded = [];
 
     public function patient()

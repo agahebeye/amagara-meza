@@ -30,6 +30,25 @@
         </table>
     </div>
 
+    <x-orientation.new />
+
+    <div class="modal fade" id="waiting-list-modal" tabindex="-1" role="dialog" aria-labelledby="waitingListModal" data-backdrop='false' data-keyboard="false" aria-hidden="true">
+        <div class="modal-dialog h-100 d-flex flex-column justify-content-center my-0" role="document">
+            <div class="modal-content rounded-md">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h2 class="modal-title text-center" id="title">Waiting List</h2>
+                </div>
+
+                <div class="modal-body">
+                    <div class="d-flex flex-column align-items-center">
+                        <h1 class="text-center my-3" id='queue-number'></h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <x-slot name='moreScripts'>
         <script src="/app/js/jquery.toast.js"></script>
         <script src="/app/js/jquery.dataTables.min.js"></script>
@@ -81,22 +100,4 @@
         </script>
     </x-slot>
 
-    <x-orientation.new />
-
-    <div class="modal fade" id="waiting-list-modal" tabindex="-1" role="dialog" aria-labelledby="waitingListModal" data-backdrop='false' data-keyboard="false" aria-hidden="true">
-        <div class="modal-dialog h-100 d-flex flex-column justify-content-center my-0" role="document">
-            <div class="modal-content rounded-md">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                    <h2 class="modal-title text-center" id="title">Waiting List</h2>
-                </div>
-
-                <div class="modal-body">
-                    <div class="d-flex flex-column align-items-center">
-                        <h1 class="text-center my-3" id='queue-number'></h1>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 </x-core.layouts.app>

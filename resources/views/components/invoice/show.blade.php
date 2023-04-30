@@ -32,7 +32,7 @@
                          <tr>
                              <th class="text-center">#</th>
                              <th>Item Name</th>
-                             <th class="text-right">Quantity</th>
+                             <th class="text-center">Quantity</th>
                              <th class="text-right">Charges</th>
                              <th class="text-right">Total</th>
                          </tr>
@@ -42,7 +42,7 @@
                          <tr>
                              <td class="text-center">{{ $service->id }}</td>
                              <td>{{ $service->name }}</td>
-                             <td class="text-right">-</td>
+                             <td class="text-center">-</td>
                              <td class="text-right">{{$service->price}} Fbu </td>
                              <td class="text-right">{{$service->price}} Fbu</td>
                          </tr>
