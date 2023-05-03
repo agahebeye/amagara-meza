@@ -15,7 +15,7 @@ class ServiceFactory extends Factory
     {
         return [
             'name' => $this->faker->unique()->word(),
-            'category' => $this->faker->randomElement(array('Consultation', 'Laboratory', 'Imaging')),
+            'category' => $this->faker->randomElement(array('Laboratory', 'Imaging')),
             'price' => $this->faker->randomFloat(11, 10_000, 100_000)
         ];
     }

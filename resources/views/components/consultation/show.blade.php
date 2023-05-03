@@ -65,8 +65,10 @@
 
                     consultation = res.data
                 }
+
+                notify('Consultation Notice', 'Consultation saved succefully')
             })
-            .catch(console.error)
+            .catch(_ => notify('Consultation Notice', 'Error while saving consultation', 'error'))
             .finally(() => {
                 if (!$('#prescribed').prop('checked')) {
                     $(this).closest('#consultation-modal').modal('hide');

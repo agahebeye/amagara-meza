@@ -17,7 +17,8 @@ class CreateTableExaminations extends Migration
             $table->id();
             $table->foreignId('consultation_id')->constrained()->cascadeOnDelete();
             $table->integer('service_id');
-            $table->integer('intra_id');
+            $table->integer('intra_id')->nullable();
+            $table->integer('qty')->default(1);
             $table->string('result')->nullable();
             $table->timestamps();
         });

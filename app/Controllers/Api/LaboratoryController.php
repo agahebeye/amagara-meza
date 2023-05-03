@@ -27,27 +27,29 @@ class LaboratoryController
 
     public function show($id)
     {
-        $consultation = Consultation::with('examinations')->firstWhere('id', $id);
+        $consultationId = Consultation::whereId($id)->value('id');
 
         return view('components.laboratory.show', [
-            'consultation' => $consultation
+            'consultationId' => $consultationId
         ]);
     }
 
     public function store(Request $request)
     {
-
-        $newPatient = Patient::create($request->all());
-
-        return response()->json([
-            'data' => $newPatient,
-            'message' => 'success'
-        ], 201);
+        // to be implemented
     }
 
     public function update($id, Request $request)
     {
-        $consultation = Consultation::query()->firstWhere('id', $id);
-        return $request->all();
+        $consultation = Consultation::query()->find($id, ['id']);
+        $exam = $consultation->examinations()->updateExistingPivot(
+            $request->service_id,
+            $request->except(['service_id'])
+        );
+
+        return response()->json([
+            'data' => $exam,
+            'message' => 'Result succefully added.'
+        ]);
     }
 }
